@@ -2,7 +2,7 @@
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US"/>
-  <App xmlns="" ProductID="{0d9d4593-6618-4c45-b445-34241ad1ff94}" Title="XamarinAzureAD.WinPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="XamarinAzureAD.WinPhone author" Description="Sample description" Publisher="XamarinAzureAD.WinPhone" PublisherID="{6baa1e2a-0e1b-45fb-936c-a3dc47ee035c}">
+  <App xmlns="" ProductID="{c056d3ea-4784-45b9-b13f-2b62df153091}" Title="XamarinAzureAD.WinPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="XamarinAzureAD.WinPhone author" Description="Sample description" Publisher="XamarinAzureAD.WinPhone" PublisherID="{2a3a6190-7be4-4371-b0c1-23661470e781}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>

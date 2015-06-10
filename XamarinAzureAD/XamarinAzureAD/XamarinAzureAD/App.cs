@@ -1,9 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XamarinAzureAD.Pages;
+using XamarinAzureAD.ViewModel;
+using XLabs.Forms.Mvvm;
+using XLabs.Forms.Services;
+using XLabs.Ioc;
+using XLabs.Platform.Mvvm;
+using XLabs.Platform.Services;
 
 namespace XamarinAzureAD
 {
@@ -12,20 +20,45 @@ namespace XamarinAzureAD
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-                }
-            };
+            Init();
+            MainPage = GetMainPage();
         }
+
+        private Page GetMainPage()
+        {
+            //REGISTER VM:S AND PAGES
+            ViewFactory.Register<LoginPage, LoginPageViewModel>();
+            ViewFactory.Register<CompletedLoginPage, CompletedLoginPageViewModel>();
+            
+            
+            var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
+            var navPage = new NavigationPage(mainPage);
+            
+            //REGISTER NAVIGATION SERVICE
+            Resolver.Resolve<IDependencyContainer>()
+                .Register<INavigationService>(t => mainPage != null ? new NavigationService(mainPage.Navigation) : null);
+            
+            return navPage;
+        }
+
+        public static void Init()
+        {
+
+            var app = Resolver.Resolve<IXFormsApp>();
+            if (app == null)
+            {
+                return;
+            }
+
+            app.Closing += (o, e) => Debug.WriteLine("Application Closing");
+            app.Error += (o, e) => Debug.WriteLine("Application Error");
+            app.Initialize += (o, e) => Debug.WriteLine("Application Initialized");
+            app.Resumed += (o, e) => Debug.WriteLine("Application Resumed");
+            app.Rotation += (o, e) => Debug.WriteLine("Application Rotated");
+            app.Startup += (o, e) => Debug.WriteLine("Application Startup");
+            app.Suspended += (o, e) => Debug.WriteLine("Application Suspended");
+        }
+
 
         protected override void OnStart()
         {

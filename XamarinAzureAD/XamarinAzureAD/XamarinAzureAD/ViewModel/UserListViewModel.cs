@@ -32,6 +32,20 @@ namespace XamarinAzureAD.ViewModel
         }
 
 
+
+		
+
+		
+
+
+
+		
+
+		
+
+ 
+
+
 		
 
 		

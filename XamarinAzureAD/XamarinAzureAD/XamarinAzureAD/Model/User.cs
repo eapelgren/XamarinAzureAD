@@ -16,8 +16,68 @@ namespace XamarinAzureAD.Model
         public string DisplayName
         {
 
-            get { return _displayName; }
+            get { return _displayName ?? (_displayName = ""); }
             set { SetProperty(ref _displayName, value); }
+        }
+
+        private string _givenName;
+
+        public string GivenName
+        {
+
+            get { return _givenName ?? (_givenName = ""); }
+            set { SetProperty(ref _givenName, value); }
+        }
+
+
+        private string _surname;
+
+        public string Surname
+        {
+
+            get { return _surname ?? (_surname = ""); }
+            set { SetProperty(ref _surname, value); }
+        }
+
+
+        private string _location;
+
+        public string Location
+        {
+
+            get
+            {
+                return _location ?? (_location = "");
+            }
+            set { SetProperty(ref _location, value); }
+        }
+
+        private string _telephoneNumber;
+
+        public string TelephoneNumber
+        {
+
+            get
+            {
+                return _telephoneNumber ?? (_telephoneNumber = "");
+            }
+            set { SetProperty(ref _telephoneNumber, value); }
+        }
+
+
+        private Image _image;
+
+        public Image Image
+        {
+
+            get
+            {
+                return _image ?? (_image = new Image()
+                {
+                    Source = "http://seniorcapital.eu/wp-content/themes/patus/images/no-image-half-landscape.png"
+                });
+            }
+            set { SetProperty(ref _image, value); }
         }
 
 
@@ -26,17 +86,6 @@ namespace XamarinAzureAD.Model
 		
 
         
-
-
-        
-        public string displayName { get; set; }
-        public string userPrincipalName { get; set; }
-        public string givenName { get; set; }
-        public string surname { get; set; }
-        public string location { get; set; }
-        public string telephoneNumber { get; set; }
         public string error { get; set; }
-        
-        public Image image { get; set; }
     }
 }

@@ -10,16 +10,21 @@
                  WinPhone="0, 0, 0, 0" />
   </mvvm:BaseView.Padding>
   <Label Text="TEST"></Label>
-  <ListView x:Name="listView"
-          ItemsSource="{Binding UserList}">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding DisplayName}"></Label>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+  <ScrollView>
+    <ListView x:Name="listView"
+            ItemsSource="{Binding UserList}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <!--<ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Image Source="{Binding Image.Source}"></Image>
+              <Label Text="{Binding DisplayName}"></Label>
+
+            </StackLayout>
+          </ViewCell>-->
+          <ImageCell Text="{Binding DisplayName}" Detail="{Binding Location}" ImageSource="{Binding Image.Source}"></ImageCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </ScrollView>
 </mvvm:BaseView>

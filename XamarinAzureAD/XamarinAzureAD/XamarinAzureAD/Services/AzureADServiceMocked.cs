@@ -24,41 +24,38 @@ namespace XamarinAzureAD.Services
                 new User()
                 {
                     DisplayName = "Emil Apelgren",
-                    displayName = "Emil Apelgren",
-                    givenName = "Emil",
-                    surname = "Apelgren",
-                    image = new Image()
+                    GivenName = "Emil",
+                    Surname = "Apelgren",
+                    Image = new Image()
                     {
                         Source = "http://i.ytimg.com/vi/_Dv7FKvUPBQ/hqdefault.jpg"
                     },
-                    location = "Xlent HQ",
+                    Location = "Xlent HQ",
 
                 },
                 new User()
                 {
                     DisplayName = "Fredrik Tonn",
-                    displayName = "Fredrik Tonn",
-                    givenName = "Fredrik",
-                    surname = "Tonn",
-                    image = new Image()
+                    GivenName = "Fredrik",
+                    Surname = "Tonn",
+                    Image = new Image()
                     {
                         Source = "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/000/24a/0d9/13e8e14.jpg"
                     },
-                    location = "Xlent HQ"
+                    Location = "Xlent HQ"
 
                 },
                 new User()
                 {
                     DisplayName = "Åsa Nisse",
-                    displayName = "Åsa Nisse",
-                    givenName = "Åsa",
-                    surname = "Nisse",
-                    image = new Image()
+                    GivenName = "Åsa",
+                    Surname = "Nisse",
+                    Image = new Image()
                     {
                         Source =
                             "http://www.mallorcanyheter.com/wp-content/uploads/2013/11/John_Elfstrom-Asa-Nisse-2-350x250.jpg"
                     },
-                    location = "AstridLand",
+                    Location = "AstridLand",
                 }
             };
             return collection;

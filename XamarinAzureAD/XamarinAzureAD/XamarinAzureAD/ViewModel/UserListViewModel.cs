@@ -16,7 +16,7 @@ namespace XamarinAzureAD.ViewModel
     {
         public UserListViewModel()
         {
-            var temp = UserList;
+           var temp = UserList;
         }
         
         private ObservableCollection<User> _userList;

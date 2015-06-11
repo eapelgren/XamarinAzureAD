@@ -4,11 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
-    public class User
+    public class User : ObservableObject
     {
+
+        private string _displayName;
+
+        public string DisplayName
+        {
+
+            get { return _displayName; }
+            set { SetProperty(ref _displayName, value); }
+        }
+
+
+		
+
+		
+
+        
+
+
+        
         public string displayName { get; set; }
         public string userPrincipalName { get; set; }
         public string givenName { get; set; }

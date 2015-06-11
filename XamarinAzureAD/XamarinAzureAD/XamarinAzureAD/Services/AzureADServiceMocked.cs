@@ -23,6 +23,7 @@ namespace XamarinAzureAD.Services
             {
                 new User()
                 {
+                    DisplayName = "Emil Apelgren",
                     displayName = "Emil Apelgren",
                     givenName = "Emil",
                     surname = "Apelgren",
@@ -35,6 +36,7 @@ namespace XamarinAzureAD.Services
                 },
                 new User()
                 {
+                    DisplayName = "Fredrik Tonn",
                     displayName = "Fredrik Tonn",
                     givenName = "Fredrik",
                     surname = "Tonn",
@@ -47,6 +49,7 @@ namespace XamarinAzureAD.Services
                 },
                 new User()
                 {
+                    DisplayName = "Åsa Nisse",
                     displayName = "Åsa Nisse",
                     givenName = "Åsa",
                     surname = "Nisse",

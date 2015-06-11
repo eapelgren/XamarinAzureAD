@@ -41,7 +41,7 @@ namespace XamarinAzureAD.ViewModel
             if (loggedIn)
             {
                 var navigation = Resolver.Resolve<INavigationService>();
-                navigation.NavigateTo<CompletedLoginPageViewModel>();
+                navigation.NavigateTo<UserListViewModel>();
             }
             else
             {
@@ -121,7 +121,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _loginCommand ??
                        (_loginCommand =
-                           new Command(async () => NavigationService.NavigateTo<CompletedLoginPageViewModel>(), () => true));
+                           new Command(async () => NavigationService.NavigateTo<UserListViewModel>(), () => true));
             }
         }
 

@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using XamarinAzureAD.ViewModel;
-using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.Pages
 {
-    [ViewType(typeof(CompletedLoginPage))]
-    public partial class CompletedLoginPage : BaseView
+    public partial class UserListPage : ContentPage
     {
-        public CompletedLoginPage()
+        public UserListPage()
         {
-            BindingContext = new CompletedLoginPageViewModel();
+            BindingContext = new UserListViewModel();
             InitializeComponent();
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +8,17 @@ using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Services
 {
-    interface IAzureAdService
+    class AzureADService : IAzureAdService
     {
-        Task<Boolean> LoginAdTask();
+        public Task<Boolean> LoginAdTask()
+        {
+            
+        }
 
-        Task<ObservableCollection<User>> GetUsersTask();
+        public Task<ObservableCollection<User>> GetUsersTask()
+        {
+            
 
-
+        }
     }
 }

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
+             x:Class="XamarinAzureAD.Pages.UserListPage">
+  <mvvm:BaseView.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                 iOS="0, 20, 0, 0"
+                 Android="0, 0, 0, 0"
+                 WinPhone="0, 0, 0, 0" />
+  </mvvm:BaseView.Padding>
+  <ListView ItemSource="UserList">
+    <ListView.ItemTemplate>
+      <ViewCell>
+        <Grid Padding="5">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+          <Label Grid.Row="0" Grid.Column="0" Text="{Binding displayName}" LineBreakMode="TailTruncation"></Label>
+          <Label Grid.Row="1" Grid.Column="0" Text="{Binding location}" Font="Small"  extColor="Gray" LineBreakMode="TailTruncation"></Label>
+          <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Source="{Binding Image}" Aspect="AspectFill"/>
+        </Grid>
+      </ViewCell>
+    </ListView.ItemTemplate>
+  </ListView>
+</mvvm:BaseView>

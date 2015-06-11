@@ -6,6 +6,7 @@ using System.Text;
 
 using Xamarin.Forms;
 using XamarinAzureAD.Pages;
+using XamarinAzureAD.Services;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
@@ -28,7 +29,7 @@ namespace XamarinAzureAD
         {
             //REGISTER VM:S AND PAGES
             ViewFactory.Register<LoginPage, LoginPageViewModel>();
-            ViewFactory.Register<CompletedLoginPage, CompletedLoginPageViewModel>();
+            ViewFactory.Register<CompletedLoginPage, UserListViewModel>();
             
             
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
@@ -38,6 +39,10 @@ namespace XamarinAzureAD
             Resolver.Resolve<IDependencyContainer>()
                 .Register<INavigationService>(t => mainPage != null ? new NavigationService(mainPage.Navigation) : null);
             
+            //REGISTER AZURE AD SERVICE
+            Resolver.Resolve<IDependencyContainer>()
+               .Register<IAzureAdService>(t => new AzureADServiceMocked());
+            
             return navPage;
         }
 
@@ -45,6 +50,11 @@ namespace XamarinAzureAD
         {
 
             var app = Resolver.Resolve<IXFormsApp>();
+            
+            //SET AZURE AD SERVICE
+           
+            
+            
             if (app == null)
             {
                 return;

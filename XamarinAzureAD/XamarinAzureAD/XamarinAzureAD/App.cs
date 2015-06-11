@@ -35,7 +35,7 @@ namespace XamarinAzureAD
             
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
             var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
-            var navPage = new NavigationPage(mainPage2);
+            var navPage = new NavigationPage(mainPage);
             
             //REGISTER NAVIGATION SERVICE
             Resolver.Resolve<IDependencyContainer>()

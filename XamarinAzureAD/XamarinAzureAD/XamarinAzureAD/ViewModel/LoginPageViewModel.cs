@@ -14,7 +14,7 @@ namespace XamarinAzureAD.ViewModel
 {
     class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
-        private Boolean _isLoading = true;
+        private Boolean _isLoading = false;
 
         public Boolean IsLoading
         {
@@ -121,7 +121,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _loginCommand ??
                        (_loginCommand =
-                           new Command(async () => NavigationService.NavigateTo<UserListViewModel>(), () => true));
+                           new Command( () => NavigationService.NavigateTo<UserListViewModel>()));
             }
         }
 
@@ -129,5 +129,7 @@ namespace XamarinAzureAD.ViewModel
         {
            LoginToAzure();
         }
+
+      
     }
 }

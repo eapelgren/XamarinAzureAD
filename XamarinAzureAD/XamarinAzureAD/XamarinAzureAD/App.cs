@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.Services;
 using XamarinAzureAD.ViewModel;
@@ -25,23 +26,23 @@ namespace XamarinAzureAD
             MainPage = GetMainPage();
         }
 
-        private Page GetMainPage()
+        public static Page GetMainPage()
         {
             //REGISTER VM:S AND PAGES
             ViewFactory.Register<LoginPage, LoginPageViewModel>();
-            ViewFactory.Register<CompletedLoginPage, UserListViewModel>();
+            ViewFactory.Register<UserListPage, UserListViewModel>();
             
             
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
-            var navPage = new NavigationPage(mainPage);
+            var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
+            var navPage = new NavigationPage(mainPage2);
             
             //REGISTER NAVIGATION SERVICE
             Resolver.Resolve<IDependencyContainer>()
-                .Register<INavigationService>(t => mainPage != null ? new NavigationService(mainPage.Navigation) : null);
+                .Register<INavigationService>(t => mainPage2 != null ? new NavigationService(mainPage2.Navigation) : null);
             
             //REGISTER AZURE AD SERVICE
-            Resolver.Resolve<IDependencyContainer>()
-               .Register<IAzureAdService>(t => new AzureADServiceMocked());
+        
             
             return navPage;
         }

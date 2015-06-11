@@ -9,7 +9,7 @@ using XamarinAzureAD.ViewModel;
 
 namespace XamarinAzureAD.Pages
 {
-    public partial class UserListPage : ContentPage
+    public partial class UserListPage : XLabs.Forms.Mvvm.BaseView
     {
         public UserListPage()
         {

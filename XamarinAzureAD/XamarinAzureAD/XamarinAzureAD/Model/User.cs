@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XamarinAzureAD.Model
 {
-    class User
+    public class User
     {
         public string displayName { get; set; }
         public string userPrincipalName { get; set; }

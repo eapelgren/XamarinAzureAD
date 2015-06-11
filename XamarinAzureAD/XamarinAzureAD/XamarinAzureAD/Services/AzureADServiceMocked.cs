@@ -9,7 +9,7 @@ using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Services
 {
-    class AzureADServiceMocked : IAzureAdService
+    public class AzureADServiceMocked : IAzureAdService
     {
         public Task<bool> LoginAdTask()
         {
@@ -17,9 +17,9 @@ namespace XamarinAzureAD.Services
             return task;
         }
 
-        public Task<ObservableCollection<User>> GetUsersTask()
+        public ObservableCollection<User> GetUsersTask()
         {
-            var task = new Task<ObservableCollection<User>> (() => new ObservableCollection<User>()
+            var collection = new ObservableCollection<User>
             {
                 new User()
                 {
@@ -57,8 +57,8 @@ namespace XamarinAzureAD.Services
                     },
                     location = "AstridLand",
                 }
-            });
-            return task;
+            };
+            return collection;
         }
     }
 }

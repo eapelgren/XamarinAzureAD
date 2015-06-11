@@ -28,7 +28,7 @@ namespace XamarinAzureAD.ViewModel
 
         //private readonly IAzureAdService azureService = Resolver.Resolve<IAzureAdService>();
         
-        private async Task LoginToAzure()
+        private void LoginToAzure()
         {
             IsLoading = true;
             //var loggedIn = await azureService.LoginAdTask();
@@ -125,9 +125,9 @@ namespace XamarinAzureAD.ViewModel
             }
         }
 
-        private async void LogginButtonClicked()
+        private void LogginButtonClicked()
         {
-           await LoginToAzure();
+           LoginToAzure();
         }
     }
 }

@@ -9,11 +9,11 @@ using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Services
 {
-    interface IAzureAdService
+    public interface IAzureAdService
     {
         Task<Boolean> LoginAdTask();
 
-        Task<ObservableCollection<User>> GetUsersTask();
+        ObservableCollection<User> GetUsersTask();
 
 
     }

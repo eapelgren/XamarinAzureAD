@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
+using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
 
@@ -27,26 +28,28 @@ namespace XamarinAzureAD.ViewModel
 
 
         //private readonly IAzureAdService azureService = Resolver.Resolve<IAzureAdService>();
-        
+
         private void LoginToAzure()
         {
             IsLoading = true;
             //var loggedIn = await azureService.LoginAdTask();
-            
-            
+
+
             //TEMP
             var loggedIn = true;
 
             IsLoading = false;
             if (loggedIn)
             {
-                var navigation = Resolver.Resolve<INavigationService>();
-                navigation.NavigateTo<UserListViewModel>();
+                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
+                var navPage = new NavigationPage(mainPage2);
+                Resolver.Resolve<IDependencyContainer>()
+                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                App.Current.MainPage = navPage;
             }
-            else
-            {
-                LogoLabel.Text = "COULD NOT LOGG IN";
-            } 
+
+
+
 
 
         }
@@ -121,15 +124,15 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _loginCommand ??
                        (_loginCommand =
-                           new Command( () => NavigationService.NavigateTo<UserListViewModel>()));
+                           new Command(LogginButtonClicked));
             }
         }
 
         private void LogginButtonClicked()
         {
-           LoginToAzure();
+            LoginToAzure();
         }
 
-      
+
     }
 }

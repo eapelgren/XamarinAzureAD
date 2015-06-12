@@ -19,6 +19,7 @@ namespace XamarinAzureAD
 {
     public class App : Application
     {
+        
         public App()
         {
             // The root page of your application
@@ -34,12 +35,11 @@ namespace XamarinAzureAD
             
             
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
-            var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
             var navPage = new NavigationPage(mainPage);
             
             //REGISTER NAVIGATION SERVICE
             Resolver.Resolve<IDependencyContainer>()
-                .Register<INavigationService>(t => mainPage2 != null ? new NavigationService(mainPage2.Navigation) : null);
+                .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
             
             //REGISTER AZURE AD SERVICE
         
@@ -69,6 +69,8 @@ namespace XamarinAzureAD
             app.Startup += (o, e) => Debug.WriteLine("Application Startup");
             app.Suspended += (o, e) => Debug.WriteLine("Application Suspended");
         }
+
+
 
 
         protected override void OnStart()

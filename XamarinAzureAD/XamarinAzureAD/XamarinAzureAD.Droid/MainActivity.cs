@@ -16,7 +16,7 @@ using XamarinAzureAD.Services;
 
 namespace XamarinAzureAD.Droid
 {
-    [Activity(Label = "Xamarin.Forms.Labs.Sample.Droid", MainLauncher = true,
+    [Activity(Label = "Xlent Xamarin Preview", MainLauncher = true,  Theme = "@android:style/Theme.Material.Light",
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class MainActivity : XFormsApplicationDroid
     {

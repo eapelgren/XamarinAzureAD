@@ -31,6 +31,13 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _userList, value); }
         }
 
+        //var listView = new ListView
+        //{
+            
+        //}
+
+
+        //var imageCell =
 
 
 		

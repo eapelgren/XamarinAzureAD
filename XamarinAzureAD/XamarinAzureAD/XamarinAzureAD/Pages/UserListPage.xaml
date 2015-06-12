@@ -21,7 +21,7 @@
 
             </StackLayout>
           </ViewCell>-->
-          <ImageCell Text="{Binding DisplayName}" Detail="{Binding Location}" ImageSource="{Binding Image.Source}"></ImageCell>
+          <ImageCell Text="{Binding DisplayName}" Detail="{Binding Location}" ImageSource="{Binding Image.Source}" Command="UserClickedCommand"></ImageCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

@@ -31,13 +31,38 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _userList, value); }
         }
 
-        //var listView = new ListView
-        //{
-            
-        //}
+        private User _selectedUser;
+
+        public User SelectedUser
+        {
+
+            get
+            {
+                return _selectedUser ?? (_selectedUser = new User()
+                {
+                    
+                });
+            }
+            set
+            {
+                SetProperty(ref _selectedUser, value);
+
+                if (value != null)
+                {
+                    var user = value;   
+                    NavigationService.NavigateTo<SelectedUserViewModel>(user);
+                }
+            }
+        }
 
 
-        //var imageCell =
+		
+
+		
+
+		
+
+		
 
 
 		

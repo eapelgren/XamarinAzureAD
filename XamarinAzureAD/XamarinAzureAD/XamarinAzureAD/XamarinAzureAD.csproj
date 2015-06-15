@@ -43,6 +43,7 @@
       <DependentUpon>UserListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AzureAdService.cs" />
     <Compile Include="Services\AzureADServiceMocked.cs" />
     <Compile Include="Services\IAzureAdService.cs" />
     <Compile Include="ViewModel\SelectedUserViewModel.cs" />

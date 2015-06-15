@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XamarinAzureAD.Model;
+using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.ViewModel
@@ -14,6 +15,10 @@ namespace XamarinAzureAD.ViewModel
         public SelectedUserViewModel(User selected)
         {
             SelectedUser = selected;
+            var service = new AzureAdService().LoginAdTask("dummy", "dummy");
+
+
+
         }
 
         private User _selectedUser;
@@ -25,7 +30,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _selectedUser ?? (_selectedUser = new User());
             }
-            set { SetProperty(ref _selectedUser, value); }
+            set { SetProperty(ref   _selectedUser, value); }
         }
 
 

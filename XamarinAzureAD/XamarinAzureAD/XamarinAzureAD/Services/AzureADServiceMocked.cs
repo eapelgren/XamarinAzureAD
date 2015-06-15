@@ -11,7 +11,7 @@ namespace XamarinAzureAD.Services
 {
     public class AzureADServiceMocked : IAzureAdService
     {
-        public Task<bool> LoginAdTask()
+        public Task<bool> LoginAdTask(string username, string password)
         {
             var task = new Task<bool>(() => true);
             return task;

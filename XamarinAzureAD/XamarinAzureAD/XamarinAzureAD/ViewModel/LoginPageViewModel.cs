@@ -42,11 +42,8 @@ namespace XamarinAzureAD.ViewModel
             IsLoading = false;
             if (loggedIn)
             {
-                var ac = new AuthenticationContext("https://login.windows.net/63efea19-e312-4fa0-9d88-f5586cdcf083", null);
-                var user = new UserCredential("sdasd", "sdasddas");
-
-                var authResult = ac.AcquireTokenAsync("https://graph.windows.net/", "35e1d0e9-ff0c-4367-b236-07adf3ca5110", user).Result;
-            
+                var adService = Resolver.Resolve<IAzureAdService>();
+                var result = adService.LoginAdTask("username", "password").Result;
 
                 //    var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
                 //    var navPage = new NavigationPage(mainPage2);

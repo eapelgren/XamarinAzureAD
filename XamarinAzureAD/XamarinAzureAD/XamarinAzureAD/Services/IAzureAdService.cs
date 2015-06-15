@@ -5,13 +5,14 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Services
 {
     public interface IAzureAdService
     {
-        Task<Boolean> LoginAdTask(string username, string password);
+        Task<AuthenticationResult> LoginAdTask(string username, string password);
 
         ObservableCollection<User> GetUsersTask();
 

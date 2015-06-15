@@ -15,9 +15,6 @@ namespace XamarinAzureAD.ViewModel
         public SelectedUserViewModel(User selected)
         {
             SelectedUser = selected;
-            var service = new AzureAdService().LoginAdTask("dummy", "dummy");
-
-
 
         }
 

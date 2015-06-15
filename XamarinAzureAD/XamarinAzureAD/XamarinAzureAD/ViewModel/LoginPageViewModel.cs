@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Xamarin.Forms;
 using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
@@ -41,11 +42,17 @@ namespace XamarinAzureAD.ViewModel
             IsLoading = false;
             if (loggedIn)
             {
-                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
-                var navPage = new NavigationPage(mainPage2);
-                Resolver.Resolve<IDependencyContainer>()
-                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
-                App.Current.MainPage = navPage;
+                var ac = new AuthenticationContext("https://login.windows.net/63efea19-e312-4fa0-9d88-f5586cdcf083", null);
+                var user = new UserCredential("sdasd", "sdasddas");
+
+                var authResult = ac.AcquireTokenAsync("https://graph.windows.net/", "35e1d0e9-ff0c-4367-b236-07adf3ca5110", user).Result;
+            
+
+                //    var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
+                //    var navPage = new NavigationPage(mainPage2);
+                //    Resolver.Resolve<IDependencyContainer>()
+                //        .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                //    App.Current.MainPage = navPage;
             }
 
 

@@ -26,6 +26,9 @@ namespace XamarinAzureAD.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Id.agentWebView = global::XamarinAzureAD.Droid.Resource.Id.agentWebView;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Layout.WebAuthenticationBroker = global::XamarinAzureAD.Droid.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.String.ApplicationName = global::XamarinAzureAD.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::XamarinAzureAD.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Resource.String.Hello = global::XamarinAzureAD.Droid.Resource.String.Hello;
 			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::XamarinAzureAD.Droid.Resource.Color.calendar_active_month_bg;
@@ -187,6 +190,9 @@ namespace XamarinAzureAD.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f080005
+			public const int agentWebView = 2131230725;
+			
 			// aapt resource value: 0x7f080004
 			public const int calendar_grid = 2131230724;
 			
@@ -228,7 +234,10 @@ namespace XamarinAzureAD.Droid
 			public const int month = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int week = 2130903044;
+			public const int WebAuthenticationBroker = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int week = 2130903045;
 			
 			static Layout()
 			{

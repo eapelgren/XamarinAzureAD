@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 
@@ -11,10 +12,9 @@ namespace XamarinAzureAD.Services
 {
     public class AzureADServiceMocked : IAzureAdService
     {
-        public Task<bool> LoginAdTask(string username, string password)
+        public Task<AuthenticationResult> LoginAdTask(string username, string password)
         {
-            var task = new Task<bool>(() => true);
-            return task;
+            return null;
         }
 
         public ObservableCollection<User> GetUsersTask()

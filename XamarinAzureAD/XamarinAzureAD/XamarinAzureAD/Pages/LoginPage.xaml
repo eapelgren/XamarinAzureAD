@@ -20,6 +20,7 @@
     <StackLayout Padding="60,60,60,60">
       <Entry Placeholder="email" BackgroundColor="White" TextColor="Black"></Entry>
       <Entry IsPassword="True" Placeholder="password" BackgroundColor="White" TextColor="Black"></Entry>
+      <!--<Label Text="{Binding ExceptionLabel.Text}" IsVisible="{Binding ExceptionLabel.IsVisible}" TextColor="{Bidning ExceptionLabel.TextColor}"></Label>-->
       <Button Text="{Binding LoginButton.Text}" Command="{Binding LoginCommand}"></Button>
     </StackLayout>
   </StackLayout>

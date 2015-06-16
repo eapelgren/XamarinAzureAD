@@ -12,7 +12,7 @@ namespace XamarinAzureAD.Services
 {
     public interface IAzureAdService
     {
-        Task<AuthenticationResult> LoginAdTask(string username, string password);
+        Task<AzureAdService.AzureLoginRespons> LoginAdTask(string username, string password);
 
         ObservableCollection<User> GetUsersTask();
 

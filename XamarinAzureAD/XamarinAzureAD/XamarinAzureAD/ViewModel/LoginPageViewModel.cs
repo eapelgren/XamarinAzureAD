@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using System.Diagnostics;
 using Xamarin.Forms;
 using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
@@ -14,58 +9,47 @@ using XLabs.Platform.Services;
 
 namespace XamarinAzureAD.ViewModel
 {
-    class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
+    internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
-        private Boolean _isLoading = false;
+        private Boolean _isLoading;
 
         public Boolean IsLoading
         {
-
             get { return _isLoading; }
             set { SetProperty(ref _isLoading, value); }
         }
 
-
-
-
-        //private readonly IAzureAdService azureService = Resolver.Resolve<IAzureAdService>();
-
-        private void LoginToAzure()
+        private async void LoginToAzure()
         {
             IsLoading = true;
-            //var loggedIn = await azureService.LoginAdTask();
-
-
-            //TEMP
-            var loggedIn = true;
-
-            IsLoading = false;
-            if (loggedIn)
+            var adService = Resolver.Resolve<IAzureAdService>();
+            var task = adService.LoginAdTask("username", "password");
+            var result = await task;
+            if (result.LoggedIn)
             {
-                var adService = Resolver.Resolve<IAzureAdService>();
-                var result = adService.LoginAdTask("username", "password").Result;
-
-                //    var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
-                //    var navPage = new NavigationPage(mainPage2);
-                //    Resolver.Resolve<IDependencyContainer>()
-                //        .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
-                //    App.Current.MainPage = navPage;
+                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
+                var navPage = new NavigationPage(mainPage2);
+                Resolver.Resolve<IDependencyContainer>()
+                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                Application.Current.MainPage = navPage;
+                
             }
-
-
-
-
-
+            else
+            {
+                ExceptionLabel.Text = result.Exception.InnerException.ToString();
+                ExceptionLabel.IsVisible = true;
+                Debug.WriteLine("ERROR Loggin" + result.Exception);
+            }
+            IsLoading = false;
         }
 
         private Label _logoLabel;
 
         public Label LogoLabel
         {
-
             get
             {
-                return _logoLabel ?? (_logoLabel = new Label()
+                return _logoLabel ?? (_logoLabel = new Label
                 {
                     Text = "LOGO COMPANY..."
                 });
@@ -77,10 +61,9 @@ namespace XamarinAzureAD.ViewModel
 
         public Entry UsernamEntry
         {
-
             get
             {
-                return _usernameEntry ?? (_usernameEntry = new Entry()
+                return _usernameEntry ?? (_usernameEntry = new Entry
                 {
                     Text = "Username"
                 });
@@ -92,10 +75,9 @@ namespace XamarinAzureAD.ViewModel
 
         public Entry PasswordEntry
         {
-
             get
             {
-                return _passwordEntry ?? (_passwordEntry = new Entry()
+                return _passwordEntry ?? (_passwordEntry = new Entry
                 {
                     Text = "Password",
                     IsPassword = true
@@ -108,10 +90,9 @@ namespace XamarinAzureAD.ViewModel
 
         public Button LoginButton
         {
-
             get
             {
-                return _loginButton ?? (_loginButton = new Button()
+                return _loginButton ?? (_loginButton = new Button
                 {
                     Text = "Login",
                     BackgroundColor = Color.Blue
@@ -137,6 +118,28 @@ namespace XamarinAzureAD.ViewModel
             LoginToAzure();
         }
 
+        private Label _exceptionLabel;
+
+        public Label ExceptionLabel
+        {
+
+            get
+            {
+                return _exceptionLabel ?? (_exceptionLabel = new Label()
+                {
+                  IsEnabled  = true,
+                  TextColor = Color.Red,
+                  IsVisible = false
+                });
+            }
+            set { SetProperty(ref _exceptionLabel, value); }
+        }
+
+
+		
+
+		
 
     }
+        
 }

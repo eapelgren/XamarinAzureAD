@@ -12,9 +12,13 @@ namespace XamarinAzureAD.Services
 {
     public class AzureADServiceMocked : IAzureAdService
     {
-        public Task<AuthenticationResult> LoginAdTask(string username, string password)
+        public Task<AzureAdService.AzureLoginRespons> LoginAdTask(string username, string password)
         {
-            return null;
+            return new Task<AzureAdService.AzureLoginRespons>(() => 
+            new AzureAdService.AzureLoginRespons()
+            {
+                LoggedIn = true
+            });
         }
 
         public ObservableCollection<User> GetUsersTask()

@@ -14,7 +14,7 @@ namespace XamarinAzureAD.Services
     {
         Task<AzureAdService.AzureLoginRespons> LoginAdTask(string username, string password);
 
-        ObservableCollection<User> GetUsersTask();
+        Task<ObservableCollection<User>> GetUsersTask();
 
 
     }

@@ -16,7 +16,6 @@ namespace XamarinAzureAD.ViewModel
     {
         public UserListViewModel()
         {
-           var temp = UserList;
         }
         
         private ObservableCollection<User> _userList;
@@ -26,9 +25,27 @@ namespace XamarinAzureAD.ViewModel
 
             get
             {
-                return _userList ?? (_userList = new AzureADServiceMocked().GetUsersTask());
+                return _userList ?? (_userList = GetUserList());
             }
             set { SetProperty(ref _userList, value); }
+        }
+
+        private ObservableCollection<User> GetUserList()
+        {
+            var list = new ObservableCollection<User>();
+            Resolver.Resolve<IAzureAdService>().GetUsersTask().ContinueWith(task =>
+            {
+                if(!task.IsFaulted)
+                    foreach (var user in task.Result)
+                    {
+                        list.Add(user);
+                    }
+                else
+                {
+                 throw new Exception("AzureAdService.GetUsersTask Faulted");
+                }
+            });
+            return list;
         }
 
         private User _selectedUser;
@@ -54,6 +71,23 @@ namespace XamarinAzureAD.ViewModel
                 }
             }
         }
+
+        private string _path;
+
+        public string Path
+        {
+
+            get
+            {
+                return _path ?? (_path = "*");
+            }
+            set { SetProperty(ref _path, value); }
+        }
+
+
+		
+
+		
 
 
 		

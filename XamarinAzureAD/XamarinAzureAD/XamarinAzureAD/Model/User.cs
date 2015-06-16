@@ -59,7 +59,7 @@ namespace XamarinAzureAD.Model
 
             get
             {
-                return _telephoneNumber ?? (_telephoneNumber = "");
+                return _telephoneNumber ?? (_telephoneNumber = "Not Listed");
             }
             set { SetProperty(ref _telephoneNumber, value); }
         }

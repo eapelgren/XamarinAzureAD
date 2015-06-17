@@ -12,10 +12,10 @@ namespace XamarinAzureAD.Services
 {
     public class AzureADServiceMocked : IAzureAdService
     {
-        public async Task<AzureAdService.AzureLoginRespons> LoginAdTask(string username, string password)
+        public async Task<AzureAdService.LoginAuthRespons> LoginAdTask(string username, string password)
         {
             return
-            new AzureAdService.AzureLoginRespons()
+            new AzureAdService.LoginAuthRespons()
             {
                 LoggedIn = true
             };
@@ -27,38 +27,38 @@ namespace XamarinAzureAD.Services
                 {
                     new User()
                     {
-                        DisplayName = "Emil Apelgren",
+                        //DisplayName = "Emil Apelgren",
                         GivenName = "Emil",
-                        Surname = "Apelgren",
-                        Image = new Image()
-                        {
-                            Source = "http://i.ytimg.com/vi/_Dv7FKvUPBQ/hqdefault.jpg"
-                        },
-                        Location = "Xlent HQ",
+                        SurName = "Apelgren",
+                        //Image = new Image()
+                        //{
+                        //    Source = "http://i.ytimg.com/vi/_Dv7FKvUPBQ/hqdefault.jpg"
+                        //},
+                        //Location = "Xlent HQ",
 
                     },
                     new User()
                     {
-                        DisplayName = "Fredrik Tonn",
+                        //DisplayName = "Fredrik Tonn",
                         GivenName = "Fredrik",
-                        Surname = "Tonn",
-                        Image = new Image()
-                        {
-                            Source = "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/000/24a/0d9/13e8e14.jpg"
-                        },
-                        Location = "Xlent HQ"
+                        SurName = "Tonn",
+                        //Image = new Image()
+                        //{
+                        //    Source = "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/000/24a/0d9/13e8e14.jpg"
+                        //},
+                        //Location = "Xlent HQ"
 
                     },
                     new User()
                     {
-                        DisplayName = "Åsa Nisse",
+                        //DisplayName = "Åsa Nisse",
                         GivenName = "Åsa",
-                        Surname = "Nisse",
-                        Image = new Image()
-                        {
-                            Source =
-                                "http://www.mallorcanyheter.com/wp-content/uploads/2013/11/John_Elfstrom-Asa-Nisse-2-350x250.jpg"
-                        },
+                        SurName = "Nisse",
+                        //Image = new Image()
+                        //{
+                        //    Source =
+                        //        "http://www.mallorcanyheter.com/wp-content/uploads/2013/11/John_Elfstrom-Asa-Nisse-2-350x250.jpg"
+                        //},
                         Location = "AstridLand",
                     }
                 };

@@ -73,7 +73,7 @@ namespace XamarinAzureAD.Droid
                 //.Register<ISimpleCache>(
                 //    t => new SQLiteSimpleCache(new SQLitePlatformAndroid(),
                 //        new SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
-                .RegisterSingle<IAzureAdService, AzureAdService>();
+                .RegisterSingle<IAzureAdService, XlentRestService>();
 
         Resolver.SetResolver(resolverContainer.GetResolver());
     }

@@ -29,7 +29,7 @@ namespace XamarinAzureAD.Services
 
         private AuthenticationResult authenticationResult;
             
-        public async Task<AzureLoginRespons> LoginAdTask(string username, string password)
+        public async Task<LoginAuthRespons> LoginAdTask(string username, string password)
         {
                 var ac = new AuthenticationContext(_authority, false);
                 var user = new UserCredential(testLogin, testPassword);
@@ -39,12 +39,12 @@ namespace XamarinAzureAD.Services
                         if (!task1.IsFaulted)
                         {
                             authenticationResult = task1.Result;
-                            return new AzureLoginRespons
+                            return new LoginAuthRespons
                             {
                                 LoggedIn = true
                             };
                         }
-                        return new AzureLoginRespons
+                        return new LoginAuthRespons
                         {
                             LoggedIn = false,
                             Exception = task1.Exception
@@ -92,9 +92,9 @@ namespace XamarinAzureAD.Services
                 {
                     result.Add(new User
                     {
-                        DisplayName = (string)results["displayName"],
+                        //DisplayName = (string)results["displayName"],
                         GivenName = (string)results["givenName"],
-                        Surname = (string)results["surname"],
+                        SurName = (string)results["surname"],
                         TelephoneNumber = (string)results["telephoneNumber"] == null ? "Not Listed." : (string)results["telephoneNumber"]
                     });
                 }
@@ -103,7 +103,7 @@ namespace XamarinAzureAD.Services
             return result;
         }
 
-        public class AzureLoginRespons
+        public class LoginAuthRespons
         {
             public Boolean LoggedIn;
             public Exception Exception;

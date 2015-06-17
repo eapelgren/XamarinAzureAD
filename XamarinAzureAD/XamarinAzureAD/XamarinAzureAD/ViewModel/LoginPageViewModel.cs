@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinAzureAD.Model;
 using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
@@ -23,6 +26,7 @@ namespace XamarinAzureAD.ViewModel
         {
             IsLoading = true;
             var adService = Resolver.Resolve<IAzureAdService>();
+
             var task = adService.LoginAdTask("username", "password");
             var result = await task;
             if (result.LoggedIn)
@@ -32,7 +36,7 @@ namespace XamarinAzureAD.ViewModel
                 Resolver.Resolve<IDependencyContainer>()
                     .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
                 Application.Current.MainPage = navPage;
-                
+
             }
             else
             {

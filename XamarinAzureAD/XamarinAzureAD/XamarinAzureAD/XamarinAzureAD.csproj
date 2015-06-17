@@ -46,6 +46,7 @@
     <Compile Include="Services\AzureAdService.cs" />
     <Compile Include="Services\AzureADServiceMocked.cs" />
     <Compile Include="Services\IAzureAdService.cs" />
+    <Compile Include="Services\XlentRestService.cs" />
     <Compile Include="ViewModel\SelectedUserViewModel.cs" />
     <Compile Include="ViewModel\UserListViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />

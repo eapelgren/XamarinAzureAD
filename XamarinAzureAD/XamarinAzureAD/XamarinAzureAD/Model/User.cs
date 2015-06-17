@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +20,7 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _displayName, value); }
         }
 
+    
         private string _givenName;
 
         public string GivenName
@@ -32,7 +33,7 @@ namespace XamarinAzureAD.Model
 
         private string _surname;
 
-        public string Surname
+        public string SurName
         {
 
             get { return _surname ?? (_surname = ""); }
@@ -64,7 +65,6 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _telephoneNumber, value); }
         }
 
-
         private Image _image;
 
         public Image Image
@@ -79,12 +79,6 @@ namespace XamarinAzureAD.Model
             }
             set { SetProperty(ref _image, value); }
         }
-
-
-		
-
-		
-
         
         public string error { get; set; }
     }

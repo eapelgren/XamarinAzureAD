@@ -57,7 +57,7 @@ namespace XamarinAzureAD.Droid
             app.Init(this);
 
             var documents = app.AppDataDirectory;
-            var pathToDatabase = Path.Combine(documents, "xforms.db");
+            var pathToDatabase = Path.Combine(documents, "xlent.db");
 
             resolverContainer.Register(t => AndroidDevice.CurrentDevice)
                 .Register<IDisplay>(t => t.Resolve<IDevice>().Display)

@@ -29,7 +29,7 @@ namespace XamarinAzureAD.Services
 
         private AuthenticationResult authenticationResult;
             
-        public async Task<LoginAuthRespons> LoginAdTask(string username, string password)
+        public async Task<XlentRestService.LoginAuthRespons> LoginAdTask(string username, string password)
         {
                 var ac = new AuthenticationContext(_authority, false);
                 var user = new UserCredential(testLogin, testPassword);
@@ -39,12 +39,12 @@ namespace XamarinAzureAD.Services
                         if (!task1.IsFaulted)
                         {
                             authenticationResult = task1.Result;
-                            return new LoginAuthRespons
+                            return new XlentRestService.LoginAuthRespons
                             {
                                 LoggedIn = true
                             };
                         }
-                        return new LoginAuthRespons
+                        return new XlentRestService.LoginAuthRespons
                         {
                             LoggedIn = false,
                             Exception = task1.Exception
@@ -101,12 +101,6 @@ namespace XamarinAzureAD.Services
                
             }
             return result;
-        }
-
-        public class LoginAuthRespons
-        {
-            public Boolean LoggedIn;
-            public Exception Exception;
         }
     }
 }

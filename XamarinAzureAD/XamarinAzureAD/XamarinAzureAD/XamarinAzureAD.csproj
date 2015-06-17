@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="script.ps1" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\LoginPage.xaml">

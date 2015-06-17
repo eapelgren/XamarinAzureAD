@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using XamarinAzureAD.Model;
 
@@ -12,11 +14,14 @@ namespace XamarinAzureAD.Services
 {
     public class XlentRestService : IAzureAdService
     {
-        public Task<AzureAdService.LoginAuthRespons> LoginAdTask(string username, string password)
+
+        public Task<LoginAuthRespons> LoginAdTask(string username, string password)
         {
             return null;
         }
 
+        
+        
         public async Task<ObservableCollection<User>> GetUsersTask()
         {
 
@@ -25,21 +30,36 @@ namespace XamarinAzureAD.Services
             try
             {
                 HttpClient client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync(request);
+                
+                var serializer = new Newtonsoft.Json.s
+
+                HttpResponseMessage response = await client.PostAsync(request,)
                 var content = await response.Content.ReadAsStringAsync();
                 var obj = (JArray)
-                    Newtonsoft.Json.JsonConvert.DeserializeObject(content);
+                    JsonConvert.DeserializeObject(content);
 
-                list = Newtonsoft.Json.JsonConvert.DeserializeObject<ObservableCollection<User>>(content);  
+                list = JsonConvert.DeserializeObject<ObservableCollection<User>>(content);  
             }
             catch (Exception ee)
             {
-                System.Diagnostics.Debug.WriteLine("ERROR IN AZURE API: " + ee.Message);
+                Debug.WriteLine("ERROR IN AZURE API: " + ee.Message);
                 throw;
             }
             return list;
         }
+     
+        [JsonObject]
+        public class LoginAuthRespons
+        {
+            public Boolean LoggedIn;
+            public Exception Exception;
+        }
 
+        [JsonObject]
+        public class LoginAuthRequest
+        {
+            public string Token;
+        }
     }
 
 }

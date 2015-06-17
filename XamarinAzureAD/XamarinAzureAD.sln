@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAzureAD.Droid", "Xam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAzureAD.WinPhone", "XamarinAzureAD\XamarinAzureAD.WinPhone\XamarinAzureAD.WinPhone.csproj", "{BF770971-3D8F-4CBD-8FA9-273A7B9D08A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7694B83E-B085-4206-9FA4-06B0CBEE0A70}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

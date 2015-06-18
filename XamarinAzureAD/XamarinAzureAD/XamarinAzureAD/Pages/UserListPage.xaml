@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
+               x:Class="XamarinAzureAD.Pages.UserListPage">
+    <mvvm:BaseView.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="0, 0, 0, 0"
+                    WinPhone="0, 0, 0, 0" />
+    </mvvm:BaseView.Padding>
+  <StackLayout>
+      <SearchBar Placeholder="search for"></SearchBar>
+    <ScrollView>
+      <ListView x:Name="listView"
+                  ItemsSource="{Binding UserList}" Header="Header If wanted" Footer="Footer Summary">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Image Source="{Binding Image.Source}"></Image>
+              <Label Text="{Binding DisplayName}"></Label>
+
+            </StackLayout>
+          </ViewCell>-->
+                    <ImageCell Text="{Binding DisplayName}" Detail="{Binding Location}"
+                               ImageSource="{Binding Image.Source}">
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
+  </StackLayout>
+</mvvm:BaseView>

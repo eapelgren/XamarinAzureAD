@@ -29,29 +29,29 @@ namespace XamarinAzureAD.Services
 
         private AuthenticationResult authenticationResult;
             
-        public async Task<XlentRestService.LoginAuthRespons> LoginAdTask(string username, string password)
+        public Task<XlentRestService.LoginAuthRespons> LoginAdTask(string username, string password)
         {
                 var ac = new AuthenticationContext(_authority, false);
                 var user = new UserCredential(testLogin, testPassword);
                 var task = ac.AcquireTokenAsync(_resource2, _clientId, user).ContinueWith(
-                    task1 =>
+                task1 =>
+                {
+                    if (!task1.IsFaulted)
                     {
-                        if (!task1.IsFaulted)
-                        {
-                            authenticationResult = task1.Result;
-                            return new XlentRestService.LoginAuthRespons
-                            {
-                                LoggedIn = true
-                            };
-                        }
+                        authenticationResult = task1.Result;
                         return new XlentRestService.LoginAuthRespons
                         {
-                            LoggedIn = false,
-                            Exception = task1.Exception
+                            LoggedIn = true
                         };
-                    });
+                    }
+                    return new XlentRestService.LoginAuthRespons
+                    {
+                        LoggedIn = false,
+                        Exception = task1.Exception
+                    };
+                });
 
-            return await task;
+            throw new Exception("");
         }
 
         public async Task<ObservableCollection<User>> GetUsersTask()

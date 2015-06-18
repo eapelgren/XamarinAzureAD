@@ -20,6 +20,7 @@ namespace XamarinAzureAD.Droid
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class MainActivity : XFormsApplicationDroid
     {
+        //TEST
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

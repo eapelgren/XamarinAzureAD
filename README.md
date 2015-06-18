@@ -2,7 +2,7 @@
 
 ##About
 
-A Prototype project integrating XlentRestServices(https://github.com/xlent-bi/XlentRestApiService) to a Xamarin Crossplatform solution 
+A Prototype project integrating XlentRestServices(https://github.com/xlent-bi/XlentRestApiService) to a Xamarin Crossplatform solution.
 
 ##Setup
 
@@ -11,5 +11,10 @@ A Prototype project integrating XlentRestServices(https://github.com/xlent-bi/Xl
 - [ ] Setup Emulators or Phone
 - [ ] Clone projekt
 - [ ] Run
+- 
+##FrameWork
+
+Xamarin Forms - http://xamarin.com/forms
+Xlabs - https://github.com/XLabs/Xamarin-Forms-Labs
 
 

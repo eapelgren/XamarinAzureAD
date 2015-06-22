@@ -5,10 +5,32 @@ using System;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 
-namespace MobileApi.RestServices.SipEntities.Models
+namespace XamarinAzureAD.RestServices.SipEntities.Models
 {
     public partial class LoginAuthResponse
     {
+        private string _encryptedAccessToken;
+        
+        /// <summary>
+        /// Optional.
+        /// </summary>
+        public string EncryptedAccessToken
+        {
+            get { return this._encryptedAccessToken; }
+            set { this._encryptedAccessToken = value; }
+        }
+        
+        private string _encryptedRefreshToken;
+        
+        /// <summary>
+        /// Optional.
+        /// </summary>
+        public string EncryptedRefreshToken
+        {
+            get { return this._encryptedRefreshToken; }
+            set { this._encryptedRefreshToken = value; }
+        }
+        
         private string _exception;
         
         /// <summary>
@@ -45,6 +67,16 @@ namespace MobileApi.RestServices.SipEntities.Models
         {
             if (inputObject != null && inputObject.Type != JTokenType.Null)
             {
+                JToken encryptedAccessTokenValue = inputObject["EncryptedAccessToken"];
+                if (encryptedAccessTokenValue != null && encryptedAccessTokenValue.Type != JTokenType.Null)
+                {
+                    this.EncryptedAccessToken = ((string)encryptedAccessTokenValue);
+                }
+                JToken encryptedRefreshTokenValue = inputObject["EncryptedRefreshToken"];
+                if (encryptedRefreshTokenValue != null && encryptedRefreshTokenValue.Type != JTokenType.Null)
+                {
+                    this.EncryptedRefreshToken = ((string)encryptedRefreshTokenValue);
+                }
                 JToken exceptionValue = inputObject["Exception"];
                 if (exceptionValue != null && exceptionValue.Type != JTokenType.Null)
                 {

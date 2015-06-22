@@ -5,20 +5,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using XamarinAzureAD.RestServices.SipEntities.Models;
 
-namespace MobileApi.RestServices.SipEntities.Models
+namespace XamarinAzureAD.RestServices.SipEntities.Models
 {
-    public static partial class StringCollection
+    public static partial class ADUserCollection
     {
         /// <summary>
         /// Deserialize the object
         /// </summary>
-        public static IList<string> DeserializeJson(JToken inputObject)
+        public static IList<ADUser> DeserializeJson(JToken inputObject)
         {
-            IList<string> deserializedObject = new List<string>();
+            IList<ADUser> deserializedObject = new List<ADUser>();
             foreach (JToken iListValue in ((JArray)inputObject))
             {
-                deserializedObject.Add(((string)iListValue));
+                ADUser aDUser = new ADUser();
+                aDUser.DeserializeJson(iListValue);
+                deserializedObject.Add(aDUser);
             }
             return deserializedObject;
         }

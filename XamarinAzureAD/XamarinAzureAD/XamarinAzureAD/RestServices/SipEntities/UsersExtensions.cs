@@ -7,20 +7,20 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using MobileApi.RestServices.SipEntities;
-using MobileApi.RestServices.SipEntities.Models;
+using XamarinAzureAD.RestServices.SipEntities;
+using XamarinAzureAD.RestServices.SipEntities.Models;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
     public static partial class UsersExtensions
     {
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IUsers.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IUsers.
         /// </param>
         /// <param name='request'>
         /// Required.
         /// </param>
-        public static IList<User> Get(this IUsers operations, LoginAuthRequest request)
+        public static IList<ADUser> Get(this IUsers operations, LoginAuthRequest request)
         {
             return Task.Factory.StartNew((object s) => 
             {
@@ -30,7 +30,7 @@ namespace MobileApi.RestServices.SipEntities
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IUsers.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IUsers.
         /// </param>
         /// <param name='request'>
         /// Required.
@@ -38,39 +38,9 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public static async Task<IList<User>> GetAsync(this IUsers operations, LoginAuthRequest request, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public static async Task<IList<ADUser>> GetAsync(this IUsers operations, LoginAuthRequest request, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IList<MobileApi.RestServices.SipEntities.Models.User>> result = await operations.GetWithOperationResponseAsync(request, cancellationToken).ConfigureAwait(false);
-            return result.Body;
-        }
-        
-        /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IUsers.
-        /// </param>
-        /// <param name='loginRequest'>
-        /// Required.
-        /// </param>
-        public static LoginAuthResponse Login(this IUsers operations, LoginAuthRequest loginRequest)
-        {
-            return Task.Factory.StartNew((object s) => 
-            {
-                return ((IUsers)s).LoginAsync(loginRequest);
-            }
-            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-        }
-        
-        /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IUsers.
-        /// </param>
-        /// <param name='loginRequest'>
-        /// Required.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// Cancellation token.
-        /// </param>
-        public static async Task<LoginAuthResponse> LoginAsync(this IUsers operations, LoginAuthRequest loginRequest, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Microsoft.Rest.HttpOperationResponse<MobileApi.RestServices.SipEntities.Models.LoginAuthResponse> result = await operations.LoginWithOperationResponseAsync(loginRequest, cancellationToken).ConfigureAwait(false);
+            Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IList<XamarinAzureAD.RestServices.SipEntities.Models.ADUser>> result = await operations.GetWithOperationResponseAsync(request, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
     }

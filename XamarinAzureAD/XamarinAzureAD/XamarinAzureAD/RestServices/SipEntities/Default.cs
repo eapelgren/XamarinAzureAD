@@ -11,20 +11,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using MobileApi.RestServices.SipEntities;
 using Newtonsoft.Json.Linq;
+using XamarinAzureAD.RestServices.SipEntities;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
-    internal partial class Values : IServiceOperations<SipEntitiesClient>, IValues
+    internal partial class Default : IServiceOperations<SipEntitiesClient>, IDefault
     {
         /// <summary>
-        /// Initializes a new instance of the Values class.
+        /// Initializes a new instance of the Default class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
         /// </param>
-        internal Values(SipEntitiesClient client)
+        internal Default(SipEntitiesClient client)
         {
             this._client = client;
         }
@@ -33,7 +33,7 @@ namespace MobileApi.RestServices.SipEntities
         
         /// <summary>
         /// Gets a reference to the
-        /// MobileApi.RestServices.SipEntities.SipEntitiesClient.
+        /// XamarinAzureAD.RestServices.SipEntities.SipEntitiesClient.
         /// </summary>
         public SipEntitiesClient Client
         {
@@ -61,7 +61,7 @@ namespace MobileApi.RestServices.SipEntities
             
             // Construct URL
             string url = "";
-            url = url + "/api/Values/";
+            url = url + "/api/Default/Delete/";
             url = url + Uri.EscapeDataString(id.ToString());
             string baseUrl = this.Client.BaseUri.AbsoluteUri;
             // Trim '/' character from the end of baseUrl and beginning of url.
@@ -124,104 +124,13 @@ namespace MobileApi.RestServices.SipEntities
             return result;
         }
         
-        /// <param name='cancellationToken'>
-        /// Cancellation token.
-        /// </param>
-        public async Task<HttpOperationResponse<IList<string>>> GetWithOperationResponseAsync(CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // Tracing
-            bool shouldTrace = ServiceClientTracing.IsEnabled;
-            string invocationId = null;
-            if (shouldTrace)
-            {
-                invocationId = ServiceClientTracing.NextInvocationId.ToString();
-                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                ServiceClientTracing.Enter(invocationId, this, "GetAsync", tracingParameters);
-            }
-            
-            // Construct URL
-            string url = "";
-            url = url + "/api/Values";
-            string baseUrl = this.Client.BaseUri.AbsoluteUri;
-            // Trim '/' character from the end of baseUrl and beginning of url.
-            if (baseUrl[baseUrl.Length - 1] == '/')
-            {
-                baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
-            }
-            if (url[0] == '/')
-            {
-                url = url.Substring(1);
-            }
-            url = baseUrl + "/" + url;
-            url = url.Replace(" ", "%20");
-            
-            // Create HTTP transport objects
-            HttpRequestMessage httpRequest = new HttpRequestMessage();
-            httpRequest.Method = HttpMethod.Get;
-            httpRequest.RequestUri = new Uri(url);
-            
-            // Send Request
-            if (shouldTrace)
-            {
-                ServiceClientTracing.SendRequest(invocationId, httpRequest);
-            }
-            cancellationToken.ThrowIfCancellationRequested();
-            HttpResponseMessage httpResponse = await this.Client.HttpClient.SendAsync(httpRequest, cancellationToken).ConfigureAwait(false);
-            if (shouldTrace)
-            {
-                ServiceClientTracing.ReceiveResponse(invocationId, httpResponse);
-            }
-            HttpStatusCode statusCode = httpResponse.StatusCode;
-            cancellationToken.ThrowIfCancellationRequested();
-            string responseContent = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-            if (statusCode != HttpStatusCode.OK)
-            {
-                HttpOperationException<object> ex = new HttpOperationException<object>();
-                ex.Request = httpRequest;
-                ex.Response = httpResponse;
-                ex.Body = null;
-                if (shouldTrace)
-                {
-                    ServiceClientTracing.Error(invocationId, ex);
-                }
-                throw ex;
-            }
-            
-            // Create Result
-            HttpOperationResponse<IList<string>> result = new HttpOperationResponse<IList<string>>();
-            result.Request = httpRequest;
-            result.Response = httpResponse;
-            
-            // Deserialize Response
-            if (statusCode == HttpStatusCode.OK)
-            {
-                IList<string> resultModel = new List<string>();
-                JToken responseDoc = null;
-                if (string.IsNullOrEmpty(responseContent) == false)
-                {
-                    responseDoc = JToken.Parse(responseContent);
-                }
-                if (responseDoc != null)
-                {
-                    resultModel = StringCollection.DeserializeJson(responseDoc);
-                }
-                result.Body = resultModel;
-            }
-            
-            if (shouldTrace)
-            {
-                ServiceClientTracing.Exit(invocationId, result);
-            }
-            return result;
-        }
-        
         /// <param name='id'>
         /// Required.
         /// </param>
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public async Task<HttpOperationResponse<string>> GetByIdWithOperationResponseAsync(int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async Task<HttpOperationResponse<string>> GetWithOperationResponseAsync(int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // Tracing
             bool shouldTrace = ServiceClientTracing.IsEnabled;
@@ -231,12 +140,12 @@ namespace MobileApi.RestServices.SipEntities
                 invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("id", id);
-                ServiceClientTracing.Enter(invocationId, this, "GetByIdAsync", tracingParameters);
+                ServiceClientTracing.Enter(invocationId, this, "GetAsync", tracingParameters);
             }
             
             // Construct URL
             string url = "";
-            url = url + "/api/Values/";
+            url = url + "/api/Default/Get/";
             url = url + Uri.EscapeDataString(id.ToString());
             string baseUrl = this.Client.BaseUri.AbsoluteUri;
             // Trim '/' character from the end of baseUrl and beginning of url.
@@ -338,7 +247,7 @@ namespace MobileApi.RestServices.SipEntities
             
             // Construct URL
             string url = "";
-            url = url + "/api/Values";
+            url = url + "/api/Default/Post";
             string baseUrl = this.Client.BaseUri.AbsoluteUri;
             // Trim '/' character from the end of baseUrl and beginning of url.
             if (baseUrl[baseUrl.Length - 1] == '/')
@@ -440,7 +349,7 @@ namespace MobileApi.RestServices.SipEntities
             
             // Construct URL
             string url = "";
-            url = url + "/api/Values/";
+            url = url + "/api/Default/Put/";
             url = url + Uri.EscapeDataString(id.ToString());
             string baseUrl = this.Client.BaseUri.AbsoluteUri;
             // Trim '/' character from the end of baseUrl and beginning of url.

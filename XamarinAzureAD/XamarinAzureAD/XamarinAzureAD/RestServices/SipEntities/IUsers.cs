@@ -7,9 +7,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using MobileApi.RestServices.SipEntities.Models;
+using XamarinAzureAD.RestServices.SipEntities.Models;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
     public partial interface IUsers
     {
@@ -19,14 +19,6 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        Task<HttpOperationResponse<IList<User>>> GetWithOperationResponseAsync(LoginAuthRequest request, CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        
-        /// <param name='loginRequest'>
-        /// Required.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// Cancellation token.
-        /// </param>
-        Task<HttpOperationResponse<LoginAuthResponse>> LoginWithOperationResponseAsync(LoginAuthRequest loginRequest, CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        Task<HttpOperationResponse<IList<ADUser>>> GetWithOperationResponseAsync(LoginAuthRequest request, CancellationToken cancellationToken = default(System.Threading.CancellationToken));
     }
 }

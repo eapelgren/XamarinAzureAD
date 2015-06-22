@@ -2,34 +2,33 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using MobileApi.RestServices.SipEntities;
+using XamarinAzureAD.RestServices.SipEntities;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
-    public static partial class ValuesExtensions
+    public static partial class DefaultExtensions
     {
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='id'>
         /// Required.
         /// </param>
-        public static object Delete(this IValues operations, int id)
+        public static object Delete(this IDefault operations, int id)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IValues)s).DeleteAsync(id);
+                return ((IDefault)s).DeleteAsync(id);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -37,53 +36,29 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public static async Task<object> DeleteAsync(this IValues operations, int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public static async Task<object> DeleteAsync(this IDefault operations, int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Microsoft.Rest.HttpOperationResponse<object> result = await operations.DeleteWithOperationResponseAsync(id, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
-        /// </param>
-        public static IList<string> Get(this IValues operations)
-        {
-            return Task.Factory.StartNew((object s) => 
-            {
-                return ((IValues)s).GetAsync();
-            }
-            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-        }
-        
-        /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// Cancellation token.
-        /// </param>
-        public static async Task<IList<string>> GetAsync(this IValues operations, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IList<string>> result = await operations.GetWithOperationResponseAsync(cancellationToken).ConfigureAwait(false);
-            return result.Body;
-        }
-        
-        /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='id'>
         /// Required.
         /// </param>
-        public static string GetById(this IValues operations, int id)
+        public static string Get(this IDefault operations, int id)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IValues)s).GetByIdAsync(id);
+                return ((IDefault)s).GetAsync(id);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -91,29 +66,29 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public static async Task<string> GetByIdAsync(this IValues operations, int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public static async Task<string> GetAsync(this IDefault operations, int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Microsoft.Rest.HttpOperationResponse<string> result = await operations.GetByIdWithOperationResponseAsync(id, cancellationToken).ConfigureAwait(false);
+            Microsoft.Rest.HttpOperationResponse<string> result = await operations.GetWithOperationResponseAsync(id, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='value'>
         /// Required.
         /// </param>
-        public static object Post(this IValues operations, string value)
+        public static object Post(this IDefault operations, string value)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IValues)s).PostAsync(value);
+                return ((IDefault)s).PostAsync(value);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='value'>
         /// Required.
@@ -121,14 +96,14 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public static async Task<object> PostAsync(this IValues operations, string value, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public static async Task<object> PostAsync(this IDefault operations, string value, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Microsoft.Rest.HttpOperationResponse<object> result = await operations.PostWithOperationResponseAsync(value, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -136,17 +111,17 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='value'>
         /// Required.
         /// </param>
-        public static object Put(this IValues operations, int id, string value)
+        public static object Put(this IDefault operations, int id, string value)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IValues)s).PutAsync(id, value);
+                return ((IDefault)s).PutAsync(id, value);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
         
         /// <param name='operations'>
-        /// Reference to the MobileApi.RestServices.SipEntities.IValues.
+        /// Reference to the XamarinAzureAD.RestServices.SipEntities.IDefault.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -157,7 +132,7 @@ namespace MobileApi.RestServices.SipEntities
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public static async Task<object> PutAsync(this IValues operations, int id, string value, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public static async Task<object> PutAsync(this IDefault operations, int id, string value, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Microsoft.Rest.HttpOperationResponse<object> result = await operations.PutWithOperationResponseAsync(id, value, cancellationToken).ConfigureAwait(false);
             return result.Body;

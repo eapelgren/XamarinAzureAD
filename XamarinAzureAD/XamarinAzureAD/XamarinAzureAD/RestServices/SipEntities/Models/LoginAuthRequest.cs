@@ -5,19 +5,30 @@ using System;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 
-namespace MobileApi.RestServices.SipEntities.Models
+namespace XamarinAzureAD.RestServices.SipEntities.Models
 {
     public partial class LoginAuthRequest
     {
-        private string _token;
+        private string _accessToken;
         
         /// <summary>
         /// Optional.
         /// </summary>
-        public string Token
+        public string AccessToken
         {
-            get { return this._token; }
-            set { this._token = value; }
+            get { return this._accessToken; }
+            set { this._accessToken = value; }
+        }
+        
+        private string _refreshToken;
+        
+        /// <summary>
+        /// Optional.
+        /// </summary>
+        public string RefreshToken
+        {
+            get { return this._refreshToken; }
+            set { this._refreshToken = value; }
         }
         
         /// <summary>
@@ -39,9 +50,13 @@ namespace MobileApi.RestServices.SipEntities.Models
             {
                 outputObject = new JObject();
             }
-            if (this.Token != null)
+            if (this.AccessToken != null)
             {
-                outputObject["Token"] = this.Token;
+                outputObject["AccessToken"] = this.AccessToken;
+            }
+            if (this.RefreshToken != null)
+            {
+                outputObject["RefreshToken"] = this.RefreshToken;
             }
             return outputObject;
         }

@@ -14,10 +14,6 @@ namespace XamarinAzureAD.ViewModel
 
     class UserListViewModel : XLabs.Forms.Mvvm.ViewModel
     {
-        public UserListViewModel()
-        {
-        }
-        
         private ObservableCollection<User> _userList;
 
         public ObservableCollection<User> UserList
@@ -32,19 +28,7 @@ namespace XamarinAzureAD.ViewModel
 
         private ObservableCollection<User> GetUserList()
         {
-            var list = new ObservableCollection<User>();
-            Resolver.Resolve<IAzureAdService>().GetUsersTask().ContinueWith(task =>
-            {
-                if(!task.IsFaulted)
-                    foreach (var user in task.Result)
-                    {
-                        list.Add(user);
-                    }
-                else
-                {
-                 throw new Exception("AzureAdService.GetUsersTask Faulted");
-                }
-            });
+            var list = Resolver.Resolve<IAzureAdService>().GetUsersTask();  
             return list;
         }
 

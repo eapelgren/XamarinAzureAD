@@ -5,9 +5,9 @@ using System;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 
-namespace MobileApi.RestServices.SipEntities.Models
+namespace XamarinAzureAD.RestServices.SipEntities.Models
 {
-    public partial class User
+    public partial class ADUser
     {
         private string _firstName;
         
@@ -65,9 +65,9 @@ namespace MobileApi.RestServices.SipEntities.Models
         }
         
         /// <summary>
-        /// Initializes a new instance of the User class.
+        /// Initializes a new instance of the ADUser class.
         /// </summary>
-        public User()
+        public ADUser()
         {
         }
         

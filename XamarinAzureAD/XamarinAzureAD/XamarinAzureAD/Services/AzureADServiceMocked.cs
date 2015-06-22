@@ -7,21 +7,24 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
+using XamarinAzureAD.RestServices;
+using XamarinAzureAD.RestServices.SipEntities.Models;
 
 namespace XamarinAzureAD.Services
 {
     public class AzureADServiceMocked : IAzureAdService
     {
-        public async Task<XlentRestService.LoginAuthRespons> LoginAdTask(string username, string password)
+        public LoginAuthResponse LoginAdTask(string token)
         {
-            return
-            new XlentRestService.LoginAuthRespons()
-            {
-                LoggedIn = true
-            };
+            throw new NotImplementedException();
         }
 
-        public async Task<ObservableCollection<User>> GetUsersTask()
+        LoginAuthResponse IAzureAdService.LoginAdTask(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public  ObservableCollection<User> GetUsersTask()
         {
                 var collection = new ObservableCollection<User>
                 {

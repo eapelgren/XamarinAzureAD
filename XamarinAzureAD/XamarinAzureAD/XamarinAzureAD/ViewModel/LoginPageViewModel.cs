@@ -22,31 +22,6 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _isLoading, value); }
         }
 
-        private async void LoginToAzure()
-        {
-            IsLoading = true;
-            var adService = Resolver.Resolve<IAzureAdService>();
-
-            var task = adService.LoginAdTask("username", "password");
-            var result = await task;
-            if (result.LoggedIn)
-            {
-                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
-                var navPage = new NavigationPage(mainPage2);
-                Resolver.Resolve<IDependencyContainer>()
-                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
-                Application.Current.MainPage = navPage;
-
-            }
-            else
-            {
-                ExceptionLabel.Text = result.Exception.InnerException.ToString();
-                ExceptionLabel.IsVisible = true;
-                Debug.WriteLine("ERROR Loggin" + result.Exception);
-            }
-            IsLoading = false;
-        }
-
         private Label _logoLabel;
 
         public Label LogoLabel
@@ -63,7 +38,7 @@ namespace XamarinAzureAD.ViewModel
 
         private Entry _usernameEntry;
 
-        public Entry UsernamEntry
+        public Entry UsernameEntry
         {
             get
             {
@@ -119,9 +94,42 @@ namespace XamarinAzureAD.ViewModel
 
         private void LogginButtonClicked()
         {
+            IsLoading = true;
             LoginToAzure();
+            IsLoading = false;
         }
 
+        private void LoginToAzure()
+        {
+            var adService = Resolver.Resolve<IAzureAdService>();
+
+            var loginAuthResponse = adService.LoginAdTask(UsernameEntry.Text, PasswordEntry.Text);
+            if (loginAuthResponse.LoggedIn != null && loginAuthResponse.LoggedIn.Value)
+            {
+                var storage = Resolver.Resolve<ISecureStorage>();
+                storage.Store("refreshToken", System.Text.Encoding.UTF8.GetBytes(loginAuthResponse.EncryptedRefreshToken));
+                storage.Store("accessToken", System.Text.Encoding.UTF8.GetBytes(loginAuthResponse.EncryptedAccessToken));
+                
+                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
+                var navPage = new NavigationPage(mainPage2);
+                
+                //SET NEW NAVIGATION SERVICE
+                Resolver.Resolve<IDependencyContainer>()
+                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                
+                //NAVIGATE TO NEW VIEWMODEL
+                Application.Current.MainPage = navPage;
+
+            }
+            else
+            {
+                ExceptionLabel.Text = loginAuthResponse.Exception.ToString();
+                ExceptionLabel.IsVisible = true;
+                Debug.WriteLine("ERROR Loggin" + loginAuthResponse.Exception);
+            }
+            
+        }
+        
         private Label _exceptionLabel;
 
         public Label ExceptionLabel

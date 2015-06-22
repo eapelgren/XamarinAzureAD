@@ -2,15 +2,14 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
-    public partial interface IValues
+    public partial interface IDefault
     {
         /// <param name='id'>
         /// Required.
@@ -20,18 +19,13 @@ namespace MobileApi.RestServices.SipEntities
         /// </param>
         Task<HttpOperationResponse<object>> DeleteWithOperationResponseAsync(int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         
-        /// <param name='cancellationToken'>
-        /// Cancellation token.
-        /// </param>
-        Task<HttpOperationResponse<IList<string>>> GetWithOperationResponseAsync(CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        
         /// <param name='id'>
         /// Required.
         /// </param>
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        Task<HttpOperationResponse<string>> GetByIdWithOperationResponseAsync(int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        Task<HttpOperationResponse<string>> GetWithOperationResponseAsync(int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         
         /// <param name='value'>
         /// Required.

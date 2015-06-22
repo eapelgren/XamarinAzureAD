@@ -4,7 +4,7 @@
 using System;
 using System.Linq;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
     public static partial class SipEntitiesClientExtensions
     {

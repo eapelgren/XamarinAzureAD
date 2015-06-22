@@ -3,9 +3,9 @@
 
 using System;
 using System.Linq;
-using MobileApi.RestServices.SipEntities;
+using XamarinAzureAD.RestServices.SipEntities;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
     public partial interface ISipEntitiesClient : IDisposable
     {
@@ -17,12 +17,17 @@ namespace MobileApi.RestServices.SipEntities
             get; set; 
         }
         
-        IUsers Users
+        IDefault Default
         {
             get; 
         }
         
-        IValues Values
+        ILogin Login
+        {
+            get; 
+        }
+        
+        IUsers Users
         {
             get; 
         }

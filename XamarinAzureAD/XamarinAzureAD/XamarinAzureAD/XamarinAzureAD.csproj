@@ -43,7 +43,22 @@
       <DependentUpon>UserListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AzureAdService.cs" />
+    <Compile Include="RestServices\SipEntities\Default.cs" />
+    <Compile Include="RestServices\SipEntities\DefaultExtensions.cs" />
+    <Compile Include="RestServices\SipEntities\IDefault.cs" />
+    <Compile Include="RestServices\SipEntities\ILogin.cs" />
+    <Compile Include="RestServices\SipEntities\ISipEntitiesClient.cs" />
+    <Compile Include="RestServices\SipEntities\IUsers.cs" />
+    <Compile Include="RestServices\SipEntities\Login.cs" />
+    <Compile Include="RestServices\SipEntities\LoginExtensions.cs" />
+    <Compile Include="RestServices\SipEntities\Models\ADUser.cs" />
+    <Compile Include="RestServices\SipEntities\Models\ADUserCollection.cs" />
+    <Compile Include="RestServices\SipEntities\Models\LoginAuthRequest.cs" />
+    <Compile Include="RestServices\SipEntities\Models\LoginAuthResponse.cs" />
+    <Compile Include="RestServices\SipEntities\SipEntitiesClient.cs" />
+    <Compile Include="RestServices\SipEntities\SipEntitiesClientExtensions.cs" />
+    <Compile Include="RestServices\SipEntities\Users.cs" />
+    <Compile Include="RestServices\SipEntities\UsersExtensions.cs" />
     <Compile Include="Services\AzureADServiceMocked.cs" />
     <Compile Include="Services\IAzureAdService.cs" />
     <Compile Include="Services\XlentRestService.cs" />
@@ -58,6 +73,9 @@
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
       <HintPath>..\..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.3.205061641-alpha\lib\portable-net45+win+wpa81+wp80\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime">
+      <HintPath>..\..\packages\Microsoft.Rest.ClientRuntime.0.9.6\lib\portable-net403+win8+wpa81\Microsoft.Rest.ClientRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\portable-net45+wp80+win8+wpa81+aspnetcore50\Newtonsoft.Json.dll</HintPath>

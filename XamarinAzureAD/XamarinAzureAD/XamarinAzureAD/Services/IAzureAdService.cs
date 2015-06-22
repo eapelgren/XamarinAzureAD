@@ -7,16 +7,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using XamarinAzureAD.Model;
+using XamarinAzureAD.RestServices.SipEntities.Models;
 
 namespace XamarinAzureAD.Services
 {
     public interface IAzureAdService
     {
-        Task<XlentRestService.LoginAuthRespons> LoginAdTask(string username, string password);
+        LoginAuthResponse LoginAdTask(string username, string password);
 
-        Task<XlentRestService.LoginAuthRespons> LoginAdTask(string token);
+        LoginAuthResponse LoginAdTask(string token);
 
-        Task<ObservableCollection<User>> GetUsersTask();
+        ObservableCollection<User> GetUsersTask();
 
 
     }

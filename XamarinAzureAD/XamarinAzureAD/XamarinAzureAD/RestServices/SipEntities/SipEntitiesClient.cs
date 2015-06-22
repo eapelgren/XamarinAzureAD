@@ -5,9 +5,9 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using Microsoft.Rest;
-using MobileApi.RestServices.SipEntities;
+using XamarinAzureAD.RestServices.SipEntities;
 
-namespace MobileApi.RestServices.SipEntities
+namespace XamarinAzureAD.RestServices.SipEntities
 {
     public partial class SipEntitiesClient : ServiceClient<SipEntitiesClient>, ISipEntitiesClient
     {
@@ -22,18 +22,25 @@ namespace MobileApi.RestServices.SipEntities
             set { this._baseUri = value; }
         }
         
+        private IDefault _defaultVariable;
+        
+        public virtual IDefault Default
+        {
+            get { return this._defaultVariable; }
+        }
+        
+        private ILogin _login;
+        
+        public virtual ILogin Login
+        {
+            get { return this._login; }
+        }
+        
         private IUsers _users;
         
         public virtual IUsers Users
         {
             get { return this._users; }
-        }
-        
-        private IValues _values;
-        
-        public virtual IValues Values
-        {
-            get { return this._values; }
         }
         
         /// <summary>
@@ -42,8 +49,9 @@ namespace MobileApi.RestServices.SipEntities
         public SipEntitiesClient()
             : base()
         {
+            this._defaultVariable = new Default(this);
+            this._login = new Login(this);
             this._users = new Users(this);
-            this._values = new Values(this);
             this._baseUri = new Uri("https://microsoft-apiapp745d3ca9013d4894bebef4e0a6f85f8e.azurewebsites.net:443");
         }
         
@@ -57,8 +65,9 @@ namespace MobileApi.RestServices.SipEntities
         public SipEntitiesClient(params DelegatingHandler[] handlers)
             : base(handlers)
         {
+            this._defaultVariable = new Default(this);
+            this._login = new Login(this);
             this._users = new Users(this);
-            this._values = new Values(this);
             this._baseUri = new Uri("https://microsoft-apiapp745d3ca9013d4894bebef4e0a6f85f8e.azurewebsites.net:443");
         }
         
@@ -75,8 +84,9 @@ namespace MobileApi.RestServices.SipEntities
         public SipEntitiesClient(HttpClientHandler rootHandler, params DelegatingHandler[] handlers)
             : base(rootHandler, handlers)
         {
+            this._defaultVariable = new Default(this);
+            this._login = new Login(this);
             this._users = new Users(this);
-            this._values = new Values(this);
             this._baseUri = new Uri("https://microsoft-apiapp745d3ca9013d4894bebef4e0a6f85f8e.azurewebsites.net:443");
         }
         

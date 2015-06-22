@@ -6,4 +6,4 @@
 Invoke-WebRequest $server/swagger/docs/v1  -OutFile EntitiesSwagger.json
  
 # Generates REST client
-..\..\packages\AutoRest.0.9.7\tools\Autorest.exe -Input EntitiesSwagger.json -Namespace MobileApi.RestServices.SipEntities -OutputDirectory RestServices/SipEntities -CodeGenerator CSharp -ClientName SipEntitiesClient
+..\..\packages\AutoRest.0.9.7\tools\Autorest.exe -Input EntitiesSwagger.json -Namespace XamarinAzureAD.RestServices.SipEntities -OutputDirectory RestServices/SipEntities -CodeGenerator CSharp -ClientName SipEntitiesClient

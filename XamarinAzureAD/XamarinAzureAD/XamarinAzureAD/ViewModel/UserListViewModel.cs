@@ -14,9 +14,9 @@ namespace XamarinAzureAD.ViewModel
 
     class UserListViewModel : XLabs.Forms.Mvvm.ViewModel
     {
-        private ObservableCollection<User> _userList;
+        private ObservableCollection<ObservableUser> _userList;
 
-        public ObservableCollection<User> UserList
+        public ObservableCollection<ObservableUser> UserList
         {
 
             get
@@ -26,27 +26,36 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _userList, value); }
         }
 
-        private ObservableCollection<User> GetUserList()
+        private ObservableCollection<ObservableUser> GetUserList()
         {
-            var list = Resolver.Resolve<IAzureAdService>().GetUsersTask();  
+
+            var list = new ObservableCollection<ObservableUser>();             
+            Resolver.Resolve<IAzureRestService>().GetUserTaskAsync().ContinueWith(task =>
+            {
+                foreach (var user in task.Result)
+                {
+                    list.Add(user);
+                }
+            });  
+           
             return list;
         }
 
-        private User _selectedUser;
+        private ObservableUser _selectedObservableUser;
 
-        public User SelectedUser
+        public ObservableUser SelectedObservableUser
         {
 
             get
             {
-                return _selectedUser ?? (_selectedUser = new User()
+                return _selectedObservableUser ?? (_selectedObservableUser = new ObservableUser()
                 {
                     
                 });
             }
             set
             {
-                SetProperty(ref _selectedUser, value);
+                SetProperty(ref _selectedObservableUser, value);
 
                 if (value != null)
                 {

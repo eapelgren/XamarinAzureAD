@@ -12,22 +12,22 @@ namespace XamarinAzureAD.ViewModel
     class SelectedUserViewModel : XLabs.Forms.Mvvm.ViewModel
     {
 
-        public SelectedUserViewModel(User selected)
+        public SelectedUserViewModel(ObservableUser selectedObservable)
         {
-            SelectedUser = selected;
+            SelectedObservableUser = selectedObservable;
 
         }
 
-        private User _selectedUser;
+        private ObservableUser _selectedObservableUser;
 
-        public User SelectedUser
+        public ObservableUser SelectedObservableUser
         {
 
             get
             {
-                return _selectedUser ?? (_selectedUser = new User());
+                return _selectedObservableUser ?? (_selectedObservableUser = new ObservableUser());
             }
-            set { SetProperty(ref   _selectedUser, value); }
+            set { SetProperty(ref   _selectedObservableUser, value); }
         }
 
 

@@ -18,7 +18,7 @@ using XLabs.Serialization;
 namespace XamarinAzureAD.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
-    // User Interface of the application, as well as listening (and optionally responding) to 
+    // ObservableUser Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
     public partial class AppDelegate : XFormsApplicationDelegate
@@ -46,8 +46,8 @@ namespace XamarinAzureAD.iOS
             var app = new XFormsAppiOS();
             app.Init(this);
 
-            //var documents = app.AppDataDirectory;
-            //var pathToDatabase = Path.Combine(documents, "xforms.db");
+            var documents = app.AppDataDirectory;
+            var pathToDatabase = Path.Combine(documents, "xlent.db");
 
             resolverContainer.Register<IDevice>(t => AppleDevice.CurrentDevice)
                 .Register<IDisplay>(t => t.Resolve<IDevice>().Display)

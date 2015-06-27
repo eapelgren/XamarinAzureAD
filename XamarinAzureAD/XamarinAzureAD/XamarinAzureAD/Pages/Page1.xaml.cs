@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using XamarinAzureAD.ViewModel;
 
 namespace XamarinAzureAD.Pages
 {
-    public partial class UserListPage : XLabs.Forms.Mvvm.BaseView
+    public partial class Page1 : ContentPage
     {
-        public UserListPage()
+        public Page1()
         {
-            BindingContext = new UserListViewModel();
             InitializeComponent();
         }
     }

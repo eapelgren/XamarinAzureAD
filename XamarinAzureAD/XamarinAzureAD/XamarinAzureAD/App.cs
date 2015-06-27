@@ -31,20 +31,22 @@ namespace XamarinAzureAD
         {
             //REGISTER VM:S AND PAGES
             ViewFactory.Register<LoginPage, LoginPageViewModel>();
-            ViewFactory.Register<UserListPage, UserListViewModel>();
+            ViewFactory.Register<NewsPage, NewsPageViewModel>();
             
             
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
             var navPage = new NavigationPage(mainPage);
             
             //REGISTER NAVIGATION SERVICE
+            //REGISTER AZURE AD SERVICE/
             Resolver.Resolve<IDependencyContainer>()
-                .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                .Register<INavigationService>(t => new NavigationService(navPage.Navigation))
+                .Register<IAzureRestService, XlentAzureRestService>();
             
-            //REGISTER AZURE AD SERVICE
-        
             
-            return navPage;
+            
+            //SHOULD BE NAVPAGE
+            return new Page1();
         }
 
         public static void Init()
@@ -52,9 +54,8 @@ namespace XamarinAzureAD
 
             var app = Resolver.Resolve<IXFormsApp>();
             
-            //SET AZURE AD SERVICE
-           
-            
+            var dependencyContainer = Resolver.Resolve<IDependencyContainer>();
+            dependencyContainer.Register<IAzureRestService, XlentAzureRestService>();
             
             if (app == null)
             {

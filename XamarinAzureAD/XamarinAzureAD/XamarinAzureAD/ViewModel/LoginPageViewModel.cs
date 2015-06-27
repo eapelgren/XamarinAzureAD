@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Threading.Tasks;
+using System.Text;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Services;
@@ -99,59 +98,32 @@ namespace XamarinAzureAD.ViewModel
             IsLoading = false;
         }
 
-        private void LoginToAzure()
+        private async void LoginToAzure()
         {
-            var adService = Resolver.Resolve<IAzureAdService>();
-
-            var loginAuthResponse = adService.LoginAdTask(UsernameEntry.Text, PasswordEntry.Text);
-            if (loginAuthResponse.LoggedIn != null && loginAuthResponse.LoggedIn.Value)
+            try
             {
-                var storage = Resolver.Resolve<ISecureStorage>();
-                storage.Store("refreshToken", System.Text.Encoding.UTF8.GetBytes(loginAuthResponse.EncryptedRefreshToken));
-                storage.Store("accessToken", System.Text.Encoding.UTF8.GetBytes(loginAuthResponse.EncryptedAccessToken));
-                
-                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
-                var navPage = new NavigationPage(mainPage2);
-                
-                //SET NEW NAVIGATION SERVICE
-                Resolver.Resolve<IDependencyContainer>()
-                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
-                
-                //NAVIGATE TO NEW VIEWMODEL
-                Application.Current.MainPage = navPage;
+            var adService = Resolver.Resolve<IAzureRestService>();
+            RestAuthenticationResult loginAuthResponse =
+                await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
+            var storage = Resolver.Resolve<ISecureStorage>();
+            storage.Store("refreshToken", Encoding.UTF8.GetBytes(loginAuthResponse.RefreshToken));
+            storage.Store("accessToken", Encoding.UTF8.GetBytes(loginAuthResponse.AccessToken));
+            var mainPage2 = ViewFactory.CreatePage<NewsPageViewModel, Page>() as Page;
+            var navPage = new NavigationPage(mainPage2);
 
+            //SET NEW NAVIGATION SERVICE
+            Resolver.Resolve<IDependencyContainer>()
+                .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+
+            //NAVIGATE TO NEW VIEWMODEL
+            Application.Current.MainPage = navPage;
             }
-            else
+            catch (Exception ee)
             {
-                ExceptionLabel.Text = loginAuthResponse.Exception.ToString();
-                ExceptionLabel.IsVisible = true;
-                Debug.WriteLine("ERROR Loggin" + loginAuthResponse.Exception);
+                Debug.WriteLine("ERROR IN LOGIN TO AZURE");
+                throw ee;
             }
-            
         }
-        
-        private Label _exceptionLabel;
-
-        public Label ExceptionLabel
-        {
-
-            get
-            {
-                return _exceptionLabel ?? (_exceptionLabel = new Label()
-                {
-                  IsEnabled  = true,
-                  TextColor = Color.Red,
-                  IsVisible = false
-                });
-            }
-            set { SetProperty(ref _exceptionLabel, value); }
-        }
-
-
-		
-
-		
-
     }
-        
 }
+

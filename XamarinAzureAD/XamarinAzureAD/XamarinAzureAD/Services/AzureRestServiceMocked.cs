@@ -8,27 +8,20 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.RestServices;
-using XamarinAzureAD.RestServices.SipEntities.Models;
 
 namespace XamarinAzureAD.Services
 {
-    public class AzureADServiceMocked : IAzureAdService
+    public class AzureRestServiceMocked : IAzureRestService
     {
-        public LoginAuthResponse LoginAdTask(string token)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        LoginAuthResponse IAzureAdService.LoginAdTask(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public  ObservableCollection<User> GetUsersTask()
+        public  ObservableCollection<ObservableUser> GetUsersTask()
         {
-                var collection = new ObservableCollection<User>
+                var collection = new ObservableCollection<ObservableUser>
                 {
-                    new User()
+                    new ObservableUser()
                     {
                         //DisplayName = "Emil Apelgren",
                         GivenName = "Emil",
@@ -40,7 +33,7 @@ namespace XamarinAzureAD.Services
                         //Location = "Xlent HQ",
 
                     },
-                    new User()
+                    new ObservableUser()
                     {
                         //DisplayName = "Fredrik Tonn",
                         GivenName = "Fredrik",
@@ -52,7 +45,7 @@ namespace XamarinAzureAD.Services
                         //Location = "Xlent HQ"
 
                     },
-                    new User()
+                    new ObservableUser()
                     {
                         //DisplayName = "Åsa Nisse",
                         GivenName = "Åsa",
@@ -66,6 +59,26 @@ namespace XamarinAzureAD.Services
                     }
                 };
                 return collection;
+        }
+
+        public Task<RestAuthenticationResult> LoginAdTaskAsync(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RestAuthenticationResult> LoginAdTaskAsync(string token)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ObservableCollection<ObservableUser>> GetUserTaskAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

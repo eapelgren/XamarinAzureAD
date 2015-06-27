@@ -8,7 +8,7 @@ using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
-    public class User : ObservableObject
+    public class ObservableUser : ObservableObject
     {
 
         private string _displayName;

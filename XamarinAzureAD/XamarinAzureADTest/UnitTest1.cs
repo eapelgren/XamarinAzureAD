@@ -17,7 +17,7 @@ namespace XamarinAzureADTest
         [TestMethod]
         public void GetNewsTest()
         {
-            var vm = new NewsPageViewModel();
+           
 
 
 

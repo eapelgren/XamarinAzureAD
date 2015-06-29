@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
-using XamarinAzureAD.RestServices;
 
 namespace XamarinAzureAD.Services
 {
@@ -61,12 +60,12 @@ namespace XamarinAzureAD.Services
                 return collection;
         }
 
-        public Task<RestAuthenticationResult> LoginAdTaskAsync(string username, string password)
+        public Task<XlentAuthResult> LoginAdTaskAsync(string username, string password)
         {
             throw new NotImplementedException();
         }
 
-        public Task<RestAuthenticationResult> LoginAdTaskAsync(string token)
+        public Task<XlentAuthResult> LoginAdTaskAsync(string token)
         {
             throw new NotImplementedException();
         }

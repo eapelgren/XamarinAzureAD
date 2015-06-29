@@ -5,6 +5,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using XamarinAzureAD.Services;
 using XLabs.Forms;
 using XLabs.Forms.Services;
 using XLabs.Ioc;
@@ -59,7 +60,8 @@ namespace XamarinAzureAD.iOS
                 .Register<IMediaPicker, MediaPicker>()
                 .Register<IXFormsApp>(app)
                 .Register<ISecureStorage, SecureStorage>()
-                .Register<IDependencyContainer>(t => resolverContainer);
+                .Register<IDependencyContainer>(t => resolverContainer)
+                .Register<IAzureRestService, XlentAzureRestServicePCL>();
                 //.Register<ISimpleCache>(
                 //    t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
                 //        new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));

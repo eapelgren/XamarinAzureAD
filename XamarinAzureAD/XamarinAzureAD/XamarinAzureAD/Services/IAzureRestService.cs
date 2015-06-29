@@ -12,14 +12,13 @@ namespace XamarinAzureAD.Services
 {
     public interface IAzureRestService
     {
-        Task<RestAuthenticationResult> LoginAdTaskAsync(string username, string password);
+        Task<XlentAuthResult> LoginAdTaskAsync(string username, string password);
 
-        Task<RestAuthenticationResult> LoginAdTaskAsync(string token);
+        Task<XlentAuthResult> LoginAdTaskAsync(string token);
 
         Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync();
 
         Task<ObservableCollection<ObservableUser>> GetUserTaskAsync();
-
 
     }
 }

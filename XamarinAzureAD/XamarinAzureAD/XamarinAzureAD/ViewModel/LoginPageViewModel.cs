@@ -13,9 +13,9 @@ namespace XamarinAzureAD.ViewModel
 {
     internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
-        private Boolean _isLoading;
+        private bool _isLoading;
 
-        public Boolean IsLoading
+        public bool IsLoading
         {
             get { return _isLoading; }
             set { SetProperty(ref _isLoading, value); }
@@ -43,7 +43,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _usernameEntry ?? (_usernameEntry = new Entry
                 {
-                    Text = "Username"
+                    Text = "Username",
                 });
             }
             set { SetProperty(ref _usernameEntry, value); }
@@ -91,38 +91,56 @@ namespace XamarinAzureAD.ViewModel
             }
         }
 
+        //private Command _entryTapCommand;
+
+        //public Command EntryTapCommand
+        //{
+
+        //    get { return _entryTapCommand ?? (_entryTapCommand = new Command(
+        //    {
+        //        throw new not
+        //    }) }
+        //    set { SetProperty(ref _entryTapCommand, value); }
+        //}
+
+
+		
+
+		
+
+
         private void LogginButtonClicked()
         {
             IsLoading = true;
             LoginToAzure();
-            IsLoading = false;
         }
 
         private async void LoginToAzure()
         {
             try
             {
-            var adService = Resolver.Resolve<IAzureRestService>();
-            RestAuthenticationResult loginAuthResponse =
-                await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
-            var storage = Resolver.Resolve<ISecureStorage>();
-            storage.Store("refreshToken", Encoding.UTF8.GetBytes(loginAuthResponse.RefreshToken));
-            storage.Store("accessToken", Encoding.UTF8.GetBytes(loginAuthResponse.AccessToken));
+                var adService = Resolver.Resolve<IAzureRestService>();
+                XlentAuthResult loginAuthResponse =
+                    await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
+                var storage = Resolver.Resolve<ISecureStorage>();
+                storage.Store("refreshToken", Encoding.UTF8.GetBytes(loginAuthResponse.RefreshToken));
+                storage.Store("accessToken", Encoding.UTF8.GetBytes(loginAuthResponse.IdToken));
+            }
+            catch (Exception ee)
+            {
+                Debug.WriteLine("ERROR IN LOGIN TO AZURE");
+                throw;
+            }
+
+
             var mainPage2 = ViewFactory.CreatePage<NewsPageViewModel, Page>() as Page;
             var navPage = new NavigationPage(mainPage2);
 
             //SET NEW NAVIGATION SERVICE
             Resolver.Resolve<IDependencyContainer>()
                 .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
-
             //NAVIGATE TO NEW VIEWMODEL
-            Application.Current.MainPage = navPage;
-            }
-            catch (Exception ee)
-            {
-                Debug.WriteLine("ERROR IN LOGIN TO AZURE");
-                throw ee;
-            }
+            Application.Current.MainPage = navPage
         }
     }
 }

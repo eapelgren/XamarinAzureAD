@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
@@ -19,7 +18,6 @@ namespace XamarinAzureAD
 {
     public class App : Application
     {
-        
         public App()
         {
             // The root page of your application
@@ -32,31 +30,19 @@ namespace XamarinAzureAD
             //REGISTER VM:S AND PAGES
             ViewFactory.Register<LoginPage, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
-            
-            
+
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
             var navPage = new NavigationPage(mainPage);
-            
-            //REGISTER NAVIGATION SERVICE
-            //REGISTER AZURE AD SERVICE/
-            Resolver.Resolve<IDependencyContainer>()
-                .Register<INavigationService>(t => new NavigationService(navPage.Navigation))
-                .Register<IAzureRestService, XlentAzureRestService>();
-            
-            
-            
+
             //SHOULD BE NAVPAGE
-            return new Page1();
+            return navPage;
         }
 
         public static void Init()
         {
-
             var app = Resolver.Resolve<IXFormsApp>();
-            
-            var dependencyContainer = Resolver.Resolve<IDependencyContainer>();
-            dependencyContainer.Register<IAzureRestService, XlentAzureRestService>();
-            
+
+
             if (app == null)
             {
                 return;
@@ -70,9 +56,6 @@ namespace XamarinAzureAD
             app.Startup += (o, e) => Debug.WriteLine("Application Startup");
             app.Suspended += (o, e) => Debug.WriteLine("Application Suspended");
         }
-
-
-
 
         protected override void OnStart()
         {

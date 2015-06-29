@@ -3,13 +3,12 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
-using Microsoft.Rest;
-using XamarinAzureAD.RestServices.XlentRestService;
+
+using XamarinAzureAD.Model;
+
 using XamarinAzureAD.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
-using AuthenticationResult = XamarinAzureAD.RestServices.XlentRestService.Models.AuthenticationResult;
 
 namespace XamarinAzureAD.Handler
 {
@@ -51,25 +50,9 @@ namespace XamarinAzureAD.Handler
             return "Unknown accessToken error";
         }
 
-        public Task<AuthenticationResult> GetAuthContextAsync()
+        public Task<XlentAuthResult> GetXlentAuthResult()
         {
-
-            try
-            {
-                var task = new Task<AuthenticationResult>(() =>
-                {
-                    var result =
-                        new XlentAzureRestService().LoginAdTaskAsync(GetRefreshToken());
-                    return result;
-                });
-                return task;
-            }
-            catch (Exception ee)
-            {
-
-                throw new AuthInvalidException("Could not Authenticate with refreshToken", ee);
-            
-            }
+           return Resolver.Resolve<IAzureRestService>().LoginAdTaskAsync(GetRefreshToken());
         }
     }
 }

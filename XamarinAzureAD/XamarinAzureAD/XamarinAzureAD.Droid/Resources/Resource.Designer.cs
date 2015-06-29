@@ -26,9 +26,12 @@ namespace XamarinAzureAD.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microsoft.Azure.AppService.Resource.String.ApplicationName = global::XamarinAzureAD.Droid.Resource.String.ApplicationName;
+			global::Microsoft.Azure.AppService.Resource.String.Hello = global::XamarinAzureAD.Droid.Resource.String.Hello;
 			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Id.agentWebView = global::XamarinAzureAD.Droid.Resource.Id.agentWebView;
 			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Layout.WebAuthenticationBroker = global::XamarinAzureAD.Droid.Resource.Layout.WebAuthenticationBroker;
 			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.String.ApplicationName = global::XamarinAzureAD.Droid.Resource.String.ApplicationName;
+			global::ModernHttpClient.Resource.String.library_name = global::XamarinAzureAD.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::XamarinAzureAD.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Resource.String.Hello = global::XamarinAzureAD.Droid.Resource.String.Hello;
 			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::XamarinAzureAD.Droid.Resource.Color.calendar_active_month_bg;

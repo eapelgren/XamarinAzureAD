@@ -7,14 +7,14 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using XamarinAzureAD.Droid;
+using XamarinAzureAD.iOS;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public static partial class ValuesExtensions
     {
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -29,7 +29,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -44,7 +44,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         public static IList<string> Get(this IValues operations)
         {
@@ -56,7 +56,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='cancellationToken'>
         /// Cancellation token.
@@ -68,7 +68,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -83,7 +83,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -98,7 +98,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='value'>
         /// Required.
@@ -113,7 +113,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='value'>
         /// Required.
@@ -128,7 +128,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -146,7 +146,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.IValues.
+        /// Reference to the XamarinAzureAD.iOS.IValues.
         /// </param>
         /// <param name='id'>
         /// Required.

@@ -6,15 +6,15 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using XamarinAzureAD.Droid;
-using XamarinAzureAD.Droid.Models;
+using XamarinAzureAD.iOS;
+using XamarinAzureAD.iOS.Models;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public static partial class LoginExtensions
     {
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.ILogin.
+        /// Reference to the XamarinAzureAD.iOS.ILogin.
         /// </param>
         /// <param name='refreshToken'>
         /// Required.
@@ -29,7 +29,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.ILogin.
+        /// Reference to the XamarinAzureAD.iOS.ILogin.
         /// </param>
         /// <param name='refreshToken'>
         /// Required.
@@ -39,12 +39,12 @@ namespace XamarinAzureAD.Droid
         /// </param>
         public static async Task<AuthenticationResult> GetByTokenAsync(this ILogin operations, string refreshToken, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Microsoft.Rest.HttpOperationResponse<XamarinAzureAD.Droid.Models.AuthenticationResult> result = await operations.GetByTokenWithOperationResponseAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            Microsoft.Rest.HttpOperationResponse<XamarinAzureAD.iOS.Models.AuthenticationResult> result = await operations.GetByTokenWithOperationResponseAsync(refreshToken, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.ILogin.
+        /// Reference to the XamarinAzureAD.iOS.ILogin.
         /// </param>
         /// <param name='username'>
         /// Required.
@@ -62,7 +62,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.ILogin.
+        /// Reference to the XamarinAzureAD.iOS.ILogin.
         /// </param>
         /// <param name='username'>
         /// Required.
@@ -75,7 +75,7 @@ namespace XamarinAzureAD.Droid
         /// </param>
         public static async Task<AuthenticationResult> GetByUsernamePasswordAsync(this ILogin operations, string username, string password, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Microsoft.Rest.HttpOperationResponse<XamarinAzureAD.Droid.Models.AuthenticationResult> result = await operations.GetByUsernamePasswordWithOperationResponseAsync(username, password, cancellationToken).ConfigureAwait(false);
+            Microsoft.Rest.HttpOperationResponse<XamarinAzureAD.iOS.Models.AuthenticationResult> result = await operations.GetByUsernamePasswordWithOperationResponseAsync(username, password, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
     }

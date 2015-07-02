@@ -5,23 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json.Linq;
-using XamarinAzureAD.Droid.Models;
 
-namespace XamarinAzureAD.Droid.Models
+namespace XamarinAzureAD.iOS.Models
 {
-    public static partial class NewsCollection
+    public static partial class StringCollection
     {
         /// <summary>
         /// Deserialize the object
         /// </summary>
-        public static IList<News> DeserializeJson(JToken inputObject)
+        public static IList<string> DeserializeJson(JToken inputObject)
         {
-            IList<News> deserializedObject = new List<News>();
+            IList<string> deserializedObject = new List<string>();
             foreach (JToken iListValue in ((JArray)inputObject))
             {
-                News news = new News();
-                news.DeserializeJson(iListValue);
-                deserializedObject.Add(news);
+                deserializedObject.Add(((string)iListValue));
             }
             return deserializedObject;
         }

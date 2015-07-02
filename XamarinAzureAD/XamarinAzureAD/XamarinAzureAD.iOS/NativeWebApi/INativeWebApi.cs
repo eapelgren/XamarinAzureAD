@@ -4,9 +4,9 @@
 using System;
 using System.Linq;
 using Microsoft.Rest;
-using XamarinAzureAD.Droid;
+using XamarinAzureAD.iOS;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public partial interface INativeWebApi : IDisposable
     {

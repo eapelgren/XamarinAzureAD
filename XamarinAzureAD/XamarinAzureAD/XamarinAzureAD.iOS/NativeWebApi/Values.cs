@@ -12,9 +12,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
 using Newtonsoft.Json.Linq;
-using XamarinAzureAD.Droid;
+using XamarinAzureAD.iOS;
+using XamarinAzureAD.iOS.Models;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     internal partial class Values : IServiceOperations<NativeWebApi>, IValues
     {
@@ -32,7 +33,7 @@ namespace XamarinAzureAD.Droid
         private NativeWebApi _client;
         
         /// <summary>
-        /// Gets a reference to the XamarinAzureAD.Droid.NativeWebApi.
+        /// Gets a reference to the XamarinAzureAD.iOS.NativeWebApi.
         /// </summary>
         public NativeWebApi Client
         {

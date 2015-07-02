@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -53,6 +54,40 @@ namespace XamarinAzureAD.Handler
         public Task<XlentAuthResult> GetXlentAuthResult()
         {
            return Resolver.Resolve<IAzureRestService>().LoginAdTaskAsync(GetRefreshToken());
+        }
+
+        public void SetRefreshToken(string refreshToken)
+        {
+            var storage = Resolver.Resolve<ISecureStorage>();
+            try
+            {
+                storage.Delete("refreshToken");
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("NO REFERSHTOKEN IN CACHE");
+            }
+            finally
+            {
+                storage.Store("refreshToken", Encoding.UTF8.GetBytes(refreshToken));   
+            }
+        }
+
+        public void SetAccessToken(string accessToken)
+        {
+            var storage = Resolver.Resolve<ISecureStorage>();
+            try
+            {
+                storage.Delete("accessToken");
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("NO ACCESSTOKEN IN CACHE");
+            }
+            finally
+            {
+                storage.Store("accessToken", Encoding.UTF8.GetBytes(accessToken));
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
+using XamarinAzureAD.Handler;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
@@ -43,7 +45,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _usernameEntry ?? (_usernameEntry = new Entry
                 {
-                    Text = "Username",
+                    Text = "test1@xlentwebapi.onmicrosoft.com",
                 });
             }
             set { SetProperty(ref _usernameEntry, value); }
@@ -57,7 +59,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _passwordEntry ?? (_passwordEntry = new Entry
                 {
-                    Text = "Password",
+                    Text = "newPassword1",
                     IsPassword = true
                 });
             }
@@ -79,15 +81,20 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _loginButton, value); }
         }
 
-        private Command _loginCommand;
-
-        public Command LoginCommand
+        public ICommand LoginCommand
         {
             get
             {
-                return _loginCommand ??
-                       (_loginCommand =
-                           new Command(LogginButtonClicked));
+                try
+                {
+                return new Command(LogginButtonClicked);
+
+                }
+                catch (Exception ee)
+                {
+                    Debug.WriteLine("GETS HERE");
+                    throw;
+                }
             }
         }
 
@@ -119,12 +126,14 @@ namespace XamarinAzureAD.ViewModel
         {
             try
             {
+                var i = 0;
                 var adService = Resolver.Resolve<IAzureRestService>();
                 XlentAuthResult loginAuthResponse =
                     await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
-                var storage = Resolver.Resolve<ISecureStorage>();
-                storage.Store("refreshToken", Encoding.UTF8.GetBytes(loginAuthResponse.RefreshToken));
-                storage.Store("accessToken", Encoding.UTF8.GetBytes(loginAuthResponse.IdToken));
+
+                var tokenHandler = new LocalTokenHandler();
+                tokenHandler.SetAccessToken(loginAuthResponse.AccessToken);
+                tokenHandler.SetRefreshToken(loginAuthResponse.RefreshToken);
             }
             catch (Exception ee)
             {
@@ -133,14 +142,14 @@ namespace XamarinAzureAD.ViewModel
             }
 
 
-            var mainPage2 = ViewFactory.CreatePage<NewsPageViewModel, Page>() as Page;
-            var navPage = new NavigationPage(mainPage2);
+            var newsPage = ViewFactory.CreatePage<NewsPageViewModel, Page>() as Page;
+            var navPage = new NavigationPage(newsPage);
 
             //SET NEW NAVIGATION SERVICE
             Resolver.Resolve<IDependencyContainer>()
                 .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
             //NAVIGATE TO NEW VIEWMODEL
-            Application.Current.MainPage = navPage
+            Application.Current.MainPage = navPage;
         }
     }
 }

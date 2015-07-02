@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using Microsoft.Azure.AppService;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public static class NativeWebApiAppServiceExtensions
     {

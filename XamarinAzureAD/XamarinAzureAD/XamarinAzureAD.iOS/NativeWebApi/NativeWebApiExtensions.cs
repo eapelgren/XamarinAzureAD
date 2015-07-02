@@ -4,7 +4,7 @@
 using System;
 using System.Linq;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public static partial class NativeWebApiExtensions
     {

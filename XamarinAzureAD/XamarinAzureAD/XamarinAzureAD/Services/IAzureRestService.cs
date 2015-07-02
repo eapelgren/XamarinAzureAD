@@ -14,11 +14,9 @@ namespace XamarinAzureAD.Services
     {
         Task<XlentAuthResult> LoginAdTaskAsync(string username, string password);
 
-        Task<XlentAuthResult> LoginAdTaskAsync(string token);
+        Task<XlentAuthResult> LoginAdTaskAsync(string refreshToken);
 
-        Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync();
-
-        Task<ObservableCollection<ObservableUser>> GetUserTaskAsync();
+        Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync(string username, string password);
 
     }
 }

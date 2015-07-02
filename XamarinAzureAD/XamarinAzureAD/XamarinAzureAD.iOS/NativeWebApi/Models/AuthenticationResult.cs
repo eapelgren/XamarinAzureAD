@@ -4,9 +4,9 @@
 using System;
 using System.Linq;
 using Newtonsoft.Json.Linq;
-using XamarinAzureAD.Droid.Models;
+using XamarinAzureAD.iOS.Models;
 
-namespace XamarinAzureAD.Droid.Models
+namespace XamarinAzureAD.iOS.Models
 {
     public partial class AuthenticationResult
     {

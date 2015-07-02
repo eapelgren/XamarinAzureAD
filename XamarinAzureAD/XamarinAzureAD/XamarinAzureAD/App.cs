@@ -42,7 +42,6 @@ namespace XamarinAzureAD
         {
             var app = Resolver.Resolve<IXFormsApp>();
 
-
             if (app == null)
             {
                 return;

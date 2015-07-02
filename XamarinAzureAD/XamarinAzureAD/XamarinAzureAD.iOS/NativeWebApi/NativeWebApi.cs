@@ -5,9 +5,9 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using Microsoft.Rest;
-using XamarinAzureAD.Droid;
+using XamarinAzureAD.iOS;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public partial class NativeWebApi : ServiceClient<NativeWebApi>, INativeWebApi
     {

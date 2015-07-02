@@ -70,6 +70,11 @@ namespace XamarinAzureAD.Services
             throw new NotImplementedException();
         }
 
+        public Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync()
         {
             throw new NotImplementedException();

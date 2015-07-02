@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Net.Http;
@@ -20,45 +21,26 @@ namespace XamarinAzureAD.Services
 
         public async Task<XlentAuthResult> LoginAdTaskAsync(string username, string password)
         {
-            var client = new HttpClient(new NativeMessageHandler())
-            {
-            };
+            var client = new HttpClient();
 
             JObject jResult;
-            try
-            {
+         
                 var responsMessage = await client.GetAsync(
                     String.Format(
-                        "http://microsoft-apiappc1f91447b91f4dc3834cbde4fca6a49c.azurewebsites.net:443/api/Login/GetByUsernamePassword?username={0}&password={1}",
+                        "https://microsoft-apiapp98fa1f47749147b6bde310c5721cc7be.azurewebsites.net/api/Login/GetByUsernamePassword?username={0}&password={1}",
                         username, password));
 
-                string content = await responsMessage.Content.ReadAsStringAsync();
-                jResult = JObject.Parse(content);
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Error Sending or Parsing");
-                throw;
-            }
-
-            if (jResult["odata.error"] != null)
-            {
-                throw new Exception("ODATA ERROR" + (string) jResult["odata.error"]["message"]["value"]);
-            }
-
-            if (jResult["value"] == null)
-            {
-                throw new Exception("UNKOWN ERROR IN LoginAdTask");
-            }
-
-            foreach (JObject result in jResult["value"])
-            {
+           string boole = await responsMessage.Content.ReadAsStringAsync();
+       
+            if(boole == "true")
                 return new XlentAuthResult()
                 {
-                    RefreshToken = (string) result["RefreshToken"],
-                    IdToken = (string) result["IdToken"]
+                    RefreshToken = "No Token at this Time",
+                    IdToken = "No Token at this Time",
+                    AccessToken = "No Token at this Time"
                 };
-            }
+            
+            
             throw new Exception("Unkown error in loginadtask");
         }
 
@@ -67,14 +49,25 @@ namespace XamarinAzureAD.Services
             throw new NotImplementedException();
         }
 
-        public Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync()
+        public async Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync(string username, string password)
         {
-            throw new NotImplementedException();
+            //AC WITH TENANT ID
+            //AuthenticationContext ac = new AuthenticationContext("https://login.windows.net/d020f655-3b3b-4c7e-bb9a-97466a58e617", false);
+
+
+            //var _nativeClientId = "a68b3653-b125-46a6-9715-afd741873ad5";
+            //var _internalClientId = "7342a457-a4b1-4bdc-8dba-e51462f45c6a";
+
+
+            HttpClient client = new HttpClient();
+            HttpRequestMessage request = new HttpRequestMessage(
+              HttpMethod.Get, "https://microsoft-apiapp98fa1f47749147b6bde310c5721cc7be.azurewebsites.net/api/News/GetNews/5");
+
+            HttpResponseMessage response = await client.SendAsync(request);
+            string responseString = await response.Content.ReadAsStringAsync();
+            var obj = JsonConvert.DeserializeObject<ObservableCollection<ObservableNews>>(responseString);
+            return obj;
         }
 
-        public Task<ObservableCollection<ObservableUser>> GetUserTaskAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

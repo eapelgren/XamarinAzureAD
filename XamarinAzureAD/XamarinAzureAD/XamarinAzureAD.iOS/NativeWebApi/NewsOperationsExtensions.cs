@@ -7,15 +7,15 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Rest;
-using XamarinAzureAD.Droid;
-using XamarinAzureAD.Droid.Models;
+using XamarinAzureAD.iOS;
+using XamarinAzureAD.iOS.Models;
 
-namespace XamarinAzureAD.Droid
+namespace XamarinAzureAD.iOS
 {
     public static partial class NewsOperationsExtensions
     {
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.INewsOperations.
+        /// Reference to the XamarinAzureAD.iOS.INewsOperations.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -33,7 +33,7 @@ namespace XamarinAzureAD.Droid
         }
         
         /// <param name='operations'>
-        /// Reference to the XamarinAzureAD.Droid.INewsOperations.
+        /// Reference to the XamarinAzureAD.iOS.INewsOperations.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -46,7 +46,7 @@ namespace XamarinAzureAD.Droid
         /// </param>
         public static async Task<IList<News>> GetNewsAsync(this INewsOperations operations, string id, string token, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IList<XamarinAzureAD.Droid.Models.News>> result = await operations.GetNewsWithOperationResponseAsync(id, token, cancellationToken).ConfigureAwait(false);
+            Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IList<XamarinAzureAD.iOS.Models.News>> result = await operations.GetNewsWithOperationResponseAsync(id, token, cancellationToken).ConfigureAwait(false);
             return result.Body;
         }
     }

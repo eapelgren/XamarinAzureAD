@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 
-namespace XamarinAzureAD.Droid.Models
+namespace XamarinAzureAD.iOS.Models
 {
     public partial class News
     {

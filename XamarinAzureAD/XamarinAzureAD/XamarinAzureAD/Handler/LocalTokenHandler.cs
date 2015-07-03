@@ -53,7 +53,7 @@ namespace XamarinAzureAD.Handler
 
         public Task<XlentAuthResult> GetXlentAuthResult()
         {
-           return Resolver.Resolve<IAzureRestService>().LoginAdTaskAsync(GetRefreshToken());
+           return Resolver.Resolve<IAuthenticationProvider>().LoginAdTaskAsync(GetRefreshToken());
         }
 
         public void SetRefreshToken(string refreshToken)

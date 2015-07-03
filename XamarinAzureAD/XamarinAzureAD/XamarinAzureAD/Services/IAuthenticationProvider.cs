@@ -10,13 +10,11 @@ using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Services
 {
-    public interface IAzureRestService
+    public interface IAuthenticationProvider
     {
         Task<XlentAuthResult> LoginAdTaskAsync(string username, string password);
 
         Task<XlentAuthResult> LoginAdTaskAsync(string refreshToken);
-
-        Task<ObservableCollection<ObservableNews>> GetNewsTaskAsync(string username, string password);
 
     }
 }

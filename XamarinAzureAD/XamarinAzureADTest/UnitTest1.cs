@@ -21,14 +21,11 @@ namespace XamarinAzureADTest
         {
             Task.Run(async () =>
             {
-                var news = await new XlentAzureRestServicePCL().GetNewsTaskAsync(_username, _password);
-
-                foreach (ObservableNews newse in news)
-                {
-                    Debug.WriteLine(newse.Header);
-                }
-                Debug.WriteLine(news);
-                Assert.IsNotNull(news);
+            
+                var news = await new NewsProvider().GetNewsTaskAsync(_username, _password);
+                Debug.WriteLine(news.Count);
+                Assert.IsTrue(news.Count > 5);                
+            
             }).GetAwaiter().GetResult();
 
 

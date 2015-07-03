@@ -10,9 +10,9 @@
       VerticalOptions="Center"
       Font="35"
       HorizontalOptions="Center" />
-    <ScrollView>
+    <ScrollView BackgroundColor="Gray">
       <StackLayout>
-        <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" SeparatorVisibility="None" HasUnevenRows="true">
+        <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true">
           <ListView.ItemTemplate>
             <DataTemplate>
               <NewsCell:NewsListCell></NewsCell:NewsListCell>

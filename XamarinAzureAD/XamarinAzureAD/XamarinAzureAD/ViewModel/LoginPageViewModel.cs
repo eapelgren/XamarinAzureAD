@@ -127,7 +127,7 @@ namespace XamarinAzureAD.ViewModel
             try
             {
                 var i = 0;
-                var adService = Resolver.Resolve<IAzureRestService>();
+                var adService = Resolver.Resolve<IAuthenticationProvider>();
                 XlentAuthResult loginAuthResponse =
                     await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
 

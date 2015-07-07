@@ -15,6 +15,5 @@ namespace XamarinAzureAD.Services
         Task<XlentAuthResult> LoginAdTaskAsync(string username, string password);
 
         Task<XlentAuthResult> LoginAdTaskAsync(string refreshToken);
-
     }
 }

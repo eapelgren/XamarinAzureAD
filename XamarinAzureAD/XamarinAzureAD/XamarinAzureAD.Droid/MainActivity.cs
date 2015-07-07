@@ -69,7 +69,9 @@ namespace XamarinAzureAD.Droid
                 .Register<ITextToSpeechService, TextToSpeechService>()
                 .Register<IDependencyContainer>(resolverContainer)
                 .Register<IXFormsApp>(app)
-                .Register<ISecureStorage>(t => new KeyVaultStorage(t.Resolve<IDevice>().Id.ToCharArray()));
+                .Register<ISecureStorage>(t => new KeyVaultStorage(t.Resolve<IDevice>().Id.ToCharArray()))
+                .Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>()
+                .Register<INewsProvider, NewsProvider>();
                 //.Register<ISimpleCache>(
                 //    t => new SQLiteSimpleCache(new SQLitePlatformAndroid(),
                 //        new SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));

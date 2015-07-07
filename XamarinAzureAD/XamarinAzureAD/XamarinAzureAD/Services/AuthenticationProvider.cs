@@ -24,24 +24,22 @@ namespace XamarinAzureAD.Services
             var client = new HttpClient();
 
             JObject jResult;
-         
-                var responsMessage = await client.GetAsync(
+
+            var responsMessage = await client.GetAsync(
                     String.Format(
-                        "https://microsoft-apiapp98fa1f47749147b6bde310c5721cc7be.azurewebsites.net/api/Login/GetByUsernamePassword?username={0}&password={1}",
+                        "https://microsoft-apiapp98fa1f47749147b6bde310c5721cc7be.azurewebsites.net/api/Login/UsernamePassword?username={0}&password={1}",
                         username, password));
 
-           string boole = await responsMessage.Content.ReadAsStringAsync();
-       
-            if(boole == "true")
-                return new XlentAuthResult()
+            string response = await responsMessage.Content.ReadAsStringAsync();
+
+                
+            return new XlentAuthResult()
                 {
                     RefreshToken = "No Token at this Time",
                     IdToken = "No Token at this Time",
                     AccessToken = "No Token at this Time"
                 };
-            
-            
-            throw new Exception("Unkown error in loginadtask");
+;
         }
 
         public Task<XlentAuthResult> LoginAdTaskAsync(string token)

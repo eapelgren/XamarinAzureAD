@@ -62,8 +62,8 @@ namespace XamarinAzureAD.iOS
                 .Register<ISecureStorage, SecureStorage>()
                 .Register<IDependencyContainer>(t => resolverContainer)
                 .Register<IAuthenticationProvider, AuthenticationProvider>()
-                .Register<INewsProvider, NewsProvider>();
-            
+                .Register<INewsProvider, NewsProvider>()
+                .Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>();
                 //.Register<ISimpleCache>(
                 //    t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
                 //        new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));

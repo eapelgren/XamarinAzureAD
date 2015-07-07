@@ -57,28 +57,37 @@ namespace XamarinAzureAD.Controlls
                 {
                     circleProfileImage,
                     nameDateStackView
-                }
+                },
+                Padding = new Thickness(3,6,3,6)
             };
 
             #endregion
 
             #region newsPostView
 
-            var newsPostImage = new ImageGallery()
+            var newsPostImage = new Image()
             {
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.Start,
-                ItemsSource = {}
-                
             };
             newsPostImage.SetBinding(Image.SourceProperty, new Binding("PictureUri"));
 
+            var newsPostImageView = new ContentView()
+            {
+                Content = newsPostImage,
+                Padding = new Thickness(0,0,0,6)
+            };
+
             var newsPostText = new Label
             {
-                Text =
-                    "Lorem ipsum dolor sit amet, ea sit animal luptatum, ea oratio electram philosophia quo, pro eu ignota putant recteque. Cu vel invidunt forensibus, ad sea numquam inermis reprehendunt. Ut melius eripuit usu, utinam ornatus est in. Enim vitae habemus nam in, ei tincidunt necessitatibus est, dolor postea everti qui an. Consul perfecto has an, eu his velit adversarium.",
                 FontSize = Device.GetNamedSize(NamedSize.Micro, typeof (Label)),
                 FontFamily = "Verdana"
+            };
+            newsPostText.SetBinding(Label.TextProperty, new Binding("Description"));
+
+            var newsPostTextView = new ContentView()
+            {
+                Content = newsPostText
             };
 
 
@@ -87,8 +96,8 @@ namespace XamarinAzureAD.Controlls
                 Orientation = StackOrientation.Vertical,
                 Children =
                 {
-                    newsPostText,
-                    newsPostImage
+                    newsPostTextView,
+                    newsPostImageView,
                 }
             };
 

@@ -119,18 +119,16 @@ namespace XamarinAzureAD.ViewModel
         private void LogginButtonClicked()
         {
             IsLoading = true;
-            LoginToAzure();
+            LoginToAzureNavigateToNewsPage();
         }
 
-        private async void LoginToAzure()
+        private async void LoginToAzureNavigateToNewsPage()
         {
             try
             {
-                var i = 0;
                 var adService = Resolver.Resolve<IAuthenticationProvider>();
                 XlentAuthResult loginAuthResponse =
                     await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
-
                 var tokenHandler = new LocalTokenHandler();
                 tokenHandler.SetAccessToken(loginAuthResponse.AccessToken);
                 tokenHandler.SetRefreshToken(loginAuthResponse.RefreshToken);

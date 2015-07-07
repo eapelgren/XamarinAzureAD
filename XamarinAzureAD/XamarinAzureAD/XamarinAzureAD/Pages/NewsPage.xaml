@@ -3,8 +3,8 @@
              xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
              xmlns:NewsCell="clr-namespace:XamarinAzureAD.Controlls;assembly=XamarinAzureAD"
   x:Class="XamarinAzureAD.Pages.NewsPage"
-  BackgroundColor="White">
-  <StackLayout VerticalOptions="FillAndExpand" Padding="5,20,5,0" >
+  BackgroundColor="White"> 
+ <StackLayout VerticalOptions="FillAndExpand" Padding="5,20,5,0" >
     <Label
       Text="News"
       VerticalOptions="Center"

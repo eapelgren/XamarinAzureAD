@@ -59,15 +59,11 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _authorName, value); }
         }
 
-        private string _datePosted;
+        private DateTime _datePosted;
 
-        public string DatePosted
+        public DateTime DatePosted
         {
-
-            get
-            {
-                return _datePosted ?? (_datePosted = "Yesterday at 08:30");
-            }
+            get { return _datePosted; }
             set { SetProperty(ref _datePosted, value); }
         }
 

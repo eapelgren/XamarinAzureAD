@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
 
@@ -75,7 +76,7 @@ namespace XamarinAzureAD.Controlls
             var newsPostImageView = new ContentView()
             {
                 Content = newsPostImage,
-                Padding = new Thickness(0,0,0,6)
+                Padding = new Thickness(0,0,0,6),
             };
 
             var newsPostText = new Label
@@ -114,6 +115,12 @@ namespace XamarinAzureAD.Controlls
                     profileHeaderView,
                     newsPostView,
                 },
+            };
+
+            var tapGestureRecongnizer = new TapGestureRecognizer();
+            tapGestureRecongnizer.Tapped += (sender, args) =>
+            {
+
             };
 
             View = cell;

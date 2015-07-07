@@ -28,7 +28,7 @@ namespace XamarinAzureAD
         public static Page GetMainPage()
         {
             //REGISTER VM:S AND PAGES
-            ViewFactory.Register<LoginPage, LoginPageViewModel>();
+            ViewFactory.Register<LoginPage3, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
 
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;

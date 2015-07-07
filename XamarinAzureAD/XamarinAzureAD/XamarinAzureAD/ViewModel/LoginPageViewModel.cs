@@ -15,26 +15,17 @@ namespace XamarinAzureAD.ViewModel
 {
     internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
+        public LoginPageViewModel()
+        {
+            ErrorHasOccoured = false;
+        }
+
         private bool _isLoading;
 
         public bool IsLoading
         {
             get { return _isLoading; }
             set { SetProperty(ref _isLoading, value); }
-        }
-
-        private Label _logoLabel;
-
-        public Label LogoLabel
-        {
-            get
-            {
-                return _logoLabel ?? (_logoLabel = new Label
-                {
-                    Text = "LOGO COMPANY..."
-                });
-            }
-            set { SetProperty(ref _logoLabel, value); }
         }
 
         private Entry _usernameEntry;
@@ -87,7 +78,11 @@ namespace XamarinAzureAD.ViewModel
             {
                 try
                 {
-                return new Command(LogginButtonClicked);
+                return new Command(() =>
+                {
+                    IsLoading = true;
+                    LoginToAzureNavigateToNewsPage();
+                });
 
                 }
                 catch (Exception ee)
@@ -111,16 +106,38 @@ namespace XamarinAzureAD.ViewModel
         //}
 
 
-		
+        private Label _errorLabel;
 
-		
-
-
-        private void LogginButtonClicked()
+        public Label ErrorLabel
         {
-            IsLoading = true;
-            LoginToAzureNavigateToNewsPage();
+            get
+            {
+                return _errorLabel ?? (_errorLabel = new Label()
+                {
+                    Text = "Enter Username Password",
+                    IsVisible = ErrorHasOccoured
+                });
+            }
+            set { SetProperty(ref _errorLabel, value); }
         }
+
+        public bool ErrorHasOccoured;
+
+        private StackLayout _baseStack;
+
+        public StackLayout BaseStack
+        {
+
+            get
+            {
+                return _baseStack ?? (_baseStack = new StackLayout()
+                {
+                    VerticalOptions = LayoutOptions.CenterAndExpand
+                });
+            }
+            set { SetProperty(ref _baseStack, value); }
+        }
+
 
         private async void LoginToAzureNavigateToNewsPage()
         {
@@ -135,11 +152,11 @@ namespace XamarinAzureAD.ViewModel
             }
             catch (Exception ee)
             {
-                Debug.WriteLine("ERROR IN LOGIN TO AZURE");
-                throw;
+                ErrorHasOccoured = true;
+                ErrorLabel.Text = "Invalid Username or Password";
+                Debug.WriteLine("ERROR IN LOGIN TO AZURE" + ee.Message);
+                return;
             }
-
-
             var newsPage = ViewFactory.CreatePage<NewsPageViewModel, Page>() as Page;
             var navPage = new NavigationPage(newsPage);
 

@@ -168,6 +168,7 @@
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
+    <AndroidResource Include="Resources\drawable\xlent_rgb.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinAzureAD\XamarinAzureAD.csproj">

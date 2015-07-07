@@ -10,7 +10,14 @@
                  Android="0, 0, 0, 0"
                  WinPhone="0, 0, 0, 0" />
   </mvvm:BaseView.Padding>
-  <StackLayout>
+  <AbsoluteLayout VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+    <BoxView    AbsoluteLayout.LayoutBounds="0.25, 0.25, 0.5, 0.5"
+                Color="Blue"
+                AbsoluteLayout.LayoutFlags="All" />
+   <StackLayout AbsoluteLayout.LayoutBounds="0.1, 0.1, 0.7, 0.7"
+                Color="Blue"
+                AbsoluteLayout.LayoutFlags="All">
     <ContentView Padding="50,50,50,50">
     <Image VerticalOptions="CenterAndExpand" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"
       Source="https://www.xlent.se/wp-content/themes/xlent/images/logo-xcg.png"></Image>
@@ -30,4 +37,6 @@
       <Button Text="{Binding LoginButton.Text}" Command="{Binding LoginCommand}"></Button>
     </StackLayout>
   </StackLayout>
+ </AbsoluteLayout>
+
 </mvvm:BaseView>

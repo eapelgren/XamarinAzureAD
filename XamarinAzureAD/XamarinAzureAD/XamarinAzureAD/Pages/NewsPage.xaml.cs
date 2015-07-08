@@ -15,6 +15,7 @@ namespace XamarinAzureAD.Pages
     {
         public NewsPage()
         {
+            this.Title = "NewsPage";
             BindingContext = new NewsPageViewModel();
             InitializeComponent();
         }

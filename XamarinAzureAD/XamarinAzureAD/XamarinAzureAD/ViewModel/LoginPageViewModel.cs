@@ -30,7 +30,7 @@ namespace XamarinAzureAD.ViewModel
 
         private Entry _usernameEntry;
 
-        public Entry UsernameEntry
+        public Entry EmailEntry
         {
             get
             {
@@ -145,7 +145,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 var adService = Resolver.Resolve<IAuthenticationProvider>();
                 XlentAuthResult loginAuthResponse =
-                    await adService.LoginAdTaskAsync(UsernameEntry.Text, PasswordEntry.Text);
+                    await adService.LoginAdTaskAsync(EmailEntry.Text, PasswordEntry.Text);
                 var tokenHandler = new LocalTokenHandler();
                 tokenHandler.SetAccessToken(loginAuthResponse.AccessToken);
                 tokenHandler.SetRefreshToken(loginAuthResponse.RefreshToken);

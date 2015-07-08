@@ -53,6 +53,7 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _location, value); }
         }
 
+        
         private string _telephoneNumber;
 
         public string TelephoneNumber
@@ -65,20 +66,31 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _telephoneNumber, value); }
         }
 
-        private Image _image;
+        
+        private Uri _authorImageUri;
 
-        public Image Image
+        public Uri AuthorImageUri
+
         {
 
             get
             {
-                return _image ?? (_image = new Image()
-                {
-                    Source = "http://seniorcapital.eu/wp-content/themes/patus/images/no-image-half-landscape.png"
-                });
+                return _authorImageUri ??
+                       (_authorImageUri =
+                           new Uri("http://seniorcapital.eu/wp-content/themes/patus/images/no-image-half-landscape.png"));
             }
-            set { SetProperty(ref _image, value); }
+            set { SetProperty(ref _authorImageUri, value); }
         }
+
+        
+        private int _id;
+
+        public int Id
+        {
+            get { return _id; }
+            set { SetProperty(ref _id, value); }
+        }		
+
         
         public string error { get; set; }
     }

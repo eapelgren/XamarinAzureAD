@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using XamarinAzureAD.Model;
+using XamarinAzureAD.ViewModel;
+using XLabs.Forms.Behaviors;
 using XLabs.Forms.Controls;
+using XLabs.Forms.Services;
+using XLabs.Ioc;
+using XLabs.Platform.Services;
 
 namespace XamarinAzureAD.Controlls
 {
@@ -28,7 +34,7 @@ namespace XamarinAzureAD.Controlls
                 FontAttributes = FontAttributes.None,
                 VerticalOptions = LayoutOptions.Center
             };
-            authorName.SetBinding(Label.TextProperty, new Binding("AuthorName"));
+            authorName.SetBinding(Label.TextProperty, new Binding("AuthorUser.DisplayName"));
 
             var datePosted =
                 new Label
@@ -50,6 +56,13 @@ namespace XamarinAzureAD.Controlls
                 },
             };
 
+            var headerTapGestureRecongnizer = new TapGestureRecognizer();
+            headerTapGestureRecongnizer.Tapped += (sender, args) =>
+            {
+                var navigation = Resolver.Resolve<INavigationService>();
+                var p = 2;
+            };
+
             var profileHeaderView = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal,
@@ -59,8 +72,10 @@ namespace XamarinAzureAD.Controlls
                     circleProfileImage,
                     nameDateStackView
                 },
-                Padding = new Thickness(3,6,3,6)
+                Padding = new Thickness(3,6,3,6),
             };
+            profileHeaderView.SetBinding(StackLayout.ClassIdProperty, new Binding("AuthorUser.Id"));
+            profileHeaderView.GestureRecognizers.Add(headerTapGestureRecongnizer);
 
             #endregion
 
@@ -117,13 +132,16 @@ namespace XamarinAzureAD.Controlls
                 },
             };
 
-            var tapGestureRecongnizer = new TapGestureRecognizer();
-            tapGestureRecongnizer.Tapped += (sender, args) =>
-            {
 
-            };
+            #region gestures
+
+   
+            #endregion
+
 
             View = cell;
         }
     }
+
+   
 }

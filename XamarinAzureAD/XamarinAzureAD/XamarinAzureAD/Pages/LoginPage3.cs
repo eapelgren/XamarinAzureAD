@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 using XamarinAzureAD.ViewModel;
-using XLabs.Forms.Controls;
 using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.Pages
@@ -15,10 +10,12 @@ namespace XamarinAzureAD.Pages
         public LoginPage3()
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            BindingContext = new LoginPageViewModel();
-            this.Padding = new Thickness(0,Device.OnPlatform(20,0,0),0,0);
+            var vm = new LoginPageViewModel();
+            BindingContext = vm;
 
-            var imageLogo = new Image()
+            Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
+
+            var imageLogo = new Image
             {
                 VerticalOptions = LayoutOptions.End,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -26,55 +23,53 @@ namespace XamarinAzureAD.Pages
                 Source = "xlent_rgb",
             };
 
-            var logoImageContentView = new ContentView()
+            var logoImageContentView = new ContentView
             {
                 Content = imageLogo,
-                Padding = new Thickness(0,10,0,10)
+                Padding = new Thickness(0, 10, 0, 10)
             };
 
-            var emailEntry = new Entry()
+            var emailEntry = new Entry
             {
-                Placeholder = "email",
-                BackgroundColor = Color.White,
-                TextColor = Color.Black,
+                Placeholder = "email"
             };
-            emailEntry.SetBinding(Entry.TextProperty, new Binding("UsernameEntry.Text"));
+            emailEntry.SetBinding(Entry.TextProperty, new Binding("EmailEntry.Text"));
 
+            //var passwordEntry = new Entry
+            //{
+            //    IsPassword = true,
+            //    Placeholder = "password",
+            //    BackgroundColor = Color.White,
+            //    TextColor = Color.Black,
+            //};
 
-            var passwordEntry = new Entry()
-            {
-                IsPassword = true,
-                Placeholder = "password",
-                BackgroundColor = Color.White,
-                TextColor = Color.Black,
-            };
-            passwordEntry.SetBinding(Entry.TextProperty, new Binding("PasswordEntry.Text"));
+            var passwordEntry = vm.PasswordEntry;
 
-            var entryStack = new StackLayout()
+            var entryStack = new StackLayout
             {
                 Children =
                 {
                     emailEntry,
                     passwordEntry,
                 },
-                Padding = new Thickness(5,0,5,0),
+                Padding = new Thickness(5, 0, 5, 0),
                 VerticalOptions = LayoutOptions.Center
             };
 
-            var errorLabel = new Label()
+            var errorLabel = new Label
             {
                 TextColor = Color.Red,
             };
             errorLabel.SetBinding(Label.TextProperty, new Binding("ErrorLabel.Text"));
-            errorLabel.SetBinding(Label.IsVisibleProperty, new Binding("ErrorLabel.IsVisible"));
+            errorLabel.SetBinding(IsVisibleProperty, new Binding("ErrorLabel.IsVisible"));
 
-            var loginbutton = new Button()
+            var loginbutton = new Button
             {
                 Text = "Login",
             };
             loginbutton.SetBinding(Button.CommandProperty, new Binding("LoginCommand"));
 
-            var baseStack = new StackLayout()
+            var baseStack = new StackLayout
             {
                 Children =
                 {
@@ -83,7 +78,7 @@ namespace XamarinAzureAD.Pages
                     errorLabel,
                     loginbutton,
                 },
-                Padding = new Thickness(10,5,10,5),
+                Padding = new Thickness(10, 5, 10, 5),
                 Spacing = 10,
                 BackgroundColor = Color.White,
                 VerticalOptions = LayoutOptions.CenterAndExpand
@@ -95,9 +90,9 @@ namespace XamarinAzureAD.Pages
             passwordEntry.Unfocused += (sender, args) => baseStack.VerticalOptions = LayoutOptions.CenterAndExpand;
 
 
-
-            this.BackgroundColor = Color.White;
+            BackgroundColor = Color.White;
             Content = baseStack;
         }
+ 
     }
 }

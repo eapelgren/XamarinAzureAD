@@ -19,12 +19,12 @@
                 Color="Blue"
                 AbsoluteLayout.LayoutFlags="All">
     <ContentView Padding="50,50,50,50">
-    <Image VerticalOptions="CenterAndExpand" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"
-      Source="https://www.xlent.se/wp-content/themes/xlent/images/logo-xcg.png"></Image>
+    <AuthorImage VerticalOptions="CenterAndExpand" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"
+      Source="https://www.xlent.se/wp-content/themes/xlent/images/logo-xcg.png"></AuthorImage>
     </ContentView>
     <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}"></ActivityIndicator>
     <StackLayout Padding="60,60,60,60">
-      <Entry Placeholder="email" BackgroundColor="White" TextColor="Black" Text="{Binding UsernameEntry.Text}"></Entry>
+      <Entry Placeholder="email" BackgroundColor="White" TextColor="Black" Text="{Binding EmailEntry.Text}"></Entry>
       <Entry IsPassword="True" Placeholder="password" BackgroundColor="White" TextColor="Black" Text="{Binding PasswordEntry.Text}">
         <!--<Entry.GestureRecognizer>
           <TapGestureRecognizer Command="{Binding EntryTapCommand}">

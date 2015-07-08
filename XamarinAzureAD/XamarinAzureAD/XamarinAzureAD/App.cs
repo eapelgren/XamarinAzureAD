@@ -32,8 +32,7 @@ namespace XamarinAzureAD
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
 
             var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
-            var navPage = new NavigationPage(mainPage);
-
+            var navPage = new NavigationPage(new MainTabbedContainer());
             //SHOULD BE NAVPAGE
             return navPage;
         }

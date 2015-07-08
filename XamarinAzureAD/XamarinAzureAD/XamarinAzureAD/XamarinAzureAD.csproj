@@ -47,12 +47,17 @@
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MainTabbedContainer.xaml.cs">
+      <DependentUpon>MainTabbedContainer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterDetailNewsPage.cs" />
     <Compile Include="Pages\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SelectedNewsView.cs" />
-    <Compile Include="Pages\TabbedPage.cs" />
+    <Compile Include="Pages\UsersPage.xaml.cs">
+      <DependentUpon>UsersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HttpHeaderProviderMocked.cs" />
     <Compile Include="Services\IHttpHeaderAuthenticator.cs" />
@@ -64,6 +69,7 @@
     </Compile>
     <Compile Include="ViewModel\NewsPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\SelectedItemViewModel.cs" />
     <Compile Include="ViewModel\SelectedNewsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlls\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\MainTabbedContainer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UsersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -34,29 +34,19 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _pictureUri, value); }
         }
 
-        private Uri _authorPicUri;
+        private ObservableUser _authorUser;
 
-        public Uri AuthorPicUri
+        public ObservableUser AuthorUser
         {
+
             get
             {
-                return _authorPicUri ??
-                       (_authorPicUri =
-                           new Uri(
-                               "http://m.c.lnkd.licdn.com/mpr/pub/image-Z3Vejnj3qgjZz0NQvfjLVRjU_HtXiw8YNa5LaS13b5bBjC3wU3VLar4gbVsEjVaHNr1/fredrik-tonn.jpg"));
+                return _authorUser ?? (_authorUser = new ObservableUser()
+                {
+                    error = "No User Set"
+                });
             }
-            set { SetProperty(ref _authorPicUri, value); }
-        }
-
-        private string _authorName;
-
-        public string AuthorName
-        {
-            get
-            {
-                return _authorName ?? (_authorName = "Fredrik Tonn");
-            }
-            set { SetProperty(ref _authorName, value); }
+            set { SetProperty(ref _authorUser, value); }
         }
 
         private DateTime _datePosted;
@@ -66,17 +56,7 @@ namespace XamarinAzureAD.Model
             get { return _datePosted; }
             set { SetProperty(ref _datePosted, value); }
         }
-
-
-		
-
-		
-
-
-
-		
-
-		
+    	
 
     }
 }

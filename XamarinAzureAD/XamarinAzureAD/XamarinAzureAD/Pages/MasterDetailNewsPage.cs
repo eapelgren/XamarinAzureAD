@@ -12,8 +12,16 @@ namespace XamarinAzureAD.Pages
     {
         public MasterDetailNewsPage()
         {
-            this.Detail = new ContentPage();
-            this.Master = new ContentPage();
+            this.Title = "MasterDetail";
+            this.Master = new ContentPage()
+            {
+                BackgroundColor = Color.Gray,
+                Title = "Gray Content"
+                
+            };
+
+            this.Detail = new NewsPage();
+
         }
     }
 }

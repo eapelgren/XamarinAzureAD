@@ -1,0 +1,3 @@
+[submodule "XlentRestDTO"]
+	path = XlentRestDTO
+	url = https://github.com/xlent-bi/XlentRestDTO

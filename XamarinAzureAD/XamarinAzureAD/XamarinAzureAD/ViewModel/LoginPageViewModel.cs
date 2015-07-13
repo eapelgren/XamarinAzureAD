@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
 using XamarinAzureAD.Model;
-using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
 using XLabs.Ioc;

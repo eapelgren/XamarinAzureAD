@@ -6,7 +6,6 @@ using System.Text;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
-using XamarinAzureAD.Services;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;

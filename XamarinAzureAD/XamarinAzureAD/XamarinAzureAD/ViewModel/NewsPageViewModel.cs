@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
-
-using XamarinAzureAD.Services;
 using XLabs.Ioc;
 
 namespace XamarinAzureAD.ViewModel
@@ -26,19 +19,20 @@ namespace XamarinAzureAD.ViewModel
         public ObservableCollection<ObservableNews> ObservableNews
         {
 
-            get { return _observableNews ?? (_observableNews = GetNews()); }
+            get { return _observableNews ?? (_observableNews = new ObservableCollection<ObservableNews>()); }
             set { SetProperty(ref _observableNews, value); }
         }
 
-        private ObservableCollection<ObservableNews> GetNews()
+        private async Task<ObservableCollection<ObservableNews>> GetNews()
         {
             isLoading = true;
             var list = new ObservableCollection<ObservableNews>();
             Debug.WriteLine("COLLECTING NEWS");
-            Resolver.Resolve<INewsProvider>().GetNewsTaskAsync("test1@xlentwebapi.onmicrosoft.com", "newPassword1").ContinueWith(task =>
-            {
-                ObservableNews = task.Result;
-            });
+            var observableNewsList = new ObservableCollection<ObservableNews>();
+            var newsProvider = Resolver.Resolve<INewsProvider>();
+            var userProvider = Resolver.Resolve<IUserProvider>()
+        }
+   
             isLoading = false;
             return list;
         }

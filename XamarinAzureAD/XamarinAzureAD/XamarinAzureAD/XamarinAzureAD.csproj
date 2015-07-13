@@ -59,16 +59,6 @@
       <DependentUpon>UsersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\HttpHeaderProviderMocked.cs" />
-    <Compile Include="Services\IHttpHeaderAuthenticator.cs" />
-    <Compile Include="Services\IAuthenticationProvider.cs" />
-    <Compile Include="Services\INewsProvider.cs" />
-    <Compile Include="Services\NewsProvider.cs" />
-    <Compile Include="Services\AuthenticationProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\ReadNewsProvider.cs" />
-    <Compile Include="Services\UserProvider.cs" />
     <Compile Include="ViewModel\NewsPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\SelectedItemViewModel.cs" />
@@ -154,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlls\Views\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainTabbedContainer.xaml">
@@ -166,6 +157,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\XlentRestApiService\XlentRestDTO\DTOModel.csproj">
+      <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
+      <Name>DTOModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

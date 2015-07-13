@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 using XamarinAzureAD.Model;
-
-using XamarinAzureAD.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
 

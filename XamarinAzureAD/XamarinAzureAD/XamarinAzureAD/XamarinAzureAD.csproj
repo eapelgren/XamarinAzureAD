@@ -67,6 +67,8 @@
     <Compile Include="Services\AuthenticationProvider.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\ReadNewsProvider.cs" />
+    <Compile Include="Services\UserProvider.cs" />
     <Compile Include="ViewModel\NewsPageViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\SelectedItemViewModel.cs" />

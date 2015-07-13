@@ -1,0 +1,27 @@
+FontName (FranklinGothic-MediumItal)
+FullName (ITC Franklin Gothic Medium Italic)
+AppleName (ITC Franklin Gothic MedIt)
+AppleFONDID 4760
+FamilyName (ITC Franklin Gothic)
+version (001.000)
+isFixedPitch false
+CharacterSet (isoadobe)
+Encoding (StandardEncoding)
+ItalicAngle -9.5
+CapHeight 667
+UnderlinePosition -100
+UnderlineThickness 50
+StemWidth 111
+Serif false
+Pi false
+SuperiorBaseline 267
+MSMenuName (ITC Franklin Gothic Med)
+VPMenuName (ITC Franklin Gothic Med)
+WORDMenuName (ITCFranklinGothicMed)
+VPTypefaceID 1579
+VPStyle (I)
+PCFileNamePrefix (FRMI_)
+PCLTypefaceID 20801
+PCLStrokeWeight 0
+PCLStyle 1
+

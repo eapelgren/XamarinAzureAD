@@ -1,0 +1,27 @@
+FontName (FranklinGothic-HeavyOblique)
+FullName (ITC Franklin Gothic Heavy Oblique)
+AppleName (ITC Franklin Gothic HeavyObl)
+AppleFONDID 14931
+FamilyName (ITC Franklin Gothic)
+version (001.002)
+isFixedPitch false
+CharacterSet (isoadobe)
+Encoding (StandardEncoding)
+ItalicAngle -11
+CapHeight 686
+UnderlinePosition -100
+UnderlineThickness 50
+StemWidth 198
+Serif false
+Pi false
+SuperiorBaseline 278
+MSMenuName (ITC Franklin Gothic HeavyObl)
+VPMenuName (ITC Franklin Gothic HeavyObl)
+WORDMenuName (ITCFranklinGothicHeavyObl)
+VPTypefaceID 1581
+VPStyle (N)
+PCFileNamePrefix (FRHO_)
+PCLTypefaceID 20801
+PCLStrokeWeight 4
+PCLStyle 1
+

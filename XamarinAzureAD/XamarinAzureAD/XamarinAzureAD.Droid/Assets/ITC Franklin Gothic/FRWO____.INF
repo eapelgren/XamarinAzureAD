@@ -1,0 +1,27 @@
+FontName (FranklinGothic-BookOblique)
+FullName (ITC Franklin Gothic Book Oblique)
+AppleName (ITC Franklin Gothic BookObl)
+AppleFONDID 14935
+FamilyName (ITC Franklin Gothic)
+version (001.003)
+isFixedPitch false
+CharacterSet (isoadobe)
+Encoding (StandardEncoding)
+ItalicAngle -11
+CapHeight 686
+UnderlinePosition -100
+UnderlineThickness 50
+StemWidth 78
+Serif false
+Pi false
+SuperiorBaseline 278
+MSMenuName (ITC Franklin Gothic BookObl)
+VPMenuName (ITC Franklin Gothic BookObl)
+WORDMenuName (ITCFranklinGothicBookObl)
+VPTypefaceID 1580
+VPStyle (N)
+PCFileNamePrefix (FRWO_)
+PCLTypefaceID 20801
+PCLStrokeWeight -1
+PCLStyle 1
+

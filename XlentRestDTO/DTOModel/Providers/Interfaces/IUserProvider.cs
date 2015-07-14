@@ -5,7 +5,7 @@ using DTOModel.Model;
 
 namespace DTOModel.Providers.Interfaces
 {
-    internal interface IUserProvider
+    public interface IUserProvider
     {
         Task<IEnumerable<IUserDTO>> GetUsersAsyncTask();
 

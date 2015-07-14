@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using DTOModel.Providers.Implementations;
+﻿using DTOModel.Providers.Implementations;
 using DTOModel.Providers.Interfaces;
+using System.IO;
+using XLabs.Forms.Services;
 using Foundation;
+using XLabs.Platform.Services;
+using XLabs.Platform.Services.Email;
+using XLabs.Platform.Services.Media;
 using UIKit;
-using XamarinAzureAD.Services;
+using Xamarin.Forms;
 using XLabs.Forms;
+using XLabs.Forms.Controls;
 using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
@@ -48,7 +50,6 @@ namespace XamarinAzureAD.iOS
 
             var app = new XFormsAppiOS();
             app.Init(this);
-
             var documents = app.AppDataDirectory;
             var pathToDatabase = Path.Combine(documents, "xlent.db");
 

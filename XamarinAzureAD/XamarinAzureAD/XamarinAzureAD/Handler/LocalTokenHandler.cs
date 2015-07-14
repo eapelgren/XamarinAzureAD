@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOModel.Model;
+using DTOModel.Providers.Interfaces;
 using XamarinAzureAD.Model;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
@@ -47,9 +49,9 @@ namespace XamarinAzureAD.Handler
             return "Unknown accessToken error";
         }
 
-        public Task<XlentAuthResult> GetXlentAuthResult()
+        public Task<IAuthenticationDTO> GetXlentAuthResult()
         {
-            return Resolver.Resolve<IAuthenticationProvider>().LoginAdTaskAsync(GetRefreshToken());
+            return Resolver.Resolve<IAuthenticationProvider>().GetTokensAsyncTask(GetRefreshToken());
         }
 
         public void SetRefreshToken(string refreshToken)

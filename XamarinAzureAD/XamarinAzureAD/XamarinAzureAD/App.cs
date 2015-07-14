@@ -1,10 +1,20 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.ViewModel;
+using XLabs.Forms.Controls;
 using XLabs.Forms.Mvvm;
 using XLabs.Ioc;
+using XLabs.Platform.Device;
 using XLabs.Platform.Mvvm;
+
 
 namespace XamarinAzureAD
 {

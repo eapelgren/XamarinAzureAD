@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Input;
+using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
 using XamarinAzureAD.Model;
@@ -136,8 +137,8 @@ namespace XamarinAzureAD.ViewModel
             try
             {
                 var adService = Resolver.Resolve<IAuthenticationProvider>();
-                XlentAuthResult loginAuthResponse =
-                    await adService.LoginAdTaskAsync(EmailEntry.Text, PasswordEntry.Text);
+                var loginAuthResponse =
+                    await adService.GetTokensAsyncTask(EmailEntry.Text, PasswordEntry.Text);
                 var tokenHandler = new LocalTokenHandler();
                 tokenHandler.SetAccessToken(loginAuthResponse.AccessToken);
                 tokenHandler.SetRefreshToken(loginAuthResponse.RefreshToken);

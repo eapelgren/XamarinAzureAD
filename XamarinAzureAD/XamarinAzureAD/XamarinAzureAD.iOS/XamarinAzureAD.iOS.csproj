@@ -112,6 +112,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\XlentRestDTO\DTOModel\DTOModel.csproj">
+      <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
+      <Name>DTOModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XamarinAzureAD\XamarinAzureAD.csproj">
       <Name>XamarinAzureAD</Name>
     </ProjectReference>
@@ -168,8 +172,8 @@
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.ObjectModel" />
+    <Reference Include="System.Runtime" />
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.3.6374\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>

@@ -5,7 +5,7 @@ using XLabs.Forms.Mvvm;
 namespace XamarinAzureAD.Pages
 {
     [ViewType(typeof (LoginPage))]
-    public class LoginPage : BaseView
+    public partial class LoginPage : BaseView
     {
         public LoginPage()
         {

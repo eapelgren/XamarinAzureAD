@@ -5,7 +5,7 @@ using XLabs.Forms.Mvvm;
 namespace XamarinAzureAD.Pages
 {
     [ViewType(typeof (NewsPage))]
-    public class NewsPage : BaseView
+    public partial class NewsPage : BaseView
     {
         public NewsPage()
         {

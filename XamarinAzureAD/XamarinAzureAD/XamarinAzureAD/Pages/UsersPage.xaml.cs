@@ -2,7 +2,7 @@
 
 namespace XamarinAzureAD.Pages
 {
-    public class UsersPage : ContentPage
+    public partial class UsersPage : ContentPage
     {
         public UsersPage()
         {

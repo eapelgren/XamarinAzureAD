@@ -2,7 +2,7 @@
 
 namespace XamarinAzureAD.Pages
 {
-    public class MainTabbedContainer : TabbedPage
+    public partial class MainTabbedContainer : TabbedPage
     {
         public MainTabbedContainer()
         {

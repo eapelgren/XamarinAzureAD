@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
+﻿using System.Diagnostics;
 using Xamarin.Forms;
-using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
-using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Mvvm;
-using XLabs.Platform.Services;
 
 namespace XamarinAzureAD
 {

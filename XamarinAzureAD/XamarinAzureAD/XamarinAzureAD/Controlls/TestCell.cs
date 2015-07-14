@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamarinAzureAD.Controlls
 {
@@ -11,11 +6,11 @@ namespace XamarinAzureAD.Controlls
     {
         public TestCell()
         {
-            var stackLayout = new StackLayout()
+            var stackLayout = new StackLayout
             {
                 Children =
                 {
-                    new Label()
+                    new Label
                     {
                         Text = "Test"
                     }

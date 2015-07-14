@@ -1,78 +1,58 @@
-﻿    using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using System;
 using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
     public class ObservableUser : ObservableObject
     {
-
+        private Uri _authorImageUri;
         private string _displayName;
+
+
+        private string _givenName;
+        private int _id;
+        private string _location;
+
+
+        private string _surname;
+        private string _telephoneNumber;
 
         public string DisplayName
         {
-
             get { return _displayName ?? (_displayName = ""); }
             set { SetProperty(ref _displayName, value); }
         }
 
-    
-        private string _givenName;
-
         public string GivenName
         {
-
             get { return _givenName ?? (_givenName = ""); }
             set { SetProperty(ref _givenName, value); }
         }
 
-
-        private string _surname;
-
         public string SurName
         {
-
             get { return _surname ?? (_surname = ""); }
             set { SetProperty(ref _surname, value); }
         }
 
 
-        private string _location;
-
         public string Location
         {
-
-            get
-            {
-                return _location ?? (_location = "");
-            }
+            get { return _location ?? (_location = ""); }
             set { SetProperty(ref _location, value); }
         }
 
-        
-        private string _telephoneNumber;
 
         public string TelephoneNumber
         {
-
-            get
-            {
-                return _telephoneNumber ?? (_telephoneNumber = "Not Listed");
-            }
+            get { return _telephoneNumber ?? (_telephoneNumber = "Not Listed"); }
             set { SetProperty(ref _telephoneNumber, value); }
         }
 
-        
-        private Uri _authorImageUri;
 
         public Uri AuthorImageUri
 
         {
-
             get
             {
                 return _authorImageUri ??
@@ -82,16 +62,14 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _authorImageUri, value); }
         }
 
-        
-        private int _id;
 
         public int Id
         {
             get { return _id; }
             set { SetProperty(ref _id, value); }
-        }		
+        }
 
-        
+
         public string error { get; set; }
     }
 }

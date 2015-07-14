@@ -6,14 +6,14 @@ using DTOModel.Providers.Interfaces;
 
 namespace DTOModel.Providers.Implementations
 {
-    internal class UserProvider : IUserProvider
+    public class UserProvider : IUserProvider
     {
         public Task<IEnumerable<IUserDTO>> GetUsersAsyncTask()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<IUserDTO>> GetUsersAsyncTask(Func<IUserDTO, bool> predict)
+        public Task<IEnumerable<IUserDTO>> GetUsersAsyncTask(string id)
         {
             throw new NotImplementedException();
         }

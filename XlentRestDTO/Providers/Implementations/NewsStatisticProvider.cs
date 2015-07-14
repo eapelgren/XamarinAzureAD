@@ -30,11 +30,7 @@ namespace DTOModel.Providers.Implementations
             var authenticatedRequest = await  _authenticationProvicer.AddBearerToRequestMessageAsyncTask(request);
    
             HttpResponseMessage response = await client.SendAsync(authenticatedRequest);
-            string responseString = await response.Content.ReadAsStringAsync();
 
-
-            var collection = JsonConvert.DeserializeObject<IEnumerable<INewsDTO>>(responseString);
-            return collection;
         }
     }
 }

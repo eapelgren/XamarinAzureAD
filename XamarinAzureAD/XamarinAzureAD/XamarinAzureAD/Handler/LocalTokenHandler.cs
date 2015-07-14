@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using XamarinAzureAD.Model;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
@@ -50,7 +49,7 @@ namespace XamarinAzureAD.Handler
 
         public Task<XlentAuthResult> GetXlentAuthResult()
         {
-           return Resolver.Resolve<IAuthenticationProvider>().LoginAdTaskAsync(GetRefreshToken());
+            return Resolver.Resolve<IAuthenticationProvider>().LoginAdTaskAsync(GetRefreshToken());
         }
 
         public void SetRefreshToken(string refreshToken)
@@ -66,7 +65,7 @@ namespace XamarinAzureAD.Handler
             }
             finally
             {
-                storage.Store("refreshToken", Encoding.UTF8.GetBytes(refreshToken));   
+                storage.Store("refreshToken", Encoding.UTF8.GetBytes(refreshToken));
             }
         }
 

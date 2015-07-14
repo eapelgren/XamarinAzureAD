@@ -13,20 +13,26 @@ namespace XamarinAzureAD.ViewModel
 {
     internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
+        public bool ErrorHasOccoured;
+
+        private StackLayout _baseStack;
+        private Label _errorLabel;
+        private bool _isLoading;
+        private Button _loginButton;
+        private Entry _passwordEntry;
+
+        private Entry _usernameEntry;
+
         public LoginPageViewModel()
         {
             ErrorHasOccoured = false;
         }
-
-        private bool _isLoading;
 
         public bool IsLoading
         {
             get { return _isLoading; }
             set { SetProperty(ref _isLoading, value); }
         }
-
-        private Entry _usernameEntry;
 
         public Entry EmailEntry
         {
@@ -40,8 +46,6 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _usernameEntry, value); }
         }
 
-        private Entry _passwordEntry;
-
         public Entry PasswordEntry
         {
             get
@@ -54,8 +58,6 @@ namespace XamarinAzureAD.ViewModel
             }
             set { SetProperty(ref _passwordEntry, value); }
         }
-
-        private Button _loginButton;
 
         public Button LoginButton
         {
@@ -76,12 +78,11 @@ namespace XamarinAzureAD.ViewModel
             {
                 try
                 {
-                return new Command(() =>
-                {
-                    IsLoading = true;
-                    LoginToAzureNavigateToNewsPage();
-                });
-
+                    return new Command(() =>
+                    {
+                        IsLoading = true;
+                        LoginToAzureNavigateToNewsPage();
+                    });
                 }
                 catch (Exception ee)
                 {
@@ -104,13 +105,11 @@ namespace XamarinAzureAD.ViewModel
         //}
 
 
-        private Label _errorLabel;
-
         public Label ErrorLabel
         {
             get
             {
-                return _errorLabel ?? (_errorLabel = new Label()
+                return _errorLabel ?? (_errorLabel = new Label
                 {
                     Text = "Enter Username Password",
                     IsVisible = ErrorHasOccoured
@@ -119,16 +118,11 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _errorLabel, value); }
         }
 
-        public bool ErrorHasOccoured;
-
-        private StackLayout _baseStack;
-
         public StackLayout BaseStack
         {
-
             get
             {
-                return _baseStack ?? (_baseStack = new StackLayout()
+                return _baseStack ?? (_baseStack = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.CenterAndExpand
                 });
@@ -166,4 +160,3 @@ namespace XamarinAzureAD.ViewModel
         }
     }
 }
-

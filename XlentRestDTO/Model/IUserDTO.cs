@@ -2,7 +2,7 @@
 
 namespace DTOModel.Model
 {
-    internal interface IUserDTO
+    public interface IUserDTO
     {
         Uri AuthorImageUri { get; set; }
 

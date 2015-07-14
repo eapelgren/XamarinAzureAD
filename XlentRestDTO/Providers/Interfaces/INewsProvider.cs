@@ -9,7 +9,7 @@ namespace DTOModel.Providers.Interfaces
     {
         Task<IEnumerable<INewsDTO>> GetNewsAsyncTask();
 
-        Task<IEnumerable<INewsDTO>> GetNewsAsyncTask(Func<INewsDTO, bool> predict);
+        Task<IEnumerable<INewsDTO>> GetNewsAsyncTask(string id);
 
         Task<INewsDTO> PostNewsAsyncTask(INewsDTO news);
     }

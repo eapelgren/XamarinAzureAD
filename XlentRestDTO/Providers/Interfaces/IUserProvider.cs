@@ -5,11 +5,11 @@ using DTOModel.Model;
 
 namespace DTOModel.Providers.Interfaces
 {
-    internal interface IUserProvider
+    public interface IUserProvider
     {
         Task<IEnumerable<IUserDTO>> GetUsersAsyncTask();
 
-        Task<IEnumerable<IUserDTO>> GetUsersAsyncTask(Func<IUserDTO, bool> predict);
+        Task<IEnumerable<IUserDTO>> GetUsersAsyncTask(string id);
 
         Task<IUserDTO> PostUserAsyncTask(IUserDTO user);
     }

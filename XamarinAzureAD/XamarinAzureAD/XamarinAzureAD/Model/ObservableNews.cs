@@ -5,7 +5,13 @@ namespace XamarinAzureAD.Model
 {
     public class ObservableNews : ObservableObject
     {
+        private ObservableUser _authorUser;
+        private DateTime _datePosted;
         private string _description;
+
+        private string _header;
+
+        private Uri _pictureUri;
 
         public string Description
         {
@@ -13,15 +19,11 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _description, value); }
         }
 
-        private string _header;
-
         public string Header
         {
             get { return _header ?? (_header = ""); }
             set { SetProperty(ref _header, value); }
         }
-
-        private Uri _pictureUri;
 
         public Uri PictureUri
         {
@@ -34,14 +36,11 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _pictureUri, value); }
         }
 
-        private ObservableUser _authorUser;
-
         public ObservableUser AuthorUser
         {
-
             get
             {
-                return _authorUser ?? (_authorUser = new ObservableUser()
+                return _authorUser ?? (_authorUser = new ObservableUser
                 {
                     error = "No User Set"
                 });
@@ -49,14 +48,10 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _authorUser, value); }
         }
 
-        private DateTime _datePosted;
-
         public DateTime DatePosted
         {
             get { return _datePosted; }
             set { SetProperty(ref _datePosted, value); }
         }
-    	
-
     }
 }

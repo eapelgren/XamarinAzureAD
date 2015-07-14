@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
+using DTOModel.Providers.Implementations;
+using DTOModel.Providers.Interfaces;
 using Foundation;
 using UIKit;
 using XamarinAzureAD.Services;
@@ -24,6 +25,7 @@ namespace XamarinAzureAD.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : XFormsApplicationDelegate
     {
+        private object IUserProvider;
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -63,7 +65,9 @@ namespace XamarinAzureAD.iOS
                 .Register<IDependencyContainer>(t => resolverContainer)
                 .Register<IAuthenticationProvider, AuthenticationProvider>()
                 .Register<INewsProvider, NewsProvider>()
-                .Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>();
+                .Register<IUserProvider, UserProvider>();
+
+               
                 //.Register<ISimpleCache>(
                 //    t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
                 //        new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));

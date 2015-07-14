@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamarinAzureAD.Pages
 {
@@ -12,16 +6,14 @@ namespace XamarinAzureAD.Pages
     {
         public MasterDetailNewsPage()
         {
-            this.Title = "MasterDetail";
-            this.Master = new ContentPage()
+            Title = "MasterDetail";
+            Master = new ContentPage
             {
                 BackgroundColor = Color.Gray,
                 Title = "Gray Content"
-                
             };
 
-            this.Detail = new NewsPage();
-
+            Detail = new NewsPage();
         }
     }
 }

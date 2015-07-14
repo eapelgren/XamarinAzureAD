@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
 
@@ -43,7 +42,7 @@ namespace XamarinAzureAD.Pages
             //    TextColor = Color.Black,
             //};
 
-            var passwordEntry = vm.PasswordEntry;
+            Entry passwordEntry = vm.PasswordEntry;
 
             var entryStack = new StackLayout
             {
@@ -93,6 +92,5 @@ namespace XamarinAzureAD.Pages
             BackgroundColor = Color.White;
             Content = baseStack;
         }
- 
     }
 }

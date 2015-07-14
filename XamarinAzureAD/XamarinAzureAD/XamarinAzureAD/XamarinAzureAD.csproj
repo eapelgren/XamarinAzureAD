@@ -159,7 +159,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\XlentRestApiService\XlentRestDTO\DTOModel.csproj">
+    <ProjectReference Include="..\..\..\XlentRestDTO\DTOModel.csproj">
       <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
       <Name>DTOModel</Name>
     </ProjectReference>

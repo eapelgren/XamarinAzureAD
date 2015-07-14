@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
-using XamarinAzureAD.Model;
-using XamarinAzureAD.ViewModel;
-using XLabs.Forms.Behaviors;
+﻿using Xamarin.Forms;
 using XLabs.Forms.Controls;
-using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
 
@@ -16,9 +10,10 @@ namespace XamarinAzureAD.Controlls
         public NewsListCell()
         {
             //MAY BREAK OUT REGIONS TO SEPARATE UI CLASSES
+
             #region profileHeaderView
 
-            var circleProfileImage = new CircleImage()
+            var circleProfileImage = new CircleImage
             {
                 Source = "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/000/24a/0d9/13e8e14.jpg",
                 HeightRequest = 40,
@@ -60,10 +55,10 @@ namespace XamarinAzureAD.Controlls
             headerTapGestureRecongnizer.Tapped += (sender, args) =>
             {
                 var navigation = Resolver.Resolve<INavigationService>();
-                var p = 2;
+                int p = 2;
             };
 
-            var profileHeaderView = new StackLayout()
+            var profileHeaderView = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 Spacing = 10,
@@ -72,26 +67,26 @@ namespace XamarinAzureAD.Controlls
                     circleProfileImage,
                     nameDateStackView
                 },
-                Padding = new Thickness(3,6,3,6),
+                Padding = new Thickness(3, 6, 3, 6),
             };
-            profileHeaderView.SetBinding(StackLayout.ClassIdProperty, new Binding("AuthorUser.Id"));
+            profileHeaderView.SetBinding(ClassIdProperty, new Binding("AuthorUser.Id"));
             profileHeaderView.GestureRecognizers.Add(headerTapGestureRecongnizer);
 
             #endregion
 
             #region newsPostView
 
-            var newsPostImage = new Image()
+            var newsPostImage = new Image
             {
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.Start,
             };
             newsPostImage.SetBinding(Image.SourceProperty, new Binding("PictureUri"));
 
-            var newsPostImageView = new ContentView()
+            var newsPostImageView = new ContentView
             {
                 Content = newsPostImage,
-                Padding = new Thickness(0,0,0,6),
+                Padding = new Thickness(0, 0, 0, 6),
             };
 
             var newsPostText = new Label
@@ -101,7 +96,7 @@ namespace XamarinAzureAD.Controlls
             };
             newsPostText.SetBinding(Label.TextProperty, new Binding("Description"));
 
-            var newsPostTextView = new ContentView()
+            var newsPostTextView = new ContentView
             {
                 Content = newsPostText
             };
@@ -118,7 +113,7 @@ namespace XamarinAzureAD.Controlls
             };
 
             #endregion
-            
+
             var cell = new StackLayout
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -132,16 +127,11 @@ namespace XamarinAzureAD.Controlls
                 },
             };
 
-
             #region gestures
 
-   
             #endregion
-
 
             View = cell;
         }
     }
-
-   
 }

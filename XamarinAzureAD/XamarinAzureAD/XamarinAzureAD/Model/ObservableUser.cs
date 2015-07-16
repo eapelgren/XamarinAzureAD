@@ -10,7 +10,7 @@ namespace XamarinAzureAD.Model
 
 
         private string _givenName;
-        private int _id;
+        private string _id;
         private string _location;
 
 
@@ -63,7 +63,7 @@ namespace XamarinAzureAD.Model
         }
 
 
-        public int Id
+        public string Id
         {
             get { return _id; }
             set { SetProperty(ref _id, value); }

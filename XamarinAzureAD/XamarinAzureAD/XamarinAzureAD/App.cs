@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using XamarinAzureAD.Handler;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Controls;
@@ -33,14 +34,15 @@ namespace XamarinAzureAD
             ViewFactory.Register<LoginPage3, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
 
-            var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
-            var navPage = new NavigationPage(new MainTabbedContainer());
+            //var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
+            //var navPage = new NavigationPage(new MainTabbedContainer());
             //SHOULD BE NAVPAGE
-            return navPage;
+            return new Page1();
         }
 
         public static void Init()
         {
+            MapperConfiguration.Init();
             var app = Resolver.Resolve<IXFormsApp>();
 
             if (app == null)

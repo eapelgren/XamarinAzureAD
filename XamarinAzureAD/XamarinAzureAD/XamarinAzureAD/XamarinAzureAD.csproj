@@ -39,6 +39,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Controlls\NewsListCell.cs" />
     <Compile Include="Controlls\TestCell.cs" />
+    <Compile Include="Handler\MapperConfiguration.cs" />
     <Compile Include="Handler\LocalTokenHandler.cs" />
     <Compile Include="Model\ObservableNews.cs" />
     <Compile Include="Model\ObservableUser.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Pages\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page1.cs" />
     <Compile Include="Pages\SelectedNewsView.cs" />
     <Compile Include="Pages\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
@@ -64,6 +66,9 @@
     <Compile Include="ViewModel\SelectedNewsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.3.3.1\lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
       <Private>True</Private>

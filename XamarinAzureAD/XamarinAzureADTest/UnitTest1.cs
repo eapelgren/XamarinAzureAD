@@ -1,39 +1,23 @@
-﻿
-
-using System.Web;
+﻿using System;
+using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using XamarinAzureAD.Services;
+using XamarinAzureAD.Handler;
 
 namespace XamarinAzureADTest
 {
     [TestClass]
     public class UnitTest1
     {
-        private string _username = "test1@xlentwebapi.onmicrosoft.com";
-        private string _password = "newPassword1";
-
-        [TestMethod]
-        public void TestCorrectUsernamePassword()
+        [TestInitialize]
+        public void Init()
         {
-            var authProvider = new AuthenticationProvider().LoginAdTaskAsync(_username, _password);
+            MapperConfiguration.Init();
         }
 
         [TestMethod]
-        [ExpectedException(typeof(HttpException))]
-        public void TestFalseUsernamePassword()
+        public void AutoMapperValidation()
         {
-
-            var authProvider = new AuthenticationProvider().LoginAdTaskAsync("dsfdsf", "asdasd");
-
+            Mapper.AssertConfigurationIsValid();
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(HttpException))]
-        public void TestNullUsernamePassword()
-        {
-            var authProvider = new AuthenticationProvider().LoginAdTaskAsync(null, null);
-        }
-
-
     }
 }

@@ -65,7 +65,7 @@ namespace XamarinAzureAD.iOS
                 .Register<ISecureStorage, SecureStorage>()
                 .Register<IDependencyContainer>(t => resolverContainer)
                 .Register<IAuthenticationProvider, AuthenticationProvider>()
-                .Register<INewsProvider, NewsProvider>()
+                .Register<INewsProvider>( t => new NewsProvider(new AuthenticationProvider()))
                 .Register<IUserProvider, UserProvider>();
 
                

@@ -15,7 +15,7 @@ namespace XamarinAzureAD.ViewModel
 
         public NewsPageViewModel()
         {
-            //UpdateObservableNews().Start();
+            UpdateObservableNews().Start();
         }
         public bool IsLoading;
         private Command _itemTappedCommand;
@@ -45,7 +45,7 @@ namespace XamarinAzureAD.ViewModel
         private async Task UpdateObservableNews()
         {
             IsLoading = true;
-            var list = new ObservableCollection<ObservableNews>();
+            var list = ObservableNews;
             Debug.WriteLine("COLLECTING NEWS");
             var newsProvider = Resolver.Resolve<INewsProvider>();
             var userProvider = Resolver.Resolve<IUserProvider>();
@@ -73,7 +73,6 @@ namespace XamarinAzureAD.ViewModel
                 });
             }
             IsLoading = false;
-            ObservableNews = list;
         }
     }
 }

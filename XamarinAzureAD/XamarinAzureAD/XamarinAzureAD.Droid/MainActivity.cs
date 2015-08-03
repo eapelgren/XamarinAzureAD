@@ -2,6 +2,8 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using DTOModel.Providers.Implementations;
+using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XLabs.Forms;
 using XLabs.Forms.Services;
@@ -12,7 +14,6 @@ using XLabs.Platform.Services;
 using XLabs.Platform.Services.Email;
 using XLabs.Platform.Services.Media;
 using XLabs.Serialization;
-using XamarinAzureAD.Services;
 
 namespace XamarinAzureAD.Droid
 {
@@ -70,7 +71,7 @@ namespace XamarinAzureAD.Droid
                 .Register<IDependencyContainer>(resolverContainer)
                 .Register<IXFormsApp>(app)
                 .Register<ISecureStorage>(t => new KeyVaultStorage(t.Resolve<IDevice>().Id.ToCharArray()))
-                .Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>()
+                //.Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>()
                 .Register<INewsProvider, NewsProvider>();
                 //.Register<ISimpleCache>(
                 //    t => new SQLiteSimpleCache(new SQLitePlatformAndroid(),

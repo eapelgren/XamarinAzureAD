@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XamarinAzureAD.ViewModel;
 
 namespace XamarinAzureAD.Pages
@@ -15,9 +9,10 @@ namespace XamarinAzureAD.Pages
         {
             Content = new StackLayout
             {
-                Children = {
-					new Label { Text = "Hello ContentPage" }
-				}
+                Children =
+                {
+                    new Label {Text = "Hello ContentPage"}
+                }
             };
 
             var vm = new NewsPageViewModel();

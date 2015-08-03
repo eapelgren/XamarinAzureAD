@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DTOModel.Model;
 using DTOModel.Providers.Interfaces;
-using XamarinAzureAD.Model;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
 

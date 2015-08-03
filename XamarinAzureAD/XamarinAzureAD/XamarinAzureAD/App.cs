@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-
+﻿using System.Diagnostics;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.ViewModel;
-using XLabs.Forms.Controls;
 using XLabs.Forms.Mvvm;
 using XLabs.Ioc;
-using XLabs.Platform.Device;
 using XLabs.Platform.Mvvm;
-
 
 namespace XamarinAzureAD
 {
@@ -35,9 +25,9 @@ namespace XamarinAzureAD
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
 
             //var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
-            //var navPage = new NavigationPage(new MainTabbedContainer());
+            var navPage = new NavigationPage(new MainTabbedContainer());
             //SHOULD BE NAVPAGE
-            return new Page1();
+            return navPage;
         }
 
         public static void Init()

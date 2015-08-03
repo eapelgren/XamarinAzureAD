@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Input;
+using DTOModel.Model;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
-using XamarinAzureAD.Model;
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
 using XLabs.Ioc;
@@ -12,7 +12,7 @@ using XLabs.Platform.Services;
 
 namespace XamarinAzureAD.ViewModel
 {
-    internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
+    public class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
         public bool ErrorHasOccoured;
 
@@ -137,7 +137,7 @@ namespace XamarinAzureAD.ViewModel
             try
             {
                 var adService = Resolver.Resolve<IAuthenticationProvider>();
-                var loginAuthResponse =
+                IAuthenticationDTO loginAuthResponse =
                     await adService.GetTokensAsyncTask(EmailEntry.Text, PasswordEntry.Text);
                 var tokenHandler = new LocalTokenHandler();
                 tokenHandler.SetAccessToken(loginAuthResponse.AccessToken);

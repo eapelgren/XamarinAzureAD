@@ -1,7 +1,5 @@
 ﻿using Xamarin.Forms;
-using XLabs.Forms.Controls;
-using XLabs.Ioc;
-using XLabs.Platform.Services;
+using XamarinAzureAD.Controlls.Views;
 
 namespace XamarinAzureAD.Controlls
 {
@@ -10,69 +8,6 @@ namespace XamarinAzureAD.Controlls
         public NewsListCell()
         {
             //MAY BREAK OUT REGIONS TO SEPARATE UI CLASSES
-
-            #region profileHeaderView
-
-            var circleProfileImage = new CircleImage
-            {
-                Source = "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/000/24a/0d9/13e8e14.jpg",
-                HeightRequest = 40,
-                WidthRequest = 40,
-            };
-            //circleProfileImage.SetBinding(CircleImage.SourceProperty, new Binding());
-
-
-            var authorName = new Label
-            {
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof (Label)),
-                FontFamily = "Verdana",
-                FontAttributes = FontAttributes.None,
-                VerticalOptions = LayoutOptions.Center
-            };
-            authorName.SetBinding(Label.TextProperty, new Binding("AuthorUser.DisplayName"));
-
-            var datePosted =
-                new Label
-                {
-                    FontSize = Device.GetNamedSize(NamedSize.Micro, typeof (Label)),
-                    VerticalOptions = LayoutOptions.Start
-                };
-            datePosted.SetBinding(Label.TextProperty, new Binding("DatePosted"));
-
-            var nameDateStackView = new StackLayout
-            {
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                Orientation = StackOrientation.Vertical,
-                Spacing = 1,
-                Children =
-                {
-                    authorName,
-                    datePosted
-                },
-            };
-
-            var headerTapGestureRecongnizer = new TapGestureRecognizer();
-            headerTapGestureRecongnizer.Tapped += (sender, args) =>
-            {
-                var navigation = Resolver.Resolve<INavigationService>();
-                int p = 2;
-            };
-
-            var profileHeaderView = new StackLayout
-            {
-                Orientation = StackOrientation.Horizontal,
-                Spacing = 10,
-                Children =
-                {
-                    circleProfileImage,
-                    nameDateStackView
-                },
-                Padding = new Thickness(3, 6, 3, 6),
-            };
-            profileHeaderView.SetBinding(ClassIdProperty, new Binding("AuthorUser.Id"));
-            profileHeaderView.GestureRecognizers.Add(headerTapGestureRecongnizer);
-
-            #endregion
 
             #region newsPostView
 
@@ -122,14 +57,10 @@ namespace XamarinAzureAD.Controlls
                 Spacing = 2,
                 Children =
                 {
-                    profileHeaderView,
+                    new PostHeaderView(),
                     newsPostView,
                 },
             };
-
-            #region gestures
-
-            #endregion
 
             View = cell;
         }

@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Linq;
+using DTOModel.Model;
+using DTOModel.Providers.Interfaces;
 using XLabs.Data;
+using XLabs.Ioc;
 
 namespace XamarinAzureAD.Model
 {
@@ -24,7 +28,7 @@ namespace XamarinAzureAD.Model
             }
             set { SetProperty(ref _authorImageUri, value); }
         }
-        
+
         public string DisplayName
         {
             get { return _displayName ?? (_displayName = ""); }
@@ -42,13 +46,13 @@ namespace XamarinAzureAD.Model
             get { return _id; }
             set { SetProperty(ref _id, value); }
         }
-        
+
         public string Location
         {
             get { return _location ?? (_location = ""); }
             set { SetProperty(ref _location, value); }
         }
-        
+
         public string SurName
         {
             get { return _surname ?? (_surname = ""); }

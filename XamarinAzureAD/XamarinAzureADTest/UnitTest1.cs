@@ -19,5 +19,7 @@ namespace XamarinAzureADTest
         {
             Mapper.AssertConfigurationIsValid();
         }
+
+
     }
 }

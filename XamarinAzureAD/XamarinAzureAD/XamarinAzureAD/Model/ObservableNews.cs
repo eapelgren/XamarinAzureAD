@@ -1,21 +1,18 @@
 ﻿using System;
-using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
-    public class ObservableNews : ObservableObject
-    {        
-
+    public class ObservableNews : BasePost
+    {
         private ObservableUser _authorUser;
         private string _datePosted;
         private string _description;
         private string _header;
-        private Uri _pictureUri;
         private string _id;
+        private Uri _pictureUri;
 
-        public string Id
+        public new string Id
         {
-
             get { return _id ?? (_id = ""); }
             set { SetProperty(ref _id, value); }
         }
@@ -43,22 +40,16 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _pictureUri, value); }
         }
 
-        public string DatePosted
+        public new string DatePosted
         {
             get { return _datePosted; }
             set { SetProperty(ref _datePosted, value); }
         }
 
-        public ObservableUser AuthorUser
+        public new ObservableUser AuthorObservableUser
         {
-            get
-            {
-                return _authorUser ?? (_authorUser = new ObservableUser
-                {
-                });
-            }
+            get { return _authorUser ?? (_authorUser = new ObservableUser()); }
             set { SetProperty(ref _authorUser, value); }
         }
-    
     }
 }

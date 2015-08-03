@@ -1,8 +1,10 @@
 ﻿using Xamarin.Forms;
+using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.Pages
 {
-    public partial class UsersPage : ContentPage
+    [ViewType(typeof(UsersPage))]
+    public partial class UsersPage : BaseView
     {
         public UsersPage()
         {

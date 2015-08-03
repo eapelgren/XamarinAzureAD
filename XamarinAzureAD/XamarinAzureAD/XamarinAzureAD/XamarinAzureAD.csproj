@@ -39,8 +39,10 @@
     <Compile Include="App.cs" />
     <Compile Include="Controlls\NewsListCell.cs" />
     <Compile Include="Controlls\TestCell.cs" />
+    <Compile Include="Controlls\Views\PostHeaderView.cs" />
     <Compile Include="Handler\MapperConfiguration.cs" />
     <Compile Include="Handler\LocalTokenHandler.cs" />
+    <Compile Include="Model\BasePost.cs" />
     <Compile Include="Model\ObservableNews.cs" />
     <Compile Include="Model\ObservableUser.cs" />
     <Compile Include="Pages\LoginPage3.cs" />
@@ -147,7 +149,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controlls\Views\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

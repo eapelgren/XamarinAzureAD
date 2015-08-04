@@ -1,6 +1,8 @@
-﻿using DTOModel.Providers.Implementations;
-using DTOModel.Providers.Interfaces;
+﻿using DTOModel;
 using System.IO;
+using DTOModel.Providers.Implementations;
+using DTOModel.Providers.Interfaces;
+using DTOModel.Providers.Implementations.Mocked;
 using XLabs.Forms.Services;
 using Foundation;
 using XLabs.Platform.Services;
@@ -38,7 +40,7 @@ namespace XamarinAzureAD.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             SetIoc();
-            
+       
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
@@ -58,20 +60,28 @@ namespace XamarinAzureAD.iOS
                 .Register<IFontManager>(t => new FontManager(t.Resolve<IDisplay>()))
                 //.Register<IJsonSerializer, XLabs.Serialization.ServiceStack.JsonSerializer>()
                 //.Register<IJsonSerializer, Services.Serialization.SystemJsonSerializer>()
+                //.Register<ISimpleCache>(
+                //    t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
+                //        new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
                 .Register<ITextToSpeechService, TextToSpeechService>()
                 .Register<IEmailService, EmailService>()
                 .Register<IMediaPicker, MediaPicker>()
                 .Register<IXFormsApp>(app)
                 .Register<ISecureStorage, SecureStorage>()
                 .Register<IDependencyContainer>(t => resolverContainer)
-                .Register<IAuthenticationProvider, AuthenticationProvider>()
-                .Register<INewsProvider>( t => new NewsProvider(new AuthenticationProvider()))
-                .Register<IUserProvider, UserProvider>();
 
-               
-                //.Register<ISimpleCache>(
-                //    t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
-                //        new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
+                //REAL
+                //.Register<IAuthenticationProvider, AuthenticationProvider>()
+                //.Register<INewsProvider>(t => new NewsProvider(new AuthenticationProvider()))
+                //.Register<IUserProvider, UserProvider>();
+
+
+            //MOCKED
+                .Register<IAuthenticationProvider, AuthenticationProviderMocked>()
+                .Register<INewsProvider>(t => new NewsProviderMocked(new AuthenticationProviderMocked()))
+                .Register<IUserProvider, UserProviderMocked>();
+
+
 
             Resolver.SetResolver(resolverContainer.GetResolver());
         }

@@ -1,19 +1,19 @@
 ﻿<mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
-               xmlns:NewsCell="clr-namespace:XamarinAzureAD.Controlls;assembly=XamarinAzureAD"
+               xmlns:controlls="clr-namespace:XamarinAzureAD.Controlls;assembly=XamarinAzureAD"
                x:Class="XamarinAzureAD.Pages.NewsPage"
                BackgroundColor="White">
-    <StackLayout VerticalOptions="FillAndExpand" Padding="5,20,5,0">
+    <StackLayout VerticalOptions="FillAndExpand" Padding="5,0,5,0">
         <ScrollView BackgroundColor="Gray">
             <StackLayout>
-                <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <NewsCell:NewsListCell></NewsCell:NewsListCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+              <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <controlls:NewsListCell></controlls:NewsListCell>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+              </ListView>
             </StackLayout>
         </ScrollView>
     </StackLayout>

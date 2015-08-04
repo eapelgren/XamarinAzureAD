@@ -39,10 +39,8 @@
     <Compile Include="App.cs" />
     <Compile Include="Controlls\NewsListCell.cs" />
     <Compile Include="Controlls\TestCell.cs" />
-    <Compile Include="Controlls\Views\PostHeaderView.cs" />
     <Compile Include="Handler\MapperConfiguration.cs" />
     <Compile Include="Handler\LocalTokenHandler.cs" />
-    <Compile Include="Model\BasePost.cs" />
     <Compile Include="Model\ObservableNews.cs" />
     <Compile Include="Model\ObservableUser.cs" />
     <Compile Include="Pages\LoginPage3.cs" />
@@ -52,12 +50,26 @@
     <Compile Include="Pages\MainTabbedContainer.xaml.cs">
       <DependentUpon>MainTabbedContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MasterDetailNewsPage.cs" />
+    <Compile Include="Pages\MasterDetail\AboutPage.cs" />
+    <Compile Include="Pages\MasterDetail\ContractsPage.cs" />
+    <Compile Include="Pages\MasterDetail\MessagesPage.cs" />
+    <Compile Include="Pages\MasterDetail\MasterDetailNewsPage.cs" />
+    <Compile Include="Pages\MasterDetail\MenuCell.cs" />
+    <Compile Include="Pages\MasterDetail\MenuItem.cs" />
+    <Compile Include="Pages\MasterDetail\MenuListData.cs" />
+    <Compile Include="Pages\MasterDetail\MenuListView.cs" />
+    <Compile Include="Pages\MasterDetail\MenuPage.cs" />
+    <Compile Include="Pages\MasterDetail\AccountPage.cs" />
+    <Compile Include="Pages\MasterDetail\RootPage.cs" />
     <Compile Include="Pages\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page1.cs" />
-    <Compile Include="Pages\SelectedNewsView.cs" />
+    <Compile Include="Pages\SelectedNewsPage.xaml.cs">
+      <DependentUpon>SelectedNewsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SelectedUserPage.xaml.cs">
+      <DependentUpon>SelectedUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
     </Compile>
@@ -66,6 +78,7 @@
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\SelectedItemViewModel.cs" />
     <Compile Include="ViewModel\SelectedNewsViewModel.cs" />
+    <Compile Include="ViewModel\SelectedUserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper">
@@ -87,8 +100,9 @@
     <Reference Include="ModernHttpClient">
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net.Http">
@@ -164,10 +178,22 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XlentRestDTO\DTOModel\DTOModel.csproj">
-      <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
+    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
+      <Project>{bdd6e02c-922a-479b-be24-8a52eb314a29}</Project>
       <Name>DTOModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SelectedNewsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SelectedUserPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

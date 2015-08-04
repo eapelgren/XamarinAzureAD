@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XamarinAzureAD.Model;
-using XamarinAzureAD.Services;
 using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.ViewModel

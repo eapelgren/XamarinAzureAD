@@ -6,7 +6,7 @@ namespace XamarinAzureAD.Pages
     {
         public MainTabbedContainer()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 

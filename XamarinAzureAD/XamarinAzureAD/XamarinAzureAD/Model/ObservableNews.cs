@@ -1,8 +1,9 @@
 ﻿using System;
+using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
-    public class ObservableNews : BasePost
+    public class ObservableNews : ObservableObject
     {
         private ObservableUser _authorUser;
         private string _datePosted;
@@ -40,13 +41,13 @@ namespace XamarinAzureAD.Model
             set { SetProperty(ref _pictureUri, value); }
         }
 
-        public new string DatePosted
+        public string DatePosted
         {
             get { return _datePosted; }
             set { SetProperty(ref _datePosted, value); }
         }
 
-        public new ObservableUser AuthorObservableUser
+        public ObservableUser AuthorObservableUser
         {
             get { return _authorUser ?? (_authorUser = new ObservableUser()); }
             set { SetProperty(ref _authorUser, value); }

@@ -1,16 +1,21 @@
 ﻿using System.Diagnostics;
+using MasterDetail;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
+using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Mvvm;
+using XLabs.Platform.Services;
 
 namespace XamarinAzureAD
 {
     public class App : Application
     {
+        private static NavigationPage navPage;
+
         public App()
         {
             // The root page of your application
@@ -25,7 +30,10 @@ namespace XamarinAzureAD
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
 
             //var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
-            var navPage = new NavigationPage(new MainTabbedContainer());
+            navPage = new NavigationPage(new RootPage());
+
+            Resolver.Resolve<IDependencyContainer>()
+.Register<INavigationService>(t => new NavigationService(navPage.Navigation));
             //SHOULD BE NAVPAGE
             return navPage;
         }
@@ -47,6 +55,11 @@ namespace XamarinAzureAD
             app.Rotation += (o, e) => Debug.WriteLine("Application Rotated");
             app.Startup += (o, e) => Debug.WriteLine("Application Startup");
             app.Suspended += (o, e) => Debug.WriteLine("Application Suspended");
+        }
+
+        public static NavigationPage GetNavigationPage()
+        {
+            return navPage;
         }
 
         protected override void OnStart()

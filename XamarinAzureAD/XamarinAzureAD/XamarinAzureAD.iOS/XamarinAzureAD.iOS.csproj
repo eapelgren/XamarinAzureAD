@@ -112,8 +112,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XlentRestDTO\DTOModel\DTOModel.csproj">
-      <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
+    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
+      <Project>{bdd6e02c-922a-479b-be24-8a52eb314a29}</Project>
       <Name>DTOModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\XamarinAzureAD\XamarinAzureAD.csproj">
@@ -168,8 +168,8 @@
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ObjectModel" />

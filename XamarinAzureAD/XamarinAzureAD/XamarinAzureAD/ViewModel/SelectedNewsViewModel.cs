@@ -6,6 +6,11 @@ namespace XamarinAzureAD.ViewModel
     {
         private ObservableNews _news;
 
+        public SelectedNewsViewModel(ObservableNews news)
+        {
+            News = news;
+        }
+
         public ObservableNews News
         {
             get { return _news ?? (_news = new ObservableNews()); }

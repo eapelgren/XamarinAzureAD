@@ -13,7 +13,6 @@ using XLabs.Platform.Mvvm;
 using XLabs.Platform.Services;
 using XLabs.Platform.Services.Email;
 using XLabs.Platform.Services.Media;
-using XLabs.Serialization;
 
 namespace XamarinAzureAD.Droid
 {

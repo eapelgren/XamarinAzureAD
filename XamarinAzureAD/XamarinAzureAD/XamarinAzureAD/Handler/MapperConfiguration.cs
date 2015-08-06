@@ -21,12 +21,12 @@ namespace XamarinAzureAD.Handler
 
         private static void MapINewsDTO()
         {
-            Mapper.CreateMap<NewsDTO, ObservableNews>().ConvertUsing<NewsConverter>();
+            AutoMapper.Mapper.CreateMap<NewsDTO, ObservableNews>().ConvertUsing<NewsConverter>();
         }
 
         private static void MapIUserDTO()
         {
-            Mapper.CreateMap<IUserDTO, ObservableUser>()
+            AutoMapper.Mapper.CreateMap<IUserDTO, ObservableUser>()
                 .ForMember(dest => dest.AuthorImageUri,
                     src => src.MapFrom(dto => new UriBuilder(dto.AuthorImageUri).Uri));
         }

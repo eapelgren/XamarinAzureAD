@@ -5,7 +5,7 @@
                x:Class="XamarinAzureAD.Pages.NewsPage"
                BackgroundColor="White">
     <StackLayout VerticalOptions="FillAndExpand" Padding="5,0,5,0">
-        <ScrollView BackgroundColor="Gray">
+        <ScrollView>
             <StackLayout>
               <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true" SeparatorVisibility="None">
                 <ListView.ItemTemplate>

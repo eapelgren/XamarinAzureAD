@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using DTOModel.Model;
+using Xamarin.Forms;
 using XamarinAzureAD.Controlls;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
@@ -6,10 +9,12 @@ using XLabs.Forms.Controls;
 using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Services;
+using DTOModel.Providers.Interfaces;
+using XamarinAzureAD.Mapper;
 
 namespace XamarinAzureAD.Controlls
 {
-    public class NewsListCell : ViewCell
+    public class NewsListCell : ExtendedViewCell
     {
         public NewsListCell()
         {
@@ -68,7 +73,6 @@ namespace XamarinAzureAD.Controlls
             headerTapGestureRecognizers.Tapped += async (sender, args) =>
             {
                 var navPage = App.GetNavigationPage();
-
                 var observableNews = (ObservableNews) this.BindingContext; 
                 await navPage.PushAsync(new SelectedUserPage(observableNews.AuthorObservableUser));
             };
@@ -118,7 +122,15 @@ namespace XamarinAzureAD.Controlls
             newsTapGestureRecognizers.Tapped += async (sender, args) =>
             {
                 var navPage = App.GetNavigationPage();
-                await navPage.PushAsync(new SelectedNewsPage((ObservableNews)this.BindingContext));
+                var commentsProvider = Resolver.Resolve<ICommentProvider>();
+                var news = (ObservableNews)this.BindingContext;
+                var commentsDTOList = await commentsProvider.GetCommentsTask(news.Id);
+                var obsCommentList = new ObservableCollection<ObservableComment>();
+                foreach (var commentDto in commentsDTOList)
+                {
+                        obsCommentList.Add(CommentMapper.Convert(commentDto));
+                }
+                await navPage.PushAsync(new SelectedNewsPage(news, obsCommentList));
             };
             newsPostView.GestureRecognizers.Add(newsTapGestureRecognizers);
 
@@ -127,6 +139,7 @@ namespace XamarinAzureAD.Controlls
 
             #endregion
 
+#region likesLabelsView  
 
             var likesLabel = new Label()
             {
@@ -141,14 +154,20 @@ namespace XamarinAzureAD.Controlls
                 FontSize = 13,
                 TextColor = Color.Blue,
             };
-
+         
             var seenbyLabel = new Label()
             {
                 Text = "64 Views",
                 FontSize = 13,
                 TextColor = Color.Blue
             };
+            //var tapGestureLikesLabels = new TapGestureRecognizer();
+            //tapGestureLikesLabels.Tapped += (sender, args) =>
+            //{
+            //    var navPage = App.GetNavigationPage();
 
+            //}
+            //seenbyLabel.GestureRecognizers.Add();
 
             var numbersView = new StackLayout()
             {
@@ -162,6 +181,9 @@ namespace XamarinAzureAD.Controlls
                 Spacing = 10
             };
 
+            #endregion
+
+            #region buttonsView
             var buttonsView = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal,
@@ -185,6 +207,7 @@ namespace XamarinAzureAD.Controlls
                 },
             };
 
+#endregion
 
             var cell = new StackLayout
             {
@@ -214,7 +237,7 @@ namespace XamarinAzureAD.Controlls
                 Content = frame,
                 Padding = new Thickness(5,0,5, 30)
             };
-
+            ShowDisclousure = false;
             View = contentHolder;
             
         }

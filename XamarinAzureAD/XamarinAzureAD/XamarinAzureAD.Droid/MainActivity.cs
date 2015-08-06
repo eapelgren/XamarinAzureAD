@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using DTOModel.Providers.Implementations;
+using DTOModel.Providers.Implementations.Mocked;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XLabs.Forms;
@@ -71,13 +72,17 @@ namespace XamarinAzureAD.Droid
                 .Register<IXFormsApp>(app)
                 .Register<ISecureStorage>(t => new KeyVaultStorage(t.Resolve<IDevice>().Id.ToCharArray()))
                 //.Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>()
-                .Register<INewsProvider, NewsProvider>();
-                //.Register<ISimpleCache>(
-                //    t => new SQLiteSimpleCache(new SQLitePlatformAndroid(),
-                //        new SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
-           
+                .Register<INewsProvider, NewsProvider>()
 
-        Resolver.SetResolver(resolverContainer.GetResolver());
+
+
+                .Register<ICommentProvider, CommentProviderMocked>();
+            //.Register<ISimpleCache>(
+            //    t => new SQLiteSimpleCache(new SQLitePlatformAndroid(),
+            //        new SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
+
+
+            Resolver.SetResolver(resolverContainer.GetResolver());
     }
     }
 }

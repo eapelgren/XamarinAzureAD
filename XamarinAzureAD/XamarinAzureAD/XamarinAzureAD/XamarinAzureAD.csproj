@@ -37,10 +37,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Controlls\CommentCell.cs" />
     <Compile Include="Controlls\NewsListCell.cs" />
-    <Compile Include="Controlls\TestCell.cs" />
+    <Compile Include="Controlls\SelectedNewsCell.cs" />
     <Compile Include="Handler\MapperConfiguration.cs" />
     <Compile Include="Handler\LocalTokenHandler.cs" />
+    <Compile Include="Mapper\CommentMapper.cs" />
+    <Compile Include="Mapper\UserMapper.cs" />
+    <Compile Include="Model\ObservableComment.cs" />
     <Compile Include="Model\ObservableNews.cs" />
     <Compile Include="Model\ObservableUser.cs" />
     <Compile Include="Pages\LoginPage3.cs" />
@@ -184,13 +188,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\SelectedNewsPage.xaml">
+    <EmbeddedResource Include="Pages\SelectedUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\SelectedUserPage.xaml">
+    <EmbeddedResource Include="Pages\SelectedNewsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

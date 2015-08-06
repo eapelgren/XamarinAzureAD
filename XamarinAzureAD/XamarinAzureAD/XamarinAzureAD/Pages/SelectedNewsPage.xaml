@@ -1,7 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
-             x:Class="XamarinAzureAD.Pages.SelectedNewsPage">
-    <WebView Source="http://www.xlent.se"></WebView>
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
+               xmlns:controlls="clr-namespace:XamarinAzureAD.Controlls;assembly=XamarinAzureAD"
+               x:Class="XamarinAzureAD.Pages.SelectedNewsPage">
+    <StackLayout>
+        <ContentView IsVisible="{Binding ScrollViewIsVisisble}">
+            <ScrollView>
+                <Grid>
+                    <!--<Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>-->
+                    <ListView ItemsSource="{Binding SingleNewsCollection}" HasUnevenRows="true"
+                              SeparatorVisibility="None" Grid.Row="0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <controlls:SelectedNewsCell />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <ListView ItemsSource="{Binding Comments}" HasUnevenRows="true" SeparatorVisibility="None"
+                              Grid.Row="1">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <controlls:CommentCell />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </ContentView>
+        <Entry Placeholder="Enter Comment" Focused="EntryIsFocused" Completed="SendComment" />
+    </StackLayout>
 </mvvm:BaseView>

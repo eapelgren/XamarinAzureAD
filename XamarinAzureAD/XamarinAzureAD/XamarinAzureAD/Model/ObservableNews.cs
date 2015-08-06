@@ -1,4 +1,5 @@
 ﻿using System;
+using DTOModel.Model;
 using XLabs.Data;
 
 namespace XamarinAzureAD.Model

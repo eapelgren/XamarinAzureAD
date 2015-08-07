@@ -4,17 +4,20 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 using DTOModel.Model;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
+using XLabs.Data;
 using XLabs.Ioc;
 
 namespace XamarinAzureAD.ViewModel
 {
     public class NewsPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
+        private Command _itemTappedCommand;
+        private ObservableCollection<ObservableObject> _observableNews;
+        public bool IsLoading;
 
         public NewsPageViewModel()
         {
@@ -22,16 +25,10 @@ namespace XamarinAzureAD.ViewModel
             UpdateObservableNews();
             Debug.WriteLine("Finnished synchron UpdateNews");
         }
-       
-        public bool IsLoading;
 
-        private Command _itemTappedCommand;
-
-        private ObservableCollection<ObservableNews> _observableNews;
-        
-        public ObservableCollection<ObservableNews> ObservableNews
+        public ObservableCollection<ObservableObject> ObservableNews
         {
-            get { return _observableNews ?? (_observableNews = new ObservableCollection<ObservableNews>()); }
+            get { return _observableNews ?? (_observableNews = new ObservableCollection<ObservableObject>()); }
             set { SetProperty(ref _observableNews, value); }
         }
 
@@ -54,18 +51,18 @@ namespace XamarinAzureAD.ViewModel
             try
             {
                 IsLoading = true;
-                ObservableCollection<ObservableNews> list = ObservableNews;
+                var list = ObservableNews;
                 Debug.WriteLine("COLLECTING NEWS");
                 var newsProvider = Resolver.Resolve<INewsProvider>();
-                IEnumerable<INewsDTO> listFromServer = await newsProvider.GetNewsAsyncTask();
+                var listFromServer = await newsProvider.GetNewsAsyncTask();
                 Debug.WriteLine("COLLECTED NEWS");
-                IList<INewsDTO> fromServer = listFromServer as IList<INewsDTO> ?? listFromServer.ToList();
+                var fromServer = listFromServer as IList<INewsDTO> ?? listFromServer.ToList();
                 Debug.WriteLine("Count: " + fromServer.Count());
-                foreach (INewsDTO newsDto in fromServer)
+                foreach (var newsDto in fromServer)
                 {
-                    list.Add(new ObservableNews()
+                    list.Add(new ObservableNews
                     {
-                        AuthorObservableUser = new ObservableUser()
+                        AuthorObservableUser = new ObservableUser
                         {
                             AuthorImageUri = new Uri(newsDto.Author.AuthorImageUri),
                             DisplayName = newsDto.Author.DisplayName,

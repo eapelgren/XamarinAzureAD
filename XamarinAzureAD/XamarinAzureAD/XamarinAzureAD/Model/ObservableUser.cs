@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Linq;
-using DTOModel.Model;
-using DTOModel.Providers.Interfaces;
 using XLabs.Data;
-using XLabs.Ioc;
 
 namespace XamarinAzureAD.Model
 {

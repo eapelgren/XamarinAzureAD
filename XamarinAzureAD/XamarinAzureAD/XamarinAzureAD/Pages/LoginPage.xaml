@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
@@ -20,12 +21,11 @@
                      AbsoluteLayout.LayoutFlags="All">
             <ContentView Padding="50,50,50,50">
                 <AuthorImage VerticalOptions="CenterAndExpand" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"
-                             Source="https://www.xlent.se/wp-content/themes/xlent/images/logo-xcg.png">
-                </AuthorImage>
+                             Source="https://www.xlent.se/wp-content/themes/xlent/images/logo-xcg.png" />
             </ContentView>
-            <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}"></ActivityIndicator>
+            <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" />
             <StackLayout Padding="60,60,60,60">
-                <Entry Placeholder="email" BackgroundColor="White" TextColor="Black" Text="{Binding EmailEntry.Text}"></Entry>
+                <Entry Placeholder="email" BackgroundColor="White" TextColor="Black" Text="{Binding EmailEntry.Text}" />
                 <Entry IsPassword="True" Placeholder="password" BackgroundColor="White" TextColor="Black"
                        Text="{Binding PasswordEntry.Text}">
                     <!--<Entry.GestureRecognizer>
@@ -36,7 +36,7 @@
 
                 </Entry>
                 <!--<Label Text="{Binding ExceptionLabel.Text}" IsVisible="{Binding ExceptionLabel.IsVisible}" TextColor="{Bidning ExceptionLabel.TextColor}"></Label>-->
-                <Button Text="{Binding LoginButton.Text}" Command="{Binding LoginCommand}"></Button>
+                <Button Text="{Binding LoginButton.Text}" Command="{Binding LoginCommand}" />
             </StackLayout>
         </StackLayout>
     </AbsoluteLayout>

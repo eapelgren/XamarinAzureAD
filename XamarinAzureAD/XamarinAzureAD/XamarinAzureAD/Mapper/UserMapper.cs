@@ -6,13 +6,9 @@ namespace XamarinAzureAD.Mapper
 {
     internal class UserMapper
     {
-        public UserMapper()
-        {
-        }
-
         public ObservableUser Convert(IUserDTO author)
         {
-            return new ObservableUser()
+            return new ObservableUser
             {
                 AuthorImageUri = new Uri(author.AuthorImageUri),
                 DisplayName = author.DisplayName,

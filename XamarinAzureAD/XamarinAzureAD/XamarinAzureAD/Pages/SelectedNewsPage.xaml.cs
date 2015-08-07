@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.ViewModel;
@@ -12,10 +7,10 @@ using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.Pages
 {
-    [ViewType(typeof(SelectedNewsPage))]
+    [ViewType(typeof (SelectedNewsPage))]
     public partial class SelectedNewsPage : BaseView
     {
-        private SelectedNewsViewModel vm;
+        private readonly SelectedNewsViewModel vm;
 
         public SelectedNewsPage(ObservableNews news, ObservableCollection<ObservableComment> commentList)
         {
@@ -29,7 +24,6 @@ namespace XamarinAzureAD.Pages
         {
             vm.ScrollViewIsVisisble = false;
         }
-
 
         private void SendComment(object sender, EventArgs e)
         {

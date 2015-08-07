@@ -19,7 +19,7 @@ namespace XamarinAzureAD.Pages
                 VerticalOptions = LayoutOptions.End,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Aspect = Aspect.AspectFit,
-                Source = "xlent_rgb",
+                Source = "xlent_rgb"
             };
 
             var logoImageContentView = new ContentView
@@ -42,14 +42,14 @@ namespace XamarinAzureAD.Pages
             //    TextColor = Color.Black,
             //};
 
-            Entry passwordEntry = vm.PasswordEntry;
+            var passwordEntry = vm.PasswordEntry;
 
             var entryStack = new StackLayout
             {
                 Children =
                 {
                     emailEntry,
-                    passwordEntry,
+                    passwordEntry
                 },
                 Padding = new Thickness(5, 0, 5, 0),
                 VerticalOptions = LayoutOptions.Center
@@ -57,14 +57,14 @@ namespace XamarinAzureAD.Pages
 
             var errorLabel = new Label
             {
-                TextColor = Color.Red,
+                TextColor = Color.Red
             };
             errorLabel.SetBinding(Label.TextProperty, new Binding("ErrorLabel.Text"));
             errorLabel.SetBinding(IsVisibleProperty, new Binding("ErrorLabel.IsVisible"));
 
             var loginbutton = new Button
             {
-                Text = "Login",
+                Text = "Login"
             };
             loginbutton.SetBinding(Button.CommandProperty, new Binding("LoginCommand"));
 
@@ -75,7 +75,7 @@ namespace XamarinAzureAD.Pages
                     logoImageContentView,
                     entryStack,
                     errorLabel,
-                    loginbutton,
+                    loginbutton
                 },
                 Padding = new Thickness(10, 5, 10, 5),
                 Spacing = 10,

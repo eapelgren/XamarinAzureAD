@@ -7,13 +7,14 @@
     <StackLayout VerticalOptions="FillAndExpand" Padding="5,0,5,0">
         <ScrollView>
             <StackLayout>
-              <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true" SeparatorVisibility="None">
-                <ListView.ItemTemplate>
-                  <DataTemplate>
-                    <controlls:NewsListCell></controlls:NewsListCell>
-                  </DataTemplate>
-                </ListView.ItemTemplate>
-              </ListView>
+                <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true"
+                          SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controlls:DynamicItemTemplate />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </ScrollView>
     </StackLayout>

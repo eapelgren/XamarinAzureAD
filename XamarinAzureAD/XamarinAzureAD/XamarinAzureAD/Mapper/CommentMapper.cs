@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTOModel.Model;
+﻿using DTOModel.Model;
 using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Mapper
@@ -12,7 +7,7 @@ namespace XamarinAzureAD.Mapper
     {
         public static ObservableComment Convert(ICommentDTO commentDTO)
         {
-            return new ObservableComment()
+            return new ObservableComment
             {
                 Author = new UserMapper().Convert(commentDTO.Author),
                 Comment = commentDTO.Comment,

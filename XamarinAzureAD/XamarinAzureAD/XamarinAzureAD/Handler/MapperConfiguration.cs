@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using AutoMapper;
 using DTOModel.Model;
-using DTOModel.Providers.Interfaces;
 using XamarinAzureAD.Model;
-using XLabs.Ioc;
 
 namespace XamarinAzureAD.Handler
 {
@@ -37,7 +33,6 @@ namespace XamarinAzureAD.Handler
         public ObservableNews Convert(ResolutionContext context)
         {
             throw new NotImplementedException("MAPPERCONFIG ERROR");
-
         }
     }
 }

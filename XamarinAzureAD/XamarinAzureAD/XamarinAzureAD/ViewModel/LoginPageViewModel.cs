@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Input;
-using DTOModel.Model;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
@@ -14,15 +13,13 @@ namespace XamarinAzureAD.ViewModel
 {
     public class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
-        public bool ErrorHasOccoured;
-
         private StackLayout _baseStack;
         private Label _errorLabel;
         private bool _isLoading;
         private Button _loginButton;
         private Entry _passwordEntry;
-
         private Entry _usernameEntry;
+        public bool ErrorHasOccoured;
 
         public LoginPageViewModel()
         {
@@ -41,7 +38,7 @@ namespace XamarinAzureAD.ViewModel
             {
                 return _usernameEntry ?? (_usernameEntry = new Entry
                 {
-                    Text = "test1@xlentwebapi.onmicrosoft.com",
+                    Text = "test1@xlentwebapi.onmicrosoft.com"
                 });
             }
             set { SetProperty(ref _usernameEntry, value); }
@@ -131,13 +128,12 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _baseStack, value); }
         }
 
-
         private async void LoginToAzureNavigateToNewsPage()
         {
             try
             {
                 var adService = Resolver.Resolve<IAuthenticationProvider>();
-                IAuthenticationDTO loginAuthResponse =
+                var loginAuthResponse =
                     await adService.GetTokensAsyncTask(EmailEntry.Text, PasswordEntry.Text);
                 var tokenHandler = new LocalTokenHandler();
                 tokenHandler.SetAccessToken(loginAuthResponse.AccessToken);

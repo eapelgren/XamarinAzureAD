@@ -1,10 +1,10 @@
 ﻿using System;
-using DTOModel.Model;
 using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
-    public class ObservableNews : ObservableObject
+    
+    public class ObservableNews : ObservableObject, IPost
     {
         private ObservableUser _authorUser;
         private string _datePosted;
@@ -13,7 +13,7 @@ namespace XamarinAzureAD.Model
         private string _id;
         private Uri _pictureUri;
 
-        public new string Id
+        public string Id
         {
             get { return _id ?? (_id = ""); }
             set { SetProperty(ref _id, value); }

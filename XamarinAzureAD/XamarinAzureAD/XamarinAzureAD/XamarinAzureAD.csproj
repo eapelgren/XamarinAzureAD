@@ -38,12 +38,19 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Controlls\CommentCell.cs" />
+    <Compile Include="Controlls\DynamicItemTemplate.cs" />
     <Compile Include="Controlls\NewsListCell.cs" />
+    <Compile Include="Model\ObservableEvent.cs" />
     <Compile Include="Controlls\SelectedNewsCell.cs" />
+    <Compile Include="Controlls\Views\LikeAndCommentButtonsView.cs" />
+    <Compile Include="Controlls\Views\LikesAndSeenLabelsView.cs" />
+    <Compile Include="Controlls\Views\NewsPostView.cs" />
+    <Compile Include="Controlls\Views\ProfileHeaderView.cs" />
     <Compile Include="Handler\MapperConfiguration.cs" />
     <Compile Include="Handler\LocalTokenHandler.cs" />
     <Compile Include="Mapper\CommentMapper.cs" />
     <Compile Include="Mapper\UserMapper.cs" />
+    <Compile Include="Model\IPost.cs" />
     <Compile Include="Model\ObservableComment.cs" />
     <Compile Include="Model\ObservableNews.cs" />
     <Compile Include="Model\ObservableUser.cs" />

@@ -16,7 +16,7 @@ namespace XamarinAzureAD.Handler
         {
             try
             {
-                byte[] byteToken = Resolver.Resolve<ISecureStorage>().Retrieve("refreshToken");
+                var byteToken = Resolver.Resolve<ISecureStorage>().Retrieve("refreshToken");
                 if (byteToken != null)
                 {
                     return Encoding.UTF8.GetString(byteToken, 0, byteToken.Count());
@@ -34,7 +34,7 @@ namespace XamarinAzureAD.Handler
         {
             try
             {
-                byte[] byteToken = Resolver.Resolve<ISecureStorage>().Retrieve("accessToken");
+                var byteToken = Resolver.Resolve<ISecureStorage>().Retrieve("accessToken");
                 if (byteToken != null)
                 {
                     return Encoding.UTF8.GetString(byteToken, 0, byteToken.Count());

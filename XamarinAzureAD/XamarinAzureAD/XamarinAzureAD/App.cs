@@ -35,7 +35,7 @@ namespace XamarinAzureAD
                 .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
             
             //Should be navPage
-            return new NewsPage();
+            return new MasterDetailNewsPage();
         }
 
         public static void Init()

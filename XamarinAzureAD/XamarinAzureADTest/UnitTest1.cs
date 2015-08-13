@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XamarinAzureAD.Handler;
 
@@ -19,7 +18,5 @@ namespace XamarinAzureADTest
         {
             Mapper.AssertConfigurationIsValid();
         }
-
-
     }
 }

@@ -9,7 +9,7 @@ namespace XamarinAzureAD.Mapper
         {
             return new ObservableComment
             {
-                Author = new UserMapper().Convert(commentDTO.Author),
+                Author = UserMapper.Convert(commentDTO.Author),
                 Comment = commentDTO.Comment,
                 Id = commentDTO.Id
             };

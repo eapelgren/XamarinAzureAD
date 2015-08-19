@@ -2,7 +2,6 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using DTOModel.Providers.Implementations;
 using DTOModel.Providers.Implementations.Mocked;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
@@ -17,7 +16,7 @@ using XLabs.Platform.Services.Media;
 
 namespace XamarinAzureAD.Droid
 {
-    [Activity(Label = "Xlent Xamarin Preview", MainLauncher = true,  Theme = "@android:style/Theme.Material.Light",
+    [Activity(Label = "Xlent Xamarin Preview", MainLauncher = true, Theme = "@android:style/Theme.Material.Light",
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class MainActivity : XFormsApplicationDroid
     {
@@ -27,7 +26,7 @@ namespace XamarinAzureAD.Droid
 
             if (!Resolver.IsSet)
             {
-                this.SetIoc();
+                SetIoc();
             }
             else
             {
@@ -47,8 +46,9 @@ namespace XamarinAzureAD.Droid
                 }
             };
 
-            this.SetPage(App.GetMainPage());
+            SetPage(App.GetMainPage());
         }
+
         private void SetIoc()
         {
             var resolverContainer = new SimpleContainer();
@@ -61,7 +61,7 @@ namespace XamarinAzureAD.Droid
             var pathToDatabase = Path.Combine(documents, "xlent.db");
 
             resolverContainer.Register(t => AndroidDevice.CurrentDevice)
-                .Register<IDisplay>(t => t.Resolve<IDevice>().Display)
+                .Register(t => t.Resolve<IDevice>().Display)
                 .Register<IFontManager>(t => new FontManager(t.Resolve<IDisplay>()))
                 //.Register<IJsonSerializer, Services.Serialization.JsonNET.JsonSerializer>()
                 //.Register<IJsonSerializer, JsonSerializer>()
@@ -72,10 +72,8 @@ namespace XamarinAzureAD.Droid
                 .Register<IXFormsApp>(app)
                 .Register<ISecureStorage>(t => new KeyVaultStorage(t.Resolve<IDevice>().Id.ToCharArray()))
                 //.Register<IHttpHeaderAuthenticator, HttpHeaderProviderMocked>()
-                .Register<INewsProvider, NewsProvider>()
-
-
-
+                .Register<INewsProvider, NewsProviderMocked>()
+                .Register<IUserProvider, UserProviderMocked>()
                 .Register<ICommentProvider, CommentProviderMocked>();
             //.Register<ISimpleCache>(
             //    t => new SQLiteSimpleCache(new SQLitePlatformAndroid(),
@@ -83,7 +81,6 @@ namespace XamarinAzureAD.Droid
 
 
             Resolver.SetResolver(resolverContainer.GetResolver());
-    }
+        }
     }
 }
-

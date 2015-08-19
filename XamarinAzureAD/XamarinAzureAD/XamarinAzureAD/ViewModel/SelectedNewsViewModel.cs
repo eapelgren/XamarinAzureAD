@@ -1,6 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
+using System.ServiceModel.Channels;
+using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
+using XamarinAzureAD.Mapper;
 using XamarinAzureAD.Model;
+using XLabs.Ioc;
 
 namespace XamarinAzureAD.ViewModel
 {
@@ -8,22 +13,29 @@ namespace XamarinAzureAD.ViewModel
     {
         private Entry _commentEntry;
         private ObservableCollection<ObservableComment> _comments;
-        private ObservableCollection<ObservableNews> _singleNewsCollection;
+        private ObservableNews _selectedNews;
 
-        public SelectedNewsViewModel(ObservableNews news, ObservableCollection<ObservableComment> commentList)
+        public SelectedNewsViewModel(ObservableNews news)
         {
             ScrollViewIsVisisble = true;
-            SingleNewsCollection.Add(news);
-            Comments = commentList;
+            SelectedNews = news;
+
+            var commentsProvider = Resolver.Resolve<ICommentProvider>();
+            commentsProvider.GetCommentsTask(news.Id).ContinueWith(task =>
+            {
+                var commentListDTO = task.Result.ToList();
+                foreach (var commentDto in commentListDTO)
+                {
+                    Comments.Add(CommentMapper.Convert(commentDto));
+                }
+            });
+
         }
 
-        public ObservableCollection<ObservableNews> SingleNewsCollection
+        public ObservableNews SelectedNews
         {
-            get
-            {
-                return _singleNewsCollection ?? (_singleNewsCollection = new ObservableCollection<ObservableNews>());
-            }
-            set { SetProperty(ref _singleNewsCollection, value); }
+            get { return _selectedNews ?? (_selectedNews = new ObservableNews()); }
+            set { SetProperty(ref _selectedNews, value); }
         }
 
         public ObservableCollection<ObservableComment> Comments

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XamarinAzureAD.Model;
-using XamarinAzureAD.ViewModel;
 
 namespace XamarinAzureAD.Controlls
 {
@@ -16,23 +9,22 @@ namespace XamarinAzureAD.Controlls
         {
             base.OnBindingContextChanged();
 
-            if (this.BindingContext is ObservableNews)
+            if (BindingContext is ObservableNews)
             {
-                this.View = new NewsListCell();
+                View = new NewsListCell();
             }
 
-            else if (this.BindingContext is ObservableEvent)
+            else if (BindingContext is ObservableEvent)
             {
-                
             }
             else
             {
-                this.View = new Label() { Text = "View model does not have a view." };
+                View = new Label {Text = "View model does not have a view."};
             }
 
-            this.Height = this.View.HeightRequest;
+            Height = View.HeightRequest;
 
-            this.View.BindingContext = this.BindingContext;
+            View.BindingContext = BindingContext;
         }
     }
 }

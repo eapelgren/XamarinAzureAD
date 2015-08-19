@@ -3,7 +3,6 @@ using XLabs.Data;
 
 namespace XamarinAzureAD.Model
 {
-    
     public class ObservableNews : ObservableObject, IPost
     {
         private ObservableUser _authorUser;

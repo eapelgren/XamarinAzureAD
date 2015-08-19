@@ -1,17 +1,10 @@
-﻿using DTOModel;
-using System.IO;
-using DTOModel.Providers.Implementations;
-using DTOModel.Providers.Interfaces;
+﻿using System.IO;
 using DTOModel.Providers.Implementations.Mocked;
-using XLabs.Forms.Services;
+using DTOModel.Providers.Interfaces;
 using Foundation;
-using XLabs.Platform.Services;
-using XLabs.Platform.Services.Email;
-using XLabs.Platform.Services.Media;
 using UIKit;
 using Xamarin.Forms;
 using XLabs.Forms;
-using XLabs.Forms.Controls;
 using XLabs.Forms.Services;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
@@ -19,7 +12,6 @@ using XLabs.Platform.Mvvm;
 using XLabs.Platform.Services;
 using XLabs.Platform.Services.Email;
 using XLabs.Platform.Services.Media;
-using XLabs.Serialization;
 
 namespace XamarinAzureAD.iOS
 {
@@ -27,7 +19,7 @@ namespace XamarinAzureAD.iOS
     // ObservableUser Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public partial class AppDelegate : XFormsApplicationDelegate
+    public class AppDelegate : XFormsApplicationDelegate
     {
         private object IUserProvider;
         //
@@ -40,8 +32,8 @@ namespace XamarinAzureAD.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             SetIoc();
-       
-            global::Xamarin.Forms.Forms.Init();
+
+            Forms.Init();
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
@@ -55,8 +47,8 @@ namespace XamarinAzureAD.iOS
             var documents = app.AppDataDirectory;
             var pathToDatabase = Path.Combine(documents, "xlent.db");
 
-            resolverContainer.Register<IDevice>(t => AppleDevice.CurrentDevice)
-                .Register<IDisplay>(t => t.Resolve<IDevice>().Display)
+            resolverContainer.Register(t => AppleDevice.CurrentDevice)
+                .Register(t => t.Resolve<IDevice>().Display)
                 .Register<IFontManager>(t => new FontManager(t.Resolve<IDisplay>()))
                 //.Register<IJsonSerializer, XLabs.Serialization.ServiceStack.JsonSerializer>()
                 //.Register<IJsonSerializer, Services.Serialization.SystemJsonSerializer>()
@@ -81,7 +73,6 @@ namespace XamarinAzureAD.iOS
                 .Register<INewsProvider>(t => new NewsProviderMocked(new AuthenticationProviderMocked()))
                 .Register<IUserProvider, UserProviderMocked>()
                 .Register<ICommentProvider, CommentProviderMocked>();
-
 
 
             Resolver.SetResolver(resolverContainer.GetResolver());

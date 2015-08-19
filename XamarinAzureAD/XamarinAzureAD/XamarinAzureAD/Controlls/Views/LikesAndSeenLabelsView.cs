@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using XLabs.Forms.Mvvm;
+﻿using Xamarin.Forms;
 
 namespace XamarinAzureAD.Controlls.Views
 {
@@ -12,7 +6,6 @@ namespace XamarinAzureAD.Controlls.Views
     {
         public LikesAndSeenLabelsView()
         {
-
             LikesLabel = new Label
             {
                 Text = "37 Likes",
@@ -20,7 +13,7 @@ namespace XamarinAzureAD.Controlls.Views
                 TextColor = Color.Blue
             };
 
-            CommentsLabel= new Label
+            CommentsLabel = new Label
             {
                 Text = "12 Comments",
                 FontSize = 13,
@@ -47,17 +40,11 @@ namespace XamarinAzureAD.Controlls.Views
             };
 
             Content = BaseStackLayout;
-
         }
 
         public Label LikesLabel { get; set; }
-
         public Label CommentsLabel { get; set; }
-
         public Label SeenbyLabel { get; set; }
-
         public StackLayout BaseStackLayout { get; set; }
-
-
     }
 }

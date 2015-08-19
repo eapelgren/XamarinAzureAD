@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using XamarinAzureAD.Handler;
 
 namespace XamarinAzureADTest
 {
@@ -10,7 +9,6 @@ namespace XamarinAzureADTest
         [TestInitialize]
         public void Init()
         {
-            MapperConfiguration.Init();
         }
 
         [TestMethod]

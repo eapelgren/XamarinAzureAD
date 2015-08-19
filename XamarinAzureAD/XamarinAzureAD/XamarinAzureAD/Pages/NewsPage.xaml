@@ -8,7 +8,7 @@
         <ScrollView>
             <StackLayout>
                 <ListView x:Name="list" ItemsSource="{Binding ObservableNews}" HasUnevenRows="true"
-                          SeparatorVisibility="None">
+                          SeparatorVisibility="None" ItemSelected="ListView_OnItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <controlls:DynamicItemTemplate />

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using XLabs.Forms.Controls;
-using XLabs.Forms.Mvvm;
+﻿using Xamarin.Forms;
 
 namespace XamarinAzureAD.Controlls.Views
 {
@@ -13,14 +6,13 @@ namespace XamarinAzureAD.Controlls.Views
     {
         public LikeAndCommentButtonsView()
         {
-
-            LikeButton = new Button()
+            LikeButton = new Button
             {
                 Text = "Like",
-                TextColor = Color.Navy,
+                TextColor = Color.Navy
             };
 
-            CommentButton = new Button()
+            CommentButton = new Button
             {
                 Text = "Comment",
                 TextColor = Color.Navy
@@ -33,16 +25,14 @@ namespace XamarinAzureAD.Controlls.Views
                 {
                     LikeButton,
                     CommentButton
-                },
+                }
             };
 
             Content = BaseStackLayout;
         }
 
         public Button LikeButton { get; set; }
-
         public Button CommentButton { get; set; }
-
         public StackLayout BaseStackLayout { get; set; }
-}
+    }
 }

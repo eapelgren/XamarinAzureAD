@@ -3,6 +3,28 @@
 <mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms"
+               xmlns:controlls="clr-namespace:XamarinAzureAD.Controlls;assembly=XamarinAzureAD"
                x:Class="XamarinAzureAD.Pages.UsersPage">
-    <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <mvvm:BaseView.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="0, 0, 0, 0"
+                    WinPhone="0, 0, 0, 0" />
+    </mvvm:BaseView.Padding>
+    <StackLayout Orientation="Vertical">
+        <Entry Placeholder="Search" Text="{Binding EntryText}" TextChanged="Entry_OnTextChanged" />
+        <!--<Label Text="NO USER FOUND" VerticalOptions="Center" IsVisible="{Binding NoUserLabelBool}"></Label>-->
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="list" ItemsSource="{Binding SortedUsersList}" HasUnevenRows="true"
+                          SeparatorVisibility="None" ItemSelected="ListView_OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controlls:UserCell />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
 </mvvm:BaseView>

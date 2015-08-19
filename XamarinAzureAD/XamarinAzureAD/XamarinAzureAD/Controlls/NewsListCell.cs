@@ -5,7 +5,6 @@ using XamarinAzureAD.Controlls.Views;
 using XamarinAzureAD.Mapper;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
-using XLabs.Forms.Controls;
 using XLabs.Ioc;
 
 namespace XamarinAzureAD.Controlls
@@ -18,8 +17,10 @@ namespace XamarinAzureAD.Controlls
 
             var profileHeaderView = new ProfileHeaderView();
 
-            profileHeaderView.AuthorNameLabel.SetBinding(Label.TextProperty, new Binding("AuthorObservableUser.DisplayName"));
-            profileHeaderView.CircleProfileImage.SetBinding(Image.SourceProperty, new Binding("AuthorObservableUser.AuthorImageUri"));
+            profileHeaderView.AuthorNameLabel.SetBinding(Label.TextProperty,
+                new Binding("AuthorObservableUser.DisplayName"));
+            profileHeaderView.CircleProfileImage.SetBinding(Image.SourceProperty,
+                new Binding("AuthorObservableUser.AuthorImageUri"));
             profileHeaderView.DatePostedLabel.SetBinding(Label.TextProperty, new Binding("DatePosted"));
 
             //ToDo Create Bindings For Likes ETC
@@ -70,7 +71,6 @@ namespace XamarinAzureAD.Controlls
 
             var frame = new Frame
             {
-
                 OutlineColor = Color.Navy,
                 Content = cell
             };

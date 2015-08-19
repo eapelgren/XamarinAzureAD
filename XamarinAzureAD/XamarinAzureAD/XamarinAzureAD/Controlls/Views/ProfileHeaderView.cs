@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using XamarinAzureAD.Model;
-using XamarinAzureAD.Pages;
+﻿using Xamarin.Forms;
 using XLabs.Forms.Controls;
-using XLabs.Forms.Mvvm;
 
 namespace XamarinAzureAD.Controlls.Views
 {
     public class ProfileHeaderView : ContentView
     {
-    
         public ProfileHeaderView()
         {
- 
             CircleProfileImage = new CircleImage
             {
                 HeightRequest = 40,
@@ -25,7 +15,7 @@ namespace XamarinAzureAD.Controlls.Views
 
             AuthorNameLabel = new Label
             {
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof (Label)),
                 FontFamily = "Verdana",
                 FontAttributes = FontAttributes.None,
                 VerticalOptions = LayoutOptions.Center
@@ -33,7 +23,7 @@ namespace XamarinAzureAD.Controlls.Views
 
             DatePostedLabel = new Label
             {
-                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof (Label)),
                 VerticalOptions = LayoutOptions.Start
             };
 
@@ -65,17 +55,8 @@ namespace XamarinAzureAD.Controlls.Views
         }
 
         public CircleImage CircleProfileImage { get; set; }
-
         public Label AuthorNameLabel { get; set; }
-
         public Label DatePostedLabel { get; set; }
-
         public StackLayout BaseStackLayout { get; set; }
-
-		
-
-		
-   
     }
-    
 }

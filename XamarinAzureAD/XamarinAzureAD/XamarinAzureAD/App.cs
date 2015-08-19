@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using MasterDetail;
 using Xamarin.Forms;
-using XamarinAzureAD.Handler;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
@@ -29,18 +28,17 @@ namespace XamarinAzureAD
             ViewFactory.Register<LoginPage3, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
 
-            //navPage = new NavigationPage(new RootPage());
+            navPage = new NavigationPage(new RootPage());
 
             Resolver.Resolve<IDependencyContainer>()
                 .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
-            
+
             //Should be navPage
-            return new MasterDetailNewsPage();
+            return navPage;
         }
 
         public static void Init()
         {
-            MapperConfiguration.Init();
             var app = Resolver.Resolve<IXFormsApp>();
 
             if (app == null)

@@ -40,5 +40,4 @@
             </StackLayout>
         </StackLayout>
     </AbsoluteLayout>
-
 </mvvm:BaseView>

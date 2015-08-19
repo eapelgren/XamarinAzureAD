@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamarinAzureAD.Controlls.Views
 {
@@ -14,7 +9,7 @@ namespace XamarinAzureAD.Controlls.Views
             NewsPostImage = new Image
             {
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.Start
             };
 
             //PADDING FOR PICTURE
@@ -24,9 +19,9 @@ namespace XamarinAzureAD.Controlls.Views
                 Padding = new Thickness(0, 0, 0, 6)
             };
 
-           NewsPostTextLabel = new Label
+            NewsPostTextLabel = new Label
             {
-                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof (Label)),
                 FontFamily = "Verdana"
             };
 
@@ -44,10 +39,7 @@ namespace XamarinAzureAD.Controlls.Views
         }
 
         public Image NewsPostImage { get; set; }
-
         public Label NewsPostTextLabel { get; set; }
-
         public StackLayout BaseStackLayout { get; set; }
-
     }
 }

@@ -12,10 +12,10 @@ namespace XamarinAzureAD.Pages
     {
         private readonly SelectedNewsViewModel vm;
 
-        public SelectedNewsPage(ObservableNews news, ObservableCollection<ObservableComment> commentList)
+        public SelectedNewsPage(ObservableNews news)
         {
             Title = "SelectedNewsPage";
-            vm = new SelectedNewsViewModel(news, commentList);
+            vm = new SelectedNewsViewModel(news);
             BindingContext = vm;
             InitializeComponent();
         }

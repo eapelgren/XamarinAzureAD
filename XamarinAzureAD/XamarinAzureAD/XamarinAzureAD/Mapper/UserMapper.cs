@@ -4,9 +4,9 @@ using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.Mapper
 {
-    internal class UserMapper
+    internal static class UserMapper
     {
-        public ObservableUser Convert(IUserDTO author)
+        public static ObservableUser Convert(IUserDTO author)
         {
             return new ObservableUser
             {

@@ -194,12 +194,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
-      <Project>{bdd6e02c-922a-479b-be24-8a52eb314a29}</Project>
-      <Name>DTOModel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\SelectedUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -210,6 +204,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
+      <Project>{bdd6e02c-922a-479b-be24-8a52eb314a29}</Project>
+      <Name>DTOModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

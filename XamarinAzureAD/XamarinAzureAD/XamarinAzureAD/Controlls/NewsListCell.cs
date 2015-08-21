@@ -37,15 +37,9 @@ namespace XamarinAzureAD.Controlls
             newsTapGestureRecognizers.Tapped += async (sender, args) =>
             {
                 var navPage = App.GetNavigationPage();
-                var commentsProvider = Resolver.Resolve<ICommentProvider>();
                 var news = (ObservableNews) BindingContext;
-                var commentsDTOList = await commentsProvider.GetCommentsTask(news.Id);
                 var obsCommentList = new ObservableCollection<ObservableComment>();
-                foreach (var commentDto in commentsDTOList)
-                {
-                    obsCommentList.Add(CommentMapper.Convert(commentDto));
-                }
-                await navPage.PushAsync(new SelectedNewsPage(news, obsCommentList));
+                await navPage.PushAsync(new SelectedNewsPage(news));
             };
             newsPostView.GestureRecognizers.Add(newsTapGestureRecognizers);
 

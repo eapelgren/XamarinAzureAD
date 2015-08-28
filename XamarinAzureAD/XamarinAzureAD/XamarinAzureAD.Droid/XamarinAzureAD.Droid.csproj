@@ -179,6 +179,10 @@
     <AndroidResource Include="Resources\drawable\xlent_rgb.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
+      <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
+      <Name>DTOModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XamarinAzureAD\XamarinAzureAD.csproj">
       <Name>XamarinAzureAD</Name>
     </ProjectReference>

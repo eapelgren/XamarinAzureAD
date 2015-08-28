@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 using XamarinAzureAD.Pages;
+using XLabs.Ioc;
 
 namespace MasterDetail
 {
@@ -14,7 +16,7 @@ namespace MasterDetail
             menuPage = new MenuPage();
             menuPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as MenuItem);
             Master = menuPage;
-            Detail = new NavigationPage(new MainTabbedContainer());
+            Detail = new MainTabbedContainer();
         }
 
         private void NavigateTo(MenuItem menu)
@@ -23,7 +25,19 @@ namespace MasterDetail
                 return;
 
             var displayPage = (Page) Activator.CreateInstance(menu.TargetType);
-            Detail = new NavigationPage(displayPage);
+
+            var navPage = Resolver.Resolve<NavigationPage>();
+            try
+            {
+            navPage.PopToRootAsync();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            navPage.PushAsync(displayPage);
+
+            Detail = navPage;
             menuPage.Menu.SelectedItem = null;
             IsPresented = false;
         }

@@ -9,7 +9,6 @@ namespace XamarinAzureAD.Pages
         {
             Title = "MasterDetail";
             Master = new MenuPage();
-
             Detail = new MainTabbedContainer();
         }
     }

@@ -5,7 +5,7 @@
             xmlns:pages="clr-namespace:XamarinAzureAD.Pages;Assembly=XamarinAzureAD"
             x:Class="XamarinAzureAD.Pages.MainTabbedContainer">
     <TabbedPage.Children>
-        <pages:NewsPage Title="News" Icon="TabIcons/Klingon.png" />
-        <pages:UsersPage Title="Users" Icon="TabIcons/Vulcan.png" />
+        <pages:NewsPage Title="News"/>
+        <pages:UsersPage Title="Users"/>
     </TabbedPage.Children>
 </TabbedPage>

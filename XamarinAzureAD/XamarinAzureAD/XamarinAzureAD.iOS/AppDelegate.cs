@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using DTOModel.Providers.Implementations;
 using DTOModel.Providers.Implementations.Mocked;
 using DTOModel.Providers.Interfaces;
 using Foundation;
@@ -70,8 +71,8 @@ namespace XamarinAzureAD.iOS
 
                 //MOCKED
                 .Register<IAuthenticationProvider, AuthenticationProviderMocked>()
-                .Register<INewsProvider>(t => new NewsProviderMocked(new AuthenticationProviderMocked()))
-                .Register<IUserProvider, UserProviderMocked>()
+                .Register<INewsProvider>(t => new NewsProvider(new AuthenticationProviderMocked()))
+                .Register<IUserProvider, UserProvider>()
                 .Register<ICommentProvider, CommentProviderMocked>();
 
 

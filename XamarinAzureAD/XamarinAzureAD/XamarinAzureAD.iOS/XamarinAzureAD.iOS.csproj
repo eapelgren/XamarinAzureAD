@@ -227,7 +227,7 @@
     <BundleResource Include="Resources\TabIcons\Alien%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\TabIcons\Borg.png" />
+    <BundleResource Include="Resources\TabIcons\Borg%401x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\TabIcons\Borg%402x.png" />
@@ -236,7 +236,7 @@
     <BundleResource Include="Resources\TabIcons\Borg%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\TabIcons\Human.png" />
+    <BundleResource Include="Resources\TabIcons\Human%401x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\TabIcons\Human%402x.png" />
@@ -254,7 +254,7 @@
     <BundleResource Include="Resources\TabIcons\Klingon%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\TabIcons\Vulcan.png" />
+    <BundleResource Include="Resources\TabIcons\Vulcan%401x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\TabIcons\Vulcan%402x.png" />

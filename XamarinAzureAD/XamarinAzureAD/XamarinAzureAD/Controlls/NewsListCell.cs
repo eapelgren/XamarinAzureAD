@@ -5,7 +5,9 @@ using XamarinAzureAD.Controlls.Views;
 using XamarinAzureAD.Mapper;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
+using XamarinAzureAD.ViewModel;
 using XLabs.Ioc;
+using XLabs.Platform.Services;
 
 namespace XamarinAzureAD.Controlls
 {
@@ -23,6 +25,17 @@ namespace XamarinAzureAD.Controlls
                 new Binding("AuthorObservableUser.AuthorImageUri"));
             profileHeaderView.DatePostedLabel.SetBinding(Label.TextProperty, new Binding("DatePosted"));
 
+            var profileHeaderGestureRecognizer = new TapGestureRecognizer();
+            profileHeaderGestureRecognizer.Tapped += async (sender, args) =>
+            {
+                var senderView = (ContentView) sender;
+                var news = (ObservableNews) senderView.BindingContext;
+                var navPage = App.GetNavigationPage();
+                await navPage.PushAsync(new SelectedUserPage(news.AuthorObservableUser));
+            };
+
+            profileHeaderView.GestureRecognizers.Add(profileHeaderGestureRecognizer);
+
             //ToDo Create Bindings For Likes ETC
             var likesAndSeenLabelsView = new LikesAndSeenLabelsView();
 
@@ -36,9 +49,9 @@ namespace XamarinAzureAD.Controlls
             var newsTapGestureRecognizers = new TapGestureRecognizer();
             newsTapGestureRecognizers.Tapped += async (sender, args) =>
             {
+                var senderView = (ContentView) sender;
+                var news = (ObservableNews) senderView.BindingContext;
                 var navPage = App.GetNavigationPage();
-                var news = (ObservableNews) BindingContext;
-                var obsCommentList = new ObservableCollection<ObservableComment>();
                 await navPage.PushAsync(new SelectedNewsPage(news));
             };
             newsPostView.GestureRecognizers.Add(newsTapGestureRecognizers);

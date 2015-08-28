@@ -27,12 +27,17 @@ namespace XamarinAzureAD
             //REGISTER VM:S AND PAGES
             ViewFactory.Register<LoginPage3, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
-
-            navPage = new NavigationPage(new RootPage());
+            ViewFactory.Register<SelectedNewsPage, SelectedNewsViewModel>();
 
             Resolver.Resolve<IDependencyContainer>()
-                .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                .Register<NavigationPage>(t => new NavigationPage());
 
+            var rootPage = new RootPage();
+            navPage = new NavigationPage(rootPage);
+            
+            Resolver.Resolve<IDependencyContainer>()
+                .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+            
             //Should be navPage
             return navPage;
         }

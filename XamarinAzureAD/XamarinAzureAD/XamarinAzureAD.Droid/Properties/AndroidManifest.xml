@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <uses-sdk android:minSdkVersion="20" />
-  <application></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="xlent.app">
+	<uses-sdk android:minSdkVersion="20" />
+	<application android:label="XLENT" android:icon="@drawable/xlent_rgb"></application>
 </manifest>

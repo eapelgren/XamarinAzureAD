@@ -76,6 +76,9 @@
     <Compile Include="Pages\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SelectedNewsPage.xaml.cs">
       <DependentUpon>SelectedNewsPage.xaml</DependentUpon>
     </Compile>
@@ -206,10 +209,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
-      <Project>{bdd6e02c-922a-479b-be24-8a52eb314a29}</Project>
-      <Name>DTOModel</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Pages\Page1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

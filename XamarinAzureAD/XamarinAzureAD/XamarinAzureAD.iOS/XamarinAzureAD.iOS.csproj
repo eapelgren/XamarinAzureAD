@@ -113,10 +113,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
-      <Project>{bdd6e02c-922a-479b-be24-8a52eb314a29}</Project>
-      <Name>DTOModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XamarinAzureAD\XamarinAzureAD.csproj">
       <Name>XamarinAzureAD</Name>
     </ProjectReference>

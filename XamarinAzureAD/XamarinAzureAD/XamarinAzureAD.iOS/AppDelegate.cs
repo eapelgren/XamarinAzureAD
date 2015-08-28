@@ -71,8 +71,8 @@ namespace XamarinAzureAD.iOS
 
                 //MOCKED
                 .Register<IAuthenticationProvider, AuthenticationProviderMocked>()
-                .Register<INewsProvider>(t => new NewsProvider(new AuthenticationProviderMocked()))
-                .Register<IUserProvider, UserProvider>()
+                .Register<INewsProvider>(t => new NewsProviderMocked(new AuthenticationProviderMocked()))
+                .Register<IUserProvider, UserProviderMocked>()
                 .Register<ICommentProvider, CommentProviderMocked>();
 
 

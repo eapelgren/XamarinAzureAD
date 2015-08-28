@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using DTOModel.Providers.Implementations;
 using DTOModel.Providers.Implementations.Mocked;
 using DTOModel.Providers.Interfaces;
 using Foundation;

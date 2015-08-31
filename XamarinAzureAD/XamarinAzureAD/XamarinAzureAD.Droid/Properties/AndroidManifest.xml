@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="xlent.app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="xlent.app" android:versionCode="1.1">
 	<uses-sdk android:minSdkVersion="20" />
 	<application android:label="XLENT" android:icon="@drawable/xlent_rgb"></application>
 </manifest>

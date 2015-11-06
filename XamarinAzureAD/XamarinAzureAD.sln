@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -19,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAzureAD.Droid", "Xam
 		{BDD6E02C-922A-479B-BE24-8A52EB314A29} = {BDD6E02C-922A-479B-BE24-8A52EB314A29}
 	EndProjectSection
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -27,12 +30,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAzureAD.iOS", "XamarinAzureAD\XamarinAzureAD.iOS\XamarinAzureAD.iOS.csproj", "{A47DD182-ABEE-43FC-9093-8DAA39A5F261}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAzureAD.Droid", "XamarinAzureAD\XamarinAzureAD.Droid\XamarinAzureAD.Droid.csproj", "{2B6B27A0-F7FE-4E9F-BB76-763D43459E06}"
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAzureAD.WinPhone", "XamarinAzureAD\XamarinAzureAD.WinPhone\XamarinAzureAD.WinPhone.csproj", "{BF770971-3D8F-4CBD-8FA9-273A7B9D08A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7694B83E-B085-4206-9FA4-06B0CBEE0A70}"
 	ProjectSection(SolutionItems) = preProject
+<<<<<<< HEAD
 <<<<<<< HEAD
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
@@ -50,6 +57,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E2678A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOModel", "..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj", "{BDD6E02C-922A-479B-BE24-8A52EB314A29}"
 EndProject
+=======
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
@@ -254,6 +266,7 @@ Global
 		{BF770971-3D8F-4CBD-8FA9-273A7B9D08A6}.Release|x86.Build.0 = Release|x86
 		{BF770971-3D8F-4CBD-8FA9-273A7B9D08A6}.Release|x86.Deploy.0 = Release|x86
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{6FC67BA9-6C0E-48A2-8C66-6650ED583A5F}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
 		{6FC67BA9-6C0E-48A2-8C66-6650ED583A5F}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
 		{6FC67BA9-6C0E-48A2-8C66-6650ED583A5F}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
@@ -336,10 +349,13 @@ Global
 		{BDD6E02C-922A-479B-BE24-8A52EB314A29}.Release|x86.Build.0 = Release|Any CPU
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 <<<<<<< HEAD
 	GlobalSection(NestedProjects) = preSolution
 		{295DF1C6-53A4-41D9-AB27-8D8C73189929} = {E2678AF5-B555-417D-BF46-8A174D468FF1}
@@ -349,6 +365,8 @@ Global
 		{6FC67BA9-6C0E-48A2-8C66-6650ED583A5F} = {E2678AF5-B555-417D-BF46-8A174D468FF1}
 		{BDD6E02C-922A-479B-BE24-8A52EB314A29} = {E2678AF5-B555-417D-BF46-8A174D468FF1}
 	EndGlobalSection
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 EndGlobal

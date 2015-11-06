@@ -1,17 +1,23 @@
 ﻿using System;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Diagnostics;
 using System.Windows.Input;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Services;
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
@@ -20,6 +26,7 @@ using XLabs.Platform.Services;
 
 namespace XamarinAzureAD.ViewModel
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     public class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
@@ -44,6 +51,8 @@ namespace XamarinAzureAD.ViewModel
 
         public Entry EmailEntry
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
         private Boolean _isLoading;
@@ -96,6 +105,9 @@ namespace XamarinAzureAD.ViewModel
         private Entry _usernameEntry;
 
         public Entry UsernamEntry
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         {
             get
@@ -103,7 +115,11 @@ namespace XamarinAzureAD.ViewModel
                 return _usernameEntry ?? (_usernameEntry = new Entry
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Text = "test1@xlentwebapi.onmicrosoft.com"
+=======
+                    Text = "Username"
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
                     Text = "Username"
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -113,6 +129,11 @@ namespace XamarinAzureAD.ViewModel
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        private Entry _passwordEntry;
+
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
         private Entry _passwordEntry;
 
@@ -124,7 +145,11 @@ namespace XamarinAzureAD.ViewModel
                 return _passwordEntry ?? (_passwordEntry = new Entry
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Text = "newPassword1",
+=======
+                    Text = "Password",
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
                     Text = "Password",
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -135,6 +160,11 @@ namespace XamarinAzureAD.ViewModel
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        private Button _loginButton;
+
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
         private Button _loginButton;
 
@@ -152,6 +182,7 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _loginButton, value); }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         public ICommand LoginCommand
         {
@@ -241,6 +272,8 @@ namespace XamarinAzureAD.ViewModel
     }
 }
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         private Command _loginCommand;
 
         public Command LoginCommand
@@ -283,4 +316,7 @@ namespace XamarinAzureAD.ViewModel
     }
         
 }
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

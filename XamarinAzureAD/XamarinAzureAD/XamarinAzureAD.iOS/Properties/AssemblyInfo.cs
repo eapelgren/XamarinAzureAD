@@ -1,5 +1,9 @@
 ﻿using System.Reflection;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+using System.Runtime.CompilerServices;
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 using System.Runtime.CompilerServices;
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -9,7 +13,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 [assembly: AssemblyTitle("XamarinAzureAD.iOS")]
@@ -25,11 +32,17 @@ using System.Runtime.InteropServices;
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
+=======
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 [assembly: ComVisible(false)]
 
@@ -48,9 +61,14 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+=======
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

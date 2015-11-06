@@ -1,7 +1,12 @@
 ﻿using System.Reflection;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Runtime.InteropServices;
 using Android;
+=======
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,7 +17,10 @@ using Android.App;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 [assembly: AssemblyTitle("XamarinAzureAD.Droid")]
@@ -36,7 +44,10 @@ using Android.App;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 [assembly: AssemblyVersion("1.0.0.0")]
@@ -44,9 +55,14 @@ using Android.App;
 
 // Add some common permissions, these can be removed if not needed
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [assembly: UsesPermission(Manifest.Permission.Internet)]
 [assembly: UsesPermission(Manifest.Permission.WriteExternalStorage)]
+=======
+[assembly: UsesPermission(Android.Manifest.Permission.Internet)]
+[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]

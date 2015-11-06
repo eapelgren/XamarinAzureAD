@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="xlent.app" android:versionCode="2">
 	<uses-sdk android:minSdkVersion="20" />
 	<application android:label="XLENT" android:icon="@drawable/xlent_rgb"></application>
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+	<uses-sdk android:minSdkVersion="20" />
+	<application></application>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 	<uses-sdk android:minSdkVersion="20" />

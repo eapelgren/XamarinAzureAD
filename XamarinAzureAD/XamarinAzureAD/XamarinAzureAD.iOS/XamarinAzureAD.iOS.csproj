@@ -12,10 +12,14 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>XamarinAzureADiOS</AssemblyName>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+=======
+    <NuGetPackageImportStamp>2fd143fb</NuGetPackageImportStamp>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
     <NuGetPackageImportStamp>2fd143fb</NuGetPackageImportStamp>
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -57,6 +61,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <MtouchDebug>True</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchSdkVersion>8.3</MtouchSdkVersion>
@@ -69,6 +74,10 @@
     <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n />
+=======
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -114,7 +123,10 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <None Include="app.config" />
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <None Include="Entitlements.plist" />
@@ -126,10 +138,13 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectReference Include="..\..\..\XlentRestDTO\XlentRestDTO\DTOModel\DTOModel.csproj">
       <Project>{BDD6E02C-922A-479B-BE24-8A52EB314A29}</Project>
       <Name>DTOModel</Name>
     </ProjectReference>
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <ProjectReference Include="..\XamarinAzureAD\XamarinAzureAD.csproj">
@@ -156,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Reference Include="ExifLib">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
     </Reference>
@@ -169,6 +185,11 @@
       <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
       <Private>True</Private>
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+      <Private>True</Private>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
       <HintPath>..\..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.3.205061641-alpha\lib\Xamarin.iOS10\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
@@ -176,6 +197,7 @@
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform">
       <HintPath>..\..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.3.205061641-alpha\lib\Xamarin.iOS10\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Reference Include="Microsoft.Rest.ClientRuntime, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -286,6 +308,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -340,11 +364,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
@@ -353,6 +381,10 @@
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+=======
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+  </Target>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>

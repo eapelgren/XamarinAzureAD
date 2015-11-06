@@ -15,10 +15,13 @@ namespace XamarinAzureAD.ViewModel
     class UserListViewModel : XLabs.Forms.Mvvm.ViewModel
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         private ObservableCollection<ObservableUser> _userList;
 
         public ObservableCollection<ObservableUser> UserList
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         public UserListViewModel()
         {
         }
@@ -26,6 +29,9 @@ namespace XamarinAzureAD.ViewModel
         private ObservableCollection<User> _userList;
 
         public ObservableCollection<User> UserList
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         {
 
@@ -36,6 +42,7 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _userList, value); }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         private ObservableCollection<ObservableUser> GetUserList()
         {
@@ -56,6 +63,8 @@ namespace XamarinAzureAD.ViewModel
 
         public ObservableUser SelectedObservableUser
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         private ObservableCollection<User> GetUserList()
         {
             var list = new ObservableCollection<User>();
@@ -77,13 +86,20 @@ namespace XamarinAzureAD.ViewModel
         private User _selectedUser;
 
         public User SelectedUser
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         {
 
             get
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return _selectedObservableUser ?? (_selectedObservableUser = new ObservableUser()
+=======
+                return _selectedUser ?? (_selectedUser = new User()
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
                 return _selectedUser ?? (_selectedUser = new User()
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -94,7 +110,11 @@ namespace XamarinAzureAD.ViewModel
             set
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 SetProperty(ref _selectedObservableUser, value);
+=======
+                SetProperty(ref _selectedUser, value);
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
                 SetProperty(ref _selectedUser, value);
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
@@ -42,6 +43,8 @@
         </StackLayout>
     </AbsoluteLayout>
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -68,5 +71,8 @@
       <Button Text="{Binding LoginButton.Text}" Command="{Binding LoginCommand}"></Button>
     </StackLayout>
   </StackLayout>
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 </mvvm:BaseView>

@@ -15,10 +15,14 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+=======
+    <NuGetPackageImportStamp>add3ea6f</NuGetPackageImportStamp>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
     <NuGetPackageImportStamp>add3ea6f</NuGetPackageImportStamp>
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -42,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Compile Include="Controlls\CommentCell.cs" />
     <Compile Include="Controlls\DynamicItemTemplate.cs" />
@@ -106,6 +111,8 @@
       <HintPath>..\..\packages\AutoMapper.3.3.1\lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.dll</HintPath>
     </Reference>
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <Compile Include="Model\User.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -123,11 +130,15 @@
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Reference Include="Microsoft.Azure.AppService">
       <HintPath>..\..\packages\Microsoft.Azure.AppService.0.2.2-alpha\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid\Microsoft.Azure.AppService.dll</HintPath>
@@ -158,6 +169,8 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
       <HintPath>..\..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.3.205061641-alpha\lib\portable-net45+win+wpa81+wp80\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
     </Reference>
@@ -167,12 +180,16 @@
     <Reference Include="System" />
     <Reference Include="System.Net.Http">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile111\System.Net.Http.dll</HintPath>
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     </Reference>
     <Reference Include="System.Runtime">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile78\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+<<<<<<< HEAD
 <<<<<<< HEAD
       <HintPath>..\..\packages\Xamarin.Forms.1.4.4.6392\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -204,6 +221,8 @@
   <ItemGroup>
     <None Include="app.config" />
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
       <HintPath>..\..\packages\Xamarin.Forms.1.4.2.6359\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -237,6 +256,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
     <None Include="packages.config" />
     <None Include="script.ps1" />
@@ -248,6 +270,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <EmbeddedResource Include="Pages\NewsPage.xaml">
 =======
@@ -269,10 +292,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\UsersPage.xaml">
+=======
+    <EmbeddedResource Include="Pages\UserListPage.xaml">
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="Pages\SelectedUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -302,10 +329,15 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
@@ -314,6 +346,10 @@
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+=======
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+  </Target>
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>

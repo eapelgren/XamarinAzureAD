@@ -1,9 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using System.Diagnostics;
 using MasterDetail;
 using Xamarin.Forms;
 using XamarinAzureAD.Pages;
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +17,9 @@ using Xamarin.Forms;
 using XamarinAzureAD.Model;
 using XamarinAzureAD.Pages;
 using XamarinAzureAD.Services;
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
@@ -27,8 +33,12 @@ namespace XamarinAzureAD
     public class App : Application
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         private static NavigationPage navPage;
 
+=======
+        
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
         
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
@@ -42,6 +52,7 @@ namespace XamarinAzureAD
         public static Page GetMainPage()
         {
             //REGISTER VM:S AND PAGES
+<<<<<<< HEAD
 <<<<<<< HEAD
             ViewFactory.Register<LoginPage3, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
@@ -58,6 +69,8 @@ namespace XamarinAzureAD
             
             //Should be navPage
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
             ViewFactory.Register<LoginPage, LoginPageViewModel>();
             ViewFactory.Register<UserListPage, UserListViewModel>();
             
@@ -72,6 +85,9 @@ namespace XamarinAzureAD
             //REGISTER AZURE AD SERVICE
         
             
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
             return navPage;
         }
@@ -79,9 +95,12 @@ namespace XamarinAzureAD
         public static void Init()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             var app = Resolver.Resolve<IXFormsApp>();
 
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 
             var app = Resolver.Resolve<IXFormsApp>();
             
@@ -89,6 +108,9 @@ namespace XamarinAzureAD
            
             
             
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
             if (app == null)
             {
@@ -105,10 +127,15 @@ namespace XamarinAzureAD
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static NavigationPage GetNavigationPage()
         {
             return navPage;
         }
+=======
+
+
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 
 
@@ -130,7 +157,11 @@ namespace XamarinAzureAD
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 =======
 }
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

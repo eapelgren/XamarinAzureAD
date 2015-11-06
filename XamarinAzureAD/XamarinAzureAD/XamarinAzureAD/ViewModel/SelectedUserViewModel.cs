@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using XamarinAzureAD.Model;
 
 namespace XamarinAzureAD.ViewModel
@@ -20,6 +21,8 @@ namespace XamarinAzureAD.ViewModel
     }
 }
 =======
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,4 +62,7 @@ namespace XamarinAzureAD.ViewModel
 
     }
 }
+<<<<<<< HEAD
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
+=======
 >>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

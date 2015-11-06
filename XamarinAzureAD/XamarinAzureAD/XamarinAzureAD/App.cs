@@ -1,7 +1,20 @@
+<<<<<<< HEAD
 ﻿using System.Diagnostics;
 using MasterDetail;
 using Xamarin.Forms;
 using XamarinAzureAD.Pages;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+
+using Xamarin.Forms;
+using XamarinAzureAD.Model;
+using XamarinAzureAD.Pages;
+using XamarinAzureAD.Services;
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 using XamarinAzureAD.ViewModel;
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
@@ -13,8 +26,12 @@ namespace XamarinAzureAD
 {
     public class App : Application
     {
+<<<<<<< HEAD
         private static NavigationPage navPage;
 
+=======
+        
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         public App()
         {
             // The root page of your application
@@ -25,6 +42,7 @@ namespace XamarinAzureAD
         public static Page GetMainPage()
         {
             //REGISTER VM:S AND PAGES
+<<<<<<< HEAD
             ViewFactory.Register<LoginPage3, LoginPageViewModel>();
             ViewFactory.Register<NewsPage, NewsPageViewModel>();
             ViewFactory.Register<SelectedNewsPage, SelectedNewsViewModel>();
@@ -39,13 +57,39 @@ namespace XamarinAzureAD
                 .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
             
             //Should be navPage
+=======
+            ViewFactory.Register<LoginPage, LoginPageViewModel>();
+            ViewFactory.Register<UserListPage, UserListViewModel>();
+            
+            
+            var mainPage = ViewFactory.CreatePage<LoginPageViewModel, Page>() as Page;
+            var navPage = new NavigationPage(mainPage);
+            
+            //REGISTER NAVIGATION SERVICE
+            Resolver.Resolve<IDependencyContainer>()
+                .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+            
+            //REGISTER AZURE AD SERVICE
+        
+            
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
             return navPage;
         }
 
         public static void Init()
         {
+<<<<<<< HEAD
             var app = Resolver.Resolve<IXFormsApp>();
 
+=======
+
+            var app = Resolver.Resolve<IXFormsApp>();
+            
+            //SET AZURE AD SERVICE
+           
+            
+            
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
             if (app == null)
             {
                 return;
@@ -60,10 +104,15 @@ namespace XamarinAzureAD
             app.Suspended += (o, e) => Debug.WriteLine("Application Suspended");
         }
 
+<<<<<<< HEAD
         public static NavigationPage GetNavigationPage()
         {
             return navPage;
         }
+=======
+
+
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 
         protected override void OnStart()
         {
@@ -80,4 +129,8 @@ namespace XamarinAzureAD
             // Handle when your app resumes
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

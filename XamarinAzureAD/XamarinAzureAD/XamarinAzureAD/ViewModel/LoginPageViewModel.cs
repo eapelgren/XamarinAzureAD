@@ -1,9 +1,18 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Diagnostics;
 using System.Windows.Input;
 using DTOModel.Providers.Interfaces;
 using Xamarin.Forms;
 using XamarinAzureAD.Handler;
+=======
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+using XamarinAzureAD.Model;
+using XamarinAzureAD.Services;
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 using XLabs.Forms.Mvvm;
 using XLabs.Forms.Services;
 using XLabs.Ioc;
@@ -11,6 +20,7 @@ using XLabs.Platform.Services;
 
 namespace XamarinAzureAD.ViewModel
 {
+<<<<<<< HEAD
     public class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
     {
         private StackLayout _baseStack;
@@ -33,30 +43,102 @@ namespace XamarinAzureAD.ViewModel
         }
 
         public Entry EmailEntry
+=======
+    internal class LoginPageViewModel : XLabs.Forms.Mvvm.ViewModel
+    {
+        private Boolean _isLoading;
+
+        public Boolean IsLoading
+        {
+            get { return _isLoading; }
+            set { SetProperty(ref _isLoading, value); }
+        }
+
+        private async void LoginToAzure()
+        {
+            IsLoading = true;
+            var adService = Resolver.Resolve<IAzureAdService>();
+
+            var task = adService.LoginAdTask("username", "password");
+            var result = await task;
+            if (result.LoggedIn)
+            {
+                var mainPage2 = ViewFactory.CreatePage<UserListViewModel, Page>() as Page;
+                var navPage = new NavigationPage(mainPage2);
+                Resolver.Resolve<IDependencyContainer>()
+                    .Register<INavigationService>(t => new NavigationService(navPage.Navigation));
+                Application.Current.MainPage = navPage;
+
+            }
+            else
+            {
+                ExceptionLabel.Text = result.Exception.InnerException.ToString();
+                ExceptionLabel.IsVisible = true;
+                Debug.WriteLine("ERROR Loggin" + result.Exception);
+            }
+            IsLoading = false;
+        }
+
+        private Label _logoLabel;
+
+        public Label LogoLabel
+        {
+            get
+            {
+                return _logoLabel ?? (_logoLabel = new Label
+                {
+                    Text = "LOGO COMPANY..."
+                });
+            }
+            set { SetProperty(ref _logoLabel, value); }
+        }
+
+        private Entry _usernameEntry;
+
+        public Entry UsernamEntry
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         {
             get
             {
                 return _usernameEntry ?? (_usernameEntry = new Entry
                 {
+<<<<<<< HEAD
                     Text = "test1@xlentwebapi.onmicrosoft.com"
+=======
+                    Text = "Username"
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
                 });
             }
             set { SetProperty(ref _usernameEntry, value); }
         }
 
+<<<<<<< HEAD
+=======
+        private Entry _passwordEntry;
+
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         public Entry PasswordEntry
         {
             get
             {
                 return _passwordEntry ?? (_passwordEntry = new Entry
                 {
+<<<<<<< HEAD
                     Text = "newPassword1",
+=======
+                    Text = "Password",
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
                     IsPassword = true
                 });
             }
             set { SetProperty(ref _passwordEntry, value); }
         }
 
+<<<<<<< HEAD
+=======
+        private Button _loginButton;
+
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
         public Button LoginButton
         {
             get
@@ -70,6 +152,7 @@ namespace XamarinAzureAD.ViewModel
             set { SetProperty(ref _loginButton, value); }
         }
 
+<<<<<<< HEAD
         public ICommand LoginCommand
         {
             get
@@ -157,3 +240,47 @@ namespace XamarinAzureAD.ViewModel
         }
     }
 }
+=======
+        private Command _loginCommand;
+
+        public Command LoginCommand
+        {
+            get
+            {
+                return _loginCommand ??
+                       (_loginCommand =
+                           new Command(LogginButtonClicked));
+            }
+        }
+
+        private void LogginButtonClicked()
+        {
+            LoginToAzure();
+        }
+
+        private Label _exceptionLabel;
+
+        public Label ExceptionLabel
+        {
+
+            get
+            {
+                return _exceptionLabel ?? (_exceptionLabel = new Label()
+                {
+                  IsEnabled  = true,
+                  TextColor = Color.Red,
+                  IsVisible = false
+                });
+            }
+            set { SetProperty(ref _exceptionLabel, value); }
+        }
+
+
+		
+
+		
+
+    }
+        
+}
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

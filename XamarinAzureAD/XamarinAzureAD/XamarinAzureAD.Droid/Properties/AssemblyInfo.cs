@@ -1,12 +1,20 @@
 ﻿using System.Reflection;
+<<<<<<< HEAD
 using System.Runtime.InteropServices;
 using Android;
+=======
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 using Android.App;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 [assembly: AssemblyTitle("XamarinAzureAD.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -27,11 +35,19 @@ using Android.App;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 // Add some common permissions, these can be removed if not needed
+<<<<<<< HEAD
 
 [assembly: UsesPermission(Manifest.Permission.Internet)]
 [assembly: UsesPermission(Manifest.Permission.WriteExternalStorage)]
+=======
+[assembly: UsesPermission(Android.Manifest.Permission.Internet)]
+[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d

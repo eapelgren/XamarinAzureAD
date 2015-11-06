@@ -1,10 +1,20 @@
+<<<<<<< HEAD
 ﻿using System.Reflection;
 using System.Resources;
+=======
+﻿using System.Resources;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
 [assembly: AssemblyTitle("XamarinAzureAD")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -25,6 +35,11 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+<<<<<<< HEAD
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+=======
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+>>>>>>> b8b21d09c1adf0a6f1affae1746fb8b84f7e688d
